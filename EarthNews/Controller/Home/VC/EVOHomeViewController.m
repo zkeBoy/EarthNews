@@ -32,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = MainBgColor;
     
     self.titleTextLabel = [UILabel new];
     self.titleTextLabel.text = @"地球新闻";

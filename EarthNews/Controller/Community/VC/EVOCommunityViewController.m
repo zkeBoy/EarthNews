@@ -7,9 +7,11 @@
 //
 
 #import "EVOCommunityViewController.h"
+#import "EVOCommunityViewCell.h"
 
-@interface EVOCommunityViewController ()
-
+@interface EVOCommunityViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UILabel * titleTextLabel;
+@property (nonatomic, strong) UITableView * tableView;
 @end
 
 @implementation EVOCommunityViewController
@@ -23,7 +25,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = MainBgColor;
+    
+    self.titleTextLabel = [UILabel new];
+    self.titleTextLabel.text = @"地球新闻";
+    self.titleTextLabel.font = [UIFont boldSystemFontOfSize:17];
+    self.titleTextLabel.textColor = UIColor.whiteColor;
+    self.titleTextLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:self.titleTextLabel];
+    [self.titleTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view).offset(kStatusBarHeight+10);
+    }];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorColor = UIColor.clearColor;
+    self.tableView.rowHeight = 288;
+    self.tableView.sectionFooterHeight = 10;
+    self.tableView.sectionHeaderHeight = 0;
+    [self.tableView registerClass:[EVOCommunityViewCell class] forCellReuseIdentifier:@"EVOCommunityViewCell"];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.width.equalTo(self.view);
+        make.top.equalTo(self.titleTextLabel.mas_bottom).offset(20);
+    }];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    EVOCommunityViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EVOCommunityViewCell" forIndexPath:indexPath];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 /*
