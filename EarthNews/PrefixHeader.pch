@@ -1,0 +1,83 @@
+//
+//  PrefixHeader.pch
+//  EasyScan
+//
+//  Created by zkeBoy on 2020/5/6.
+//  Copyright © 2020 zkeBoy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <MJExtension.h>
+#import <Masonry/Masonry.h>
+#import "UIColor+Hex.h"
+#import "UIImage+Category.h"
+#import "EVONetworkEngineManager.h"
+#import <SDWebImage.h>
+
+//HEX颜色值转化
+#define RGBHex(hex)   [UIColor colorWithHexString:hex]
+#define RGBHexA(hex,a)   [UIColor colorWithHexString:hex alpha:a]
+
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define isIphoneX_XS     (kScreenWidth == 375.f && kScreenHeight == 812.f ? YES : NO)
+#define isIphoneXR_XSMax    (kScreenWidth == 414.f && kScreenHeight == 896.f ? YES : NO)
+#define isFullScreen    (isIphoneX_XS || isIphoneXR_XSMax)
+#define kStatusBarHeight     (isFullScreen ? 44.f : 20.f)
+#define kNavigationBarHeight  44.f
+#define TabbarHeight         (isFullScreen ? (49.f+34.f) : 49.f)
+#define iPhone4s    480.f // {320, 480}
+#define iPhone5s    568.f // {320, 568}
+#define iPhone6s    667.f // {375, 667}
+#define iPhonePs    736.f // {414, 736}
+#define iPhoneX     812.f // {375, 812}
+#define iPhoneXR    896.f // {414, 896}
+#define iPhoneXS    812.f // {375, 812}
+#define iPhoneXSMax 896.f // {414, 896}
+
+#define WeakSelf(self) __weak typeof(self) Weak##Self = self
+
+/****************************初始化方法********************************/
+#define NFont(num) [UIFont systemFontOfSize:(num)]
+#define BFont(num) [UIFont boldSystemFontOfSize:(num)]
+#define CreateImage(name) [UIImage imageNamed:@#name]
+#define CFont(name,size) [UIFont fontWithName:name size:size]
+#define LocalKey(key) NSLocalizedString(@#key, nil)   //语言
+#define WeakSelf(self) __weak typeof(self) Weak##Self = self
+
+/***************************拼接基本数据类型******************************/
+#define NSFormatStr(String,NString) [NSString stringWithFormat:@"%@%@",String,NString]
+#define NSFormatInt(Int)     [NSString stringWithFormat:@"%@",[NSNumber numberWithInteger:(long)Int]]
+#define NSFormatFloat(Float) [NSString stringWithFormat:@"%@",[NSNumber numberWithFloat:Float]]
+#define NSFormatDouble(Double) [NSString stringWithFormat:@"%@",[NSNumber numberWithDouble:Double]]
+#define NSFormatBool(Bool) [NSString stringWithFormat:@"%@",[NSNumber numberWithBool:Bool]]
+
+#define kSPrStrong(...) @property (nonatomic , strong) __VA_ARGS__
+#define kSPrCopy__(...) @property (nonatomic ,   copy) __VA_ARGS__
+#define kSPrWeak__(...) @property (nonatomic ,   weak) __VA_ARGS__
+#define kSPrAssign(...) @property (nonatomic , assign) __VA_ARGS__
+
+/*****************************宏定义方法*******************************/
+#define  adjustsScrollViewInsets(scrollView)\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"")\
+if ([scrollView respondsToSelector:NSSelectorFromString(@"setContentInsetAdjustmentBehavior:")]) {\
+NSMethodSignature *signature = [UIScrollView instanceMethodSignatureForSelector:@selector(setContentInsetAdjustmentBehavior:)];\
+NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];\
+NSInteger argument = 2;\
+invocation.target = scrollView;\
+invocation.selector = @selector(setContentInsetAdjustmentBehavior:);\
+[invocation setArgument:&argument atIndex:2];\
+[invocation retainArguments];\
+[invocation invoke];\
+}\
+_Pragma("clang diagnostic pop")\
+} while (0)
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

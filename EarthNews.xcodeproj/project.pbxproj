@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
+		0ACD6DAF2463A50E006C65FA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAE2463A50E006C65FA /* SceneDelegate.m */; };
+		0ACD6DB52463A50E006C65FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB32463A50E006C65FA /* Main.storyboard */; };
+		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
+		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
+		0ACD6DBD2463A50E006C65FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DBC2463A50E006C65FA /* main.m */; };
+		0ACD6DC52463A5D3006C65FA /* GlobeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DC42463A5D3006C65FA /* GlobeScene.m */; };
+		0ACD6DCE2463ACAE006C65FA /* EVOTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DCD2463ACAE006C65FA /* EVOTabBarViewController.m */; };
+		0ACD6DD22463AEFD006C65FA /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DD12463AEFD006C65FA /* UIImage+Category.m */; };
+		0ACD6DD62463B095006C65FA /* EVONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DD52463B095006C65FA /* EVONavigationController.m */; };
+		0ACD6DDA2463B26C006C65FA /* EVOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DD82463B26C006C65FA /* EVOHomeViewController.m */; };
+		0ACD6DDB2463B26C006C65FA /* EVOHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DD92463B26C006C65FA /* EVOHomeViewController.xib */; };
+		0ACD6DDE2463B6B1006C65FA /* EVOHomeNewsListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DDD2463B6B1006C65FA /* EVOHomeNewsListView.m */; };
+		0ACD6DE52463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DE32463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m */; };
+		0ACD6DE62463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DE42463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.xib */; };
+		0ACD6DEB2463D74D006C65FA /* EVOMyCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DEA2463D74D006C65FA /* EVOMyCenterViewController.m */; };
+		0ACD6DEE2463D75F006C65FA /* EVOCommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DED2463D75F006C65FA /* EVOCommunityViewController.m */; };
+		0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DF12463D9E7006C65FA /* UIColor+Hex.m */; };
+		0ACD6DF92463DE98006C65FA /* EVONetworkEngineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DF82463DE98006C65FA /* EVONetworkEngineManager.m */; };
+		0ACD6DFC2463E6B3006C65FA /* EVOMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DFB2463E6B3006C65FA /* EVOMapDetailViewController.m */; };
+		0ACD6E032463F217006C65FA /* EVODynamicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E022463F217006C65FA /* EVODynamicsViewController.m */; };
+		0ACD6E062463F221006C65FA /* EVOMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E052463F221006C65FA /* EVOMessageViewController.m */; };
+		D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80692613D39F8817B75A928F /* Pods_EarthNews.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A0A8209C00392E4D831AF9D /* Pods-EarthNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.release.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.release.xcconfig"; sourceTree = "<group>"; };
+		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0ACD6DAD2463A50E006C65FA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		0ACD6DAE2463A50E006C65FA /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		0ACD6DB42463A50E006C65FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0ACD6DB62463A50E006C65FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0ACD6DB92463A50E006C65FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0ACD6DBB2463A50E006C65FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ACD6DBC2463A50E006C65FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0ACD6DC32463A5D3006C65FA /* GlobeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobeScene.h; sourceTree = "<group>"; };
+		0ACD6DC42463A5D3006C65FA /* GlobeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobeScene.m; sourceTree = "<group>"; };
+		0ACD6DC62463A6A7006C65FA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0ACD6DCC2463ACAE006C65FA /* EVOTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOTabBarViewController.h; sourceTree = "<group>"; };
+		0ACD6DCD2463ACAE006C65FA /* EVOTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOTabBarViewController.m; sourceTree = "<group>"; };
+		0ACD6DD02463AEFD006C65FA /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
+		0ACD6DD12463AEFD006C65FA /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
+		0ACD6DD42463B095006C65FA /* EVONavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVONavigationController.h; sourceTree = "<group>"; };
+		0ACD6DD52463B095006C65FA /* EVONavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONavigationController.m; sourceTree = "<group>"; };
+		0ACD6DD72463B26C006C65FA /* EVOHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOHomeViewController.h; sourceTree = "<group>"; };
+		0ACD6DD82463B26C006C65FA /* EVOHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOHomeViewController.m; sourceTree = "<group>"; };
+		0ACD6DD92463B26C006C65FA /* EVOHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOHomeViewController.xib; sourceTree = "<group>"; };
+		0ACD6DDC2463B6B1006C65FA /* EVOHomeNewsListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOHomeNewsListView.h; sourceTree = "<group>"; };
+		0ACD6DDD2463B6B1006C65FA /* EVOHomeNewsListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOHomeNewsListView.m; sourceTree = "<group>"; };
+		0ACD6DE22463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOHomeNewsCollectionViewCell.h; sourceTree = "<group>"; };
+		0ACD6DE32463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOHomeNewsCollectionViewCell.m; sourceTree = "<group>"; };
+		0ACD6DE42463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOHomeNewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		0ACD6DE92463D74D006C65FA /* EVOMyCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOMyCenterViewController.h; sourceTree = "<group>"; };
+		0ACD6DEA2463D74D006C65FA /* EVOMyCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOMyCenterViewController.m; sourceTree = "<group>"; };
+		0ACD6DEC2463D75F006C65FA /* EVOCommunityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOCommunityViewController.h; sourceTree = "<group>"; };
+		0ACD6DED2463D75F006C65FA /* EVOCommunityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOCommunityViewController.m; sourceTree = "<group>"; };
+		0ACD6DF12463D9E7006C65FA /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		0ACD6DF22463D9E7006C65FA /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		0ACD6DF72463DE98006C65FA /* EVONetworkEngineManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVONetworkEngineManager.h; sourceTree = "<group>"; };
+		0ACD6DF82463DE98006C65FA /* EVONetworkEngineManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONetworkEngineManager.m; sourceTree = "<group>"; };
+		0ACD6DFA2463E6B3006C65FA /* EVOMapDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOMapDetailViewController.h; sourceTree = "<group>"; };
+		0ACD6DFB2463E6B3006C65FA /* EVOMapDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOMapDetailViewController.m; sourceTree = "<group>"; };
+		0ACD6E012463F217006C65FA /* EVODynamicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVODynamicsViewController.h; sourceTree = "<group>"; };
+		0ACD6E022463F217006C65FA /* EVODynamicsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVODynamicsViewController.m; sourceTree = "<group>"; };
+		0ACD6E042463F221006C65FA /* EVOMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOMessageViewController.h; sourceTree = "<group>"; };
+		0ACD6E052463F221006C65FA /* EVOMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOMessageViewController.m; sourceTree = "<group>"; };
+		80692613D39F8817B75A928F /* Pods_EarthNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.debug.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0ACD6DA42463A50E006C65FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A4EC57C5B1E6757EC57A834 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80692613D39F8817B75A928F /* Pods_EarthNews.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0ACD6D9E2463A50E006C65FA = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DA92463A50E006C65FA /* EarthNews */,
+				0ACD6DA82463A50E006C65FA /* Products */,
+				8F3FE6222781C8434A1D3104 /* Pods */,
+				0A4EC57C5B1E6757EC57A834 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0ACD6DA82463A50E006C65FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DA72463A50E006C65FA /* EarthNews.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0ACD6DA92463A50E006C65FA /* EarthNews */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DAA2463A50E006C65FA /* AppDelegate.h */,
+				0ACD6DAB2463A50E006C65FA /* AppDelegate.m */,
+				0ACD6DAD2463A50E006C65FA /* SceneDelegate.h */,
+				0ACD6DAE2463A50E006C65FA /* SceneDelegate.m */,
+				0ACD6DF42463DE5A006C65FA /* Tool */,
+				0ACD6DCF2463AEB7006C65FA /* Category */,
+				0ACD6DC82463AC5A006C65FA /* Controller */,
+				0ACD6DC72463AC50006C65FA /* TabBar */,
+				0ACD6DD32463B04B006C65FA /* NavigationBar */,
+				0ACD6DB32463A50E006C65FA /* Main.storyboard */,
+				0ACD6DB62463A50E006C65FA /* Assets.xcassets */,
+				0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */,
+				0ACD6DBB2463A50E006C65FA /* Info.plist */,
+				0ACD6DBC2463A50E006C65FA /* main.m */,
+				0ACD6DC62463A6A7006C65FA /* PrefixHeader.pch */,
+			);
+			path = EarthNews;
+			sourceTree = "<group>";
+		};
+		0ACD6DC72463AC50006C65FA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DCC2463ACAE006C65FA /* EVOTabBarViewController.h */,
+				0ACD6DCD2463ACAE006C65FA /* EVOTabBarViewController.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0ACD6DC82463AC5A006C65FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DFE2463F1E2006C65FA /* Dynamics */,
+				0ACD6DFD2463F1D9006C65FA /* Message */,
+				0ACD6DE82463D719006C65FA /* MyCenter */,
+				0ACD6DE72463D713006C65FA /* Community */,
+				0ACD6DC92463AC63006C65FA /* Home */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0ACD6DC92463AC63006C65FA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DCB2463AC7F006C65FA /* VC */,
+				0ACD6DCA2463AC6D006C65FA /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0ACD6DCA2463AC6D006C65FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DC32463A5D3006C65FA /* GlobeScene.h */,
+				0ACD6DC42463A5D3006C65FA /* GlobeScene.m */,
+				0ACD6DDC2463B6B1006C65FA /* EVOHomeNewsListView.h */,
+				0ACD6DDD2463B6B1006C65FA /* EVOHomeNewsListView.m */,
+				0ACD6DE22463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.h */,
+				0ACD6DE32463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m */,
+				0ACD6DE42463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0ACD6DCB2463AC7F006C65FA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DD72463B26C006C65FA /* EVOHomeViewController.h */,
+				0ACD6DD82463B26C006C65FA /* EVOHomeViewController.m */,
+				0ACD6DD92463B26C006C65FA /* EVOHomeViewController.xib */,
+				0ACD6DFA2463E6B3006C65FA /* EVOMapDetailViewController.h */,
+				0ACD6DFB2463E6B3006C65FA /* EVOMapDetailViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		0ACD6DCF2463AEB7006C65FA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DF22463D9E7006C65FA /* UIColor+Hex.h */,
+				0ACD6DF12463D9E7006C65FA /* UIColor+Hex.m */,
+				0ACD6DD02463AEFD006C65FA /* UIImage+Category.h */,
+				0ACD6DD12463AEFD006C65FA /* UIImage+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		0ACD6DD32463B04B006C65FA /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DD42463B095006C65FA /* EVONavigationController.h */,
+				0ACD6DD52463B095006C65FA /* EVONavigationController.m */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		0ACD6DE72463D713006C65FA /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DEF2463D765006C65FA /* VC */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		0ACD6DE82463D719006C65FA /* MyCenter */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DF02463D76D006C65FA /* VC */,
+			);
+			path = MyCenter;
+			sourceTree = "<group>";
+		};
+		0ACD6DEF2463D765006C65FA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DEC2463D75F006C65FA /* EVOCommunityViewController.h */,
+				0ACD6DED2463D75F006C65FA /* EVOCommunityViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		0ACD6DF02463D76D006C65FA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DE92463D74D006C65FA /* EVOMyCenterViewController.h */,
+				0ACD6DEA2463D74D006C65FA /* EVOMyCenterViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		0ACD6DF42463DE5A006C65FA /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DF52463DE60006C65FA /* Network */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		0ACD6DF52463DE60006C65FA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DF72463DE98006C65FA /* EVONetworkEngineManager.h */,
+				0ACD6DF82463DE98006C65FA /* EVONetworkEngineManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0ACD6DFD2463F1D9006C65FA /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6DFF2463F204006C65FA /* VC */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		0ACD6DFE2463F1E2006C65FA /* Dynamics */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6E002463F209006C65FA /* VC */,
+			);
+			path = Dynamics;
+			sourceTree = "<group>";
+		};
+		0ACD6DFF2463F204006C65FA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6E042463F221006C65FA /* EVOMessageViewController.h */,
+				0ACD6E052463F221006C65FA /* EVOMessageViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		0ACD6E002463F209006C65FA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6E012463F217006C65FA /* EVODynamicsViewController.h */,
+				0ACD6E022463F217006C65FA /* EVODynamicsViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		8F3FE6222781C8434A1D3104 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */,
+				0A0A8209C00392E4D831AF9D /* Pods-EarthNews.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0ACD6DA62463A50E006C65FA /* EarthNews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ACD6DC02463A50E006C65FA /* Build configuration list for PBXNativeTarget "EarthNews" */;
+			buildPhases = (
+				CB7C7C3B520EDD5A9BDC8C03 /* [CP] Check Pods Manifest.lock */,
+				0ACD6DA32463A50E006C65FA /* Sources */,
+				0ACD6DA42463A50E006C65FA /* Frameworks */,
+				0ACD6DA52463A50E006C65FA /* Resources */,
+				05BB08B060DAB9346FB5AB1C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EarthNews;
+			productName = EarthNews;
+			productReference = 0ACD6DA72463A50E006C65FA /* EarthNews.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0ACD6D9F2463A50E006C65FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = zkeBoy;
+				TargetAttributes = {
+					0ACD6DA62463A50E006C65FA = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 0ACD6DA22463A50E006C65FA /* Build configuration list for PBXProject "EarthNews" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0ACD6D9E2463A50E006C65FA;
+			productRefGroup = 0ACD6DA82463A50E006C65FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0ACD6DA62463A50E006C65FA /* EarthNews */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ACD6DA52463A50E006C65FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ACD6DDB2463B26C006C65FA /* EVOHomeViewController.xib in Resources */,
+				0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */,
+				0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */,
+				0ACD6DE62463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.xib in Resources */,
+				0ACD6DB52463A50E006C65FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05BB08B060DAB9346FB5AB1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EarthNews/Pods-EarthNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EarthNews/Pods-EarthNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EarthNews/Pods-EarthNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB7C7C3B520EDD5A9BDC8C03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EarthNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0ACD6DA32463A50E006C65FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ACD6E062463F221006C65FA /* EVOMessageViewController.m in Sources */,
+				0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */,
+				0ACD6DD62463B095006C65FA /* EVONavigationController.m in Sources */,
+				0ACD6DFC2463E6B3006C65FA /* EVOMapDetailViewController.m in Sources */,
+				0ACD6DD22463AEFD006C65FA /* UIImage+Category.m in Sources */,
+				0ACD6DE52463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m in Sources */,
+				0ACD6DBD2463A50E006C65FA /* main.m in Sources */,
+				0ACD6DEE2463D75F006C65FA /* EVOCommunityViewController.m in Sources */,
+				0ACD6E032463F217006C65FA /* EVODynamicsViewController.m in Sources */,
+				0ACD6DCE2463ACAE006C65FA /* EVOTabBarViewController.m in Sources */,
+				0ACD6DEB2463D74D006C65FA /* EVOMyCenterViewController.m in Sources */,
+				0ACD6DDA2463B26C006C65FA /* EVOHomeViewController.m in Sources */,
+				0ACD6DC52463A5D3006C65FA /* GlobeScene.m in Sources */,
+				0ACD6DAF2463A50E006C65FA /* SceneDelegate.m in Sources */,
+				0ACD6DDE2463B6B1006C65FA /* EVOHomeNewsListView.m in Sources */,
+				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
+				0ACD6DF92463DE98006C65FA /* EVONetworkEngineManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0ACD6DB32463A50E006C65FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0ACD6DB42463A50E006C65FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0ACD6DB92463A50E006C65FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0ACD6DBE2463A50E006C65FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0ACD6DBF2463A50E006C65FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0ACD6DC12463A50E006C65FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 822B77XGPZ;
+				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/EarthNews/EarthNews/PrefixHeader.pch;
+				INFOPLIST_FILE = EarthNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.EarthNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0ACD6DC22463A50E006C65FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A0A8209C00392E4D831AF9D /* Pods-EarthNews.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 822B77XGPZ;
+				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/EarthNews/EarthNews/PrefixHeader.pch;
+				INFOPLIST_FILE = EarthNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = www.EarthNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ACD6DA22463A50E006C65FA /* Build configuration list for PBXProject "EarthNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACD6DBE2463A50E006C65FA /* Debug */,
+				0ACD6DBF2463A50E006C65FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ACD6DC02463A50E006C65FA /* Build configuration list for PBXNativeTarget "EarthNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACD6DC12463A50E006C65FA /* Debug */,
+				0ACD6DC22463A50E006C65FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0ACD6D9F2463A50E006C65FA /* Project object */;
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EVOHomeNewsCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="135" height="172"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="135" height="172"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wuR-zD-J3v">
+                        <rect key="frame" x="0.0" y="0.0" width="135" height="172"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="local" translatesAutoresizingMaskIntoConstraints="NO" id="Zia-fW-sqS">
+                        <rect key="frame" x="11" y="10" width="9" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="8EE-8g-frj"/>
+                            <constraint firstAttribute="width" constant="9" id="Q6D-UX-BMB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-hG-OTd">
+                        <rect key="frame" x="24" y="8.5" width="40" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="4wg-iB-UqB"/>
+                            <constraint firstAttribute="height" constant="15" id="6KE-0l-UEJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2小时之前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NYH-jg-5b1">
+                        <rect key="frame" x="51" y="10" width="76" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交通运输部：公路6日起恢复收费" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7J-Z2-he8">
+                        <rect key="frame" x="11" y="123" width="116" height="42"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="42" id="CWq-a2-9Ig"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="wuR-zD-J3v" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4mz-HM-EmG"/>
+                <constraint firstItem="Zia-fW-sqS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Obo-67-7ii"/>
+                <constraint firstAttribute="trailing" secondItem="wuR-zD-J3v" secondAttribute="trailing" id="Swv-SG-JMD"/>
+                <constraint firstItem="Zia-fW-sqS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="YPm-GJ-z24"/>
+                <constraint firstItem="e2g-hG-OTd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8.5" id="Zqi-Ev-zZB"/>
+                <constraint firstAttribute="bottom" secondItem="wuR-zD-J3v" secondAttribute="bottom" id="atr-M9-ESw"/>
+                <constraint firstItem="wuR-zD-J3v" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cmA-2o-6dm"/>
+                <constraint firstAttribute="bottom" secondItem="S7J-Z2-he8" secondAttribute="bottom" constant="7" id="edM-Ck-wEM"/>
+                <constraint firstAttribute="trailing" secondItem="S7J-Z2-he8" secondAttribute="trailing" constant="8" id="fPc-xL-DIY"/>
+                <constraint firstItem="S7J-Z2-he8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="k64-CT-f7n"/>
+                <constraint firstItem="e2g-hG-OTd" firstAttribute="leading" secondItem="Zia-fW-sqS" secondAttribute="trailing" constant="4" id="uGE-2V-N0e"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="139" height="206"/>
+            <connections>
+                <outlet property="bgContentView" destination="wuR-zD-J3v" id="v1N-Zj-c2K"/>
+                <outlet property="newsAddressTextLabel" destination="e2g-hG-OTd" id="1CA-LU-bDl"/>
+                <outlet property="newsContentTextLabel" destination="S7J-Z2-he8" id="WWh-Rm-enm"/>
+                <outlet property="newsTimeTextLabel" destination="NYH-jg-5b1" id="6dE-Yy-dfK"/>
+            </connections>
+            <point key="canvasLocation" x="202.17391304347828" y="154.01785714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="local" width="9" height="12"/>
+    </resources>
+</document>
