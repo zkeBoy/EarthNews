@@ -32,6 +32,8 @@
 		0ACD6E0E24640216006C65FA /* EVOCommunityViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E0C24640216006C65FA /* EVOCommunityViewCell.m */; };
 		0ACD6E0F24640216006C65FA /* EVOCommunityViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E0D24640216006C65FA /* EVOCommunityViewCell.xib */; };
 		0ACD6E12246413E0006C65FA /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E10246413E0006C65FA /* UIView+Gesture.m */; };
+		0ACD6E1624641729006C65FA /* EVOMyCenterTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E1524641729006C65FA /* EVOMyCenterTopView.m */; };
+		0ACD6E19246417FD006C65FA /* EVOMyCenterCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E18246417FD006C65FA /* EVOMyCenterCustomView.m */; };
 		D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80692613D39F8817B75A928F /* Pods_EarthNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,10 @@
 		0ACD6E0D24640216006C65FA /* EVOCommunityViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOCommunityViewCell.xib; sourceTree = "<group>"; };
 		0ACD6E10246413E0006C65FA /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
 		0ACD6E11246413E0006C65FA /* UIView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gesture.h"; sourceTree = "<group>"; };
+		0ACD6E1424641729006C65FA /* EVOMyCenterTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOMyCenterTopView.h; sourceTree = "<group>"; };
+		0ACD6E1524641729006C65FA /* EVOMyCenterTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOMyCenterTopView.m; sourceTree = "<group>"; };
+		0ACD6E17246417FD006C65FA /* EVOMyCenterCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOMyCenterCustomView.h; sourceTree = "<group>"; };
+		0ACD6E18246417FD006C65FA /* EVOMyCenterCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOMyCenterCustomView.m; sourceTree = "<group>"; };
 		80692613D39F8817B75A928F /* Pods_EarthNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.debug.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +243,7 @@
 		0ACD6DE82463D719006C65FA /* MyCenter */ = {
 			isa = PBXGroup;
 			children = (
+				0ACD6E1324641703006C65FA /* View */,
 				0ACD6DF02463D76D006C65FA /* VC */,
 			);
 			path = MyCenter;
@@ -317,6 +324,17 @@
 				0ACD6E0B24640216006C65FA /* EVOCommunityViewCell.h */,
 				0ACD6E0C24640216006C65FA /* EVOCommunityViewCell.m */,
 				0ACD6E0D24640216006C65FA /* EVOCommunityViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0ACD6E1324641703006C65FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6E1424641729006C65FA /* EVOMyCenterTopView.h */,
+				0ACD6E1524641729006C65FA /* EVOMyCenterTopView.m */,
+				0ACD6E17246417FD006C65FA /* EVOMyCenterCustomView.h */,
+				0ACD6E18246417FD006C65FA /* EVOMyCenterCustomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,7 +482,9 @@
 				0ACD6E0E24640216006C65FA /* EVOCommunityViewCell.m in Sources */,
 				0ACD6DAF2463A50E006C65FA /* SceneDelegate.m in Sources */,
 				0ACD6DDE2463B6B1006C65FA /* EVOHomeNewsListView.m in Sources */,
+				0ACD6E19246417FD006C65FA /* EVOMyCenterCustomView.m in Sources */,
 				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
+				0ACD6E1624641729006C65FA /* EVOMyCenterTopView.m in Sources */,
 				0ACD6DF92463DE98006C65FA /* EVONetworkEngineManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

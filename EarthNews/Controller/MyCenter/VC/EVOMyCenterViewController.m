@@ -7,9 +7,10 @@
 //
 
 #import "EVOMyCenterViewController.h"
+#import "EVOMyCenterTopView.h"
 
 @interface EVOMyCenterViewController ()
-
+@property (nonatomic, strong) EVOMyCenterTopView * topView;
 @end
 
 @implementation EVOMyCenterViewController
@@ -23,6 +24,25 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = MainBgColor;
+    
+    [self setUIConfig];
+}
+
+- (void)setUIConfig {
+    [self.view addSubview:self.topView];
+    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.width.equalTo(self.view);
+        make.height.mas_equalTo(230);
+        make.top.equalTo(self.view).offset(kStatusBarHeight);
+    }];
+}
+
+#pragma mark - lazy init
+- (EVOMyCenterTopView *)topView {
+    if (!_topView) {
+        _topView = [EVOMyCenterTopView new];
+    }
+    return _topView;
 }
 
 /*
