@@ -584,7 +584,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 822B77XGPZ;
-				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/EarthNews/EarthNews/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/GitHub/EarthNews/EarthNews/PrefixHeader.pch;
 				INFOPLIST_FILE = EarthNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -604,7 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 822B77XGPZ;
-				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/EarthNews/EarthNews/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/GitHub/EarthNews/EarthNews/PrefixHeader.pch;
 				INFOPLIST_FILE = EarthNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
