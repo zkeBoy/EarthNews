@@ -38,7 +38,7 @@
 - (void)setUIConfig {
     
     // Initialization code
-    self.userHeadImgView.layer.cornerRadius = 17;
+    self.userHeadImgView.layer.cornerRadius = 17.5;
     
     NSInteger space = (kScreenWidth-114*3-26)/2;
     
