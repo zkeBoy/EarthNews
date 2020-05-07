@@ -38,14 +38,17 @@
         make.top.equalTo(self.view).offset(kStatusBarHeight+10);
     }];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = UIColor.clearColor;
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0.01)];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0.01)];
     self.tableView.separatorColor = UIColor.clearColor;
     self.tableView.rowHeight = 288;
     self.tableView.sectionFooterHeight = 10;
     self.tableView.sectionHeaderHeight = 0;
-    [self.tableView registerClass:[EVOCommunityViewCell class] forCellReuseIdentifier:@"EVOCommunityViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"EVOCommunityViewCell" bundle:nil] forCellReuseIdentifier:@"EVOCommunityViewCell"];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.width.equalTo(self.view);
@@ -54,8 +57,12 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 10;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
