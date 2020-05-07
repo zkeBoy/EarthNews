@@ -31,6 +31,7 @@
 		0ACD6E062463F221006C65FA /* EVOMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E052463F221006C65FA /* EVOMessageViewController.m */; };
 		0ACD6E0E24640216006C65FA /* EVOCommunityViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E0C24640216006C65FA /* EVOCommunityViewCell.m */; };
 		0ACD6E0F24640216006C65FA /* EVOCommunityViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E0D24640216006C65FA /* EVOCommunityViewCell.xib */; };
+		0ACD6E12246413E0006C65FA /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E10246413E0006C65FA /* UIView+Gesture.m */; };
 		D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80692613D39F8817B75A928F /* Pods_EarthNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,8 @@
 		0ACD6E0B24640216006C65FA /* EVOCommunityViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOCommunityViewCell.h; sourceTree = "<group>"; };
 		0ACD6E0C24640216006C65FA /* EVOCommunityViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOCommunityViewCell.m; sourceTree = "<group>"; };
 		0ACD6E0D24640216006C65FA /* EVOCommunityViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOCommunityViewCell.xib; sourceTree = "<group>"; };
+		0ACD6E10246413E0006C65FA /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
+		0ACD6E11246413E0006C65FA /* UIView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gesture.h"; sourceTree = "<group>"; };
 		80692613D39F8817B75A928F /* Pods_EarthNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.debug.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +206,8 @@
 		0ACD6DCF2463AEB7006C65FA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0ACD6E11246413E0006C65FA /* UIView+Gesture.h */,
+				0ACD6E10246413E0006C65FA /* UIView+Gesture.m */,
 				0ACD6DF22463D9E7006C65FA /* UIColor+Hex.h */,
 				0ACD6DF12463D9E7006C65FA /* UIColor+Hex.m */,
 				0ACD6DD02463AEFD006C65FA /* UIImage+Category.h */,
@@ -447,6 +452,7 @@
 				0ACD6DD62463B095006C65FA /* EVONavigationController.m in Sources */,
 				0ACD6DFC2463E6B3006C65FA /* EVOMapDetailViewController.m in Sources */,
 				0ACD6DD22463AEFD006C65FA /* UIImage+Category.m in Sources */,
+				0ACD6E12246413E0006C65FA /* UIView+Gesture.m in Sources */,
 				0ACD6DE52463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m in Sources */,
 				0ACD6DBD2463A50E006C65FA /* main.m in Sources */,
 				0ACD6DEE2463D75F006C65FA /* EVOCommunityViewController.m in Sources */,

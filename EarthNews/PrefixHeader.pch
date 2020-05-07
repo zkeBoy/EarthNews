@@ -12,6 +12,7 @@
 #import <MJExtension.h>
 #import <Masonry/Masonry.h>
 #import "UIColor+Hex.h"
+#import "UIView+Gesture.h"
 #import "UIImage+Category.h"
 #import "EVONetworkEngineManager.h"
 #import <SDWebImage.h>
@@ -44,7 +45,7 @@
 /****************************初始化方法********************************/
 #define NFont(num) [UIFont systemFontOfSize:(num)]
 #define BFont(num) [UIFont boldSystemFontOfSize:(num)]
-#define CreateImage(name) [UIImage imageNamed:@#name]
+#define CreateImage(name) [UIImage imageNamed:name]
 #define CFont(name,size) [UIFont fontWithName:name size:size]
 #define LocalKey(key) NSLocalizedString(@#key, nil)   //语言
 #define WeakSelf(self) __weak typeof(self) Weak##Self = self

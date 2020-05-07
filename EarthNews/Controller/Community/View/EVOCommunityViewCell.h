@@ -23,7 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *commentBtn;
 @property (weak, nonatomic) IBOutlet UILabel *commentTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *commentImgView;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *spaceOne;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *spaceThree;
+@property (nonatomic, assign) BOOL isComment; //是否点赞
 @end
 
 NS_ASSUME_NONNULL_END
