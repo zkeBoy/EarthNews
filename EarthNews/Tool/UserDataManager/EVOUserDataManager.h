@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EVOUserCommunityDataObj.h"
+#import "EVOUserDataObj.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOUserDataManager : NSObject
+@property (nonatomic, strong) EVOUserDataObj * userDataObj;
 
-//存储点赞的数据
-- (void)saveThumbs_UpToLocal:(EVOUserCommunityDataObj *)dataObj;
-
-//读取本地点赞的数据
-- (NSArray <EVOUserCommunityDataObj *>*)getThumbs_UpFromLocal;
++ (EVOUserDataManager *)shareUserDataManager ;
+- (BOOL)isLogin; //是否登录
+- (void)logOut; //退出登录
+- (void)saveUserData:(EVOUserDataObj *)userDataObj;
 
 @end
 

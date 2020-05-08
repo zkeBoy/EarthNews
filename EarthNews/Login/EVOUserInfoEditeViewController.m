@@ -8,6 +8,8 @@
 
 #import "EVOUserInfoEditeViewController.h"
 #import "SPDateTimePickerView.h"
+#import "EVOUserDataManager.h"
+#import "EVOPrivateRuleViewController.h"
 
 @interface EVOUserInfoEditeViewController () <SPDateTimePickerViewDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
@@ -34,10 +36,12 @@
 
 #pragma mark - Private Method
 - (IBAction)clickBackAction:(id)sender {//点击返回
+    [self.view endEditing:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)clickSubmitAction:(id)sender {//点击完成
+    [self.view endEditing:YES];
     //判断数据是否完整
     if (!self.headImg) {
         [self showToastText:@"请上传头像!"];
@@ -69,13 +73,34 @@
         return;
     }
     
+    /*
+     kSPrCopy__(NSString * userName);
+     kSPrStrong(NSData * userHeadImg);
+     kSPrCopy__(NSString * userSex);
+     kSPrCopy__(NSString * birthDay);
+     */
+    
+    NSData * data = UIImagePNGRepresentation(self.headImg);
+    NSDictionary * userDicObj = @{@"userName":self.userNameInputView.text,
+                                   @"userSex":self.userSexTextLabel.text,
+                                   @"birthDay":self.userBrithdayTextLabel.text,
+                                   @"userHeadImg":data
+    };
+    
+    EVOUserDataObj * userDataObj = [EVOUserDataObj mj_objectWithKeyValues:userDicObj];
+    
+    [[EVOUserDataManager shareUserDataManager] saveUserData:userDataObj];
+    
     if (self.isSignUp) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSignUpSuccessKey object:nil];
+        EVOPrivateRuleViewController * ruleVC = [EVOPrivateRuleViewController new];
+        [self.navigationController pushViewController:ruleVC animated:YES];
+    }else {
+        [self clickBackAction:nil];
     }
-    [self clickBackAction:nil];
 }
 
 - (IBAction)selectUserHeadImgAction:(id)sender {
+    [self.view endEditing:YES];
     //选择头像
     [[EVONormalToolManager shareManager] takePhotoAlbumImage:^(UIImage * _Nonnull image) {
         self.userHeadImgView.image = image;
@@ -84,6 +109,7 @@
 }
 
 - (IBAction)selectUserSexAction:(id)sender {
+    [self.view endEditing:YES];
     //选择性别
     NSDictionary * man = @{@"title":@"男",
                            @"color":RGBHexA(@"#005FFF", 0.74)

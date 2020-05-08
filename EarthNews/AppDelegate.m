@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "EVOAppEnterViewController.h"
 #import "EVOTabBarViewController.h"
+#import "EVOUserDataManager.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(exchangeTabBarToRootVC) name:EVOUserSignUpSuccessKey object:nil];
     
-    [self compareUserLoginStatus];
+    //判断是否登录
+    if ([[EVOUserDataManager shareUserDataManager] isLogin]) {
+        [self exchangeTabBarToRootVC];
+    }else {
+        [self compareUserLoginStatus];
+    }
     
     return YES;
 }
