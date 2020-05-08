@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "EVOAppEnterViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +20,15 @@
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
+    [self compareUserLoginStatus];
+    
     return YES;
 }
 
+- (void)compareUserLoginStatus { //判断用户登录状态
+    EVOAppEnterViewController * appEnterVC = [[EVOAppEnterViewController alloc] initWithNibName:@"EVOAppEnterViewController" bundle:nil];
+    self.window.rootViewController = appEnterVC;
+    [self.window makeKeyAndVisible];
+}
 
 @end

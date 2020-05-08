@@ -16,6 +16,7 @@
 #import "UIImage+Category.h"
 #import "EVONetworkEngineManager.h"
 #import <SDWebImage.h>
+#import "EVOConstCommentHeader.h"
 
 //HEX颜色值转化
 #define RGBHex(hex)   [UIColor colorWithHexString:hex]
