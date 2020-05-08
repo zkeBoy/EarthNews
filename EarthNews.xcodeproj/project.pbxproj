@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A5C0CBE2465493C0018E88F /* EVONormalToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CBD2465493C0018E88F /* EVONormalToolManager.m */; };
+		0A5C0CC1246552550018E88F /* NSObject+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CC0246552550018E88F /* NSObject+Toast.m */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -52,6 +53,8 @@
 		0A0A8209C00392E4D831AF9D /* Pods-EarthNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.release.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.release.xcconfig"; sourceTree = "<group>"; };
 		0A5C0CBC2465493C0018E88F /* EVONormalToolManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVONormalToolManager.h; sourceTree = "<group>"; };
 		0A5C0CBD2465493C0018E88F /* EVONormalToolManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONormalToolManager.m; sourceTree = "<group>"; };
+		0A5C0CBF246552550018E88F /* NSObject+Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Toast.h"; sourceTree = "<group>"; };
+		0A5C0CC0246552550018E88F /* NSObject+Toast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Toast.m"; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				0ACD6DF12463D9E7006C65FA /* UIColor+Hex.m */,
 				0ACD6DD02463AEFD006C65FA /* UIImage+Category.h */,
 				0ACD6DD12463AEFD006C65FA /* UIImage+Category.m */,
+				0A5C0CBF246552550018E88F /* NSObject+Toast.h */,
+				0A5C0CC0246552550018E88F /* NSObject+Toast.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -602,6 +607,7 @@
 				0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */,
 				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
 				0ACD6E1624641729006C65FA /* EVOMyCenterTopView.m in Sources */,
+				0A5C0CC1246552550018E88F /* NSObject+Toast.m in Sources */,
 				0ACD6E2F24650F6E006C65FA /* EVOCommunityDataManager.m in Sources */,
 				0ACD6DF92463DE98006C65FA /* EVONetworkEngineManager.m in Sources */,
 			);

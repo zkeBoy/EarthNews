@@ -12,6 +12,7 @@
 #import <MJExtension.h>
 #import <Masonry/Masonry.h>
 #import "UIColor+Hex.h"
+#import "NSObject+Toast.h"
 #import "UIView+Gesture.h"
 #import "UIImage+Category.h"
 #import "EVONetworkEngineManager.h"

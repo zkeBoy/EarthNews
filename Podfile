@@ -11,5 +11,6 @@ target 'EarthNews' do
   pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'CYLTabBarController'
-  pod 'Realm'
+  #pod 'Realm'
+  pod 'SVProgressHUD'
 end

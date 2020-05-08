@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameInputView;
 @property (weak, nonatomic) IBOutlet UILabel *userSexTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userBrithdayTextLabel;
-
 @property (nonatomic, strong) UIImage * headImg;
 @end
 
@@ -40,7 +39,33 @@
 - (IBAction)clickSubmitAction:(id)sender {//点击完成
     //判断数据是否完整
     if (!self.headImg) {
-        
+        [self showToastText:@"请上传头像!"];
+        return;
+    }
+    
+    if (self.userNameInputView.text.length==0) {
+        [self showToastText:@"请输入个人昵称!"];
+        return;
+    }else {
+        if (self.userNameInputView.text.length>10) {
+            [self showToastText:@"请输入小于10字符昵称!"];
+            return;
+        }else {
+            if ([[EVONormalToolManager shareManager] isEmptyWithString:self.userNameInputView.text]) {
+                [self showToastText:@"请输入非空字符!"];
+                return;
+            }
+        }
+    }
+    
+    if (!self.userSexTextLabel.text.length) {
+        [self showToastText:@"请选择用户性别!"];
+        return;
+    }
+    
+    if (!self.userBrithdayTextLabel.text.length) {
+        [self showToastText:@"请选择用户生日!"];
+        return;
     }
     
     if (self.isSignUp) {

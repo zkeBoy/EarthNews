@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)clipPhotoalbumImage:(void(^)(UIImage *image))completeClipBlock; //从相册选取照片
 - (void)takePhotoAlbumImage:(void(^)(UIImage *image))completeClipBlock; //拍照获取照片
 - (UIViewController *)currentViewController;
+- (BOOL)isEmptyWithString:(NSString *)str; //判断是否为空字符串
 
 - (void)showAlertViewWithTitle:(NSString *)title
                        message:(NSString * _Nullable)message

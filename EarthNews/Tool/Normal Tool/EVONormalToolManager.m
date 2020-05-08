@@ -134,6 +134,25 @@
     return nil;
 }
 
+- (BOOL)isEmptyWithString:(NSString *)str {
+    if (str == nil || str == NULL||[str isKindOfClass:[NSNull class]]||[str isKindOfClass:[NSString class]]==NO) {
+        return YES;
+    }else{
+        return  [self isEmpty:str];
+    }
+}
+
+- (BOOL)isEmpty:(NSString *)str {
+    if ([str isKindOfClass:[NSString class]]) {
+        NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        NSString *trimedString = [str stringByTrimmingCharactersInSet:set];
+        if ([trimedString length] == 0) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 #pragma mark - AlertView
 - (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message other:(NSString *)other cancel:(NSString *)cancel otherBlock:(void(^)(void))otherBlock cancelBlock:(void(^)(void))cancelBlock {
     UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
