@@ -172,10 +172,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1G-Pf-g7J">
-                    <rect key="frame" x="276" y="199" width="120" height="34"/>
+                    <rect key="frame" x="176" y="199" width="220" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="Dig-kg-yZq"/>
-                        <constraint firstAttribute="width" constant="120" id="bmr-I4-1mI"/>
+                        <constraint firstAttribute="width" constant="220" id="bmr-I4-1mI"/>
                     </constraints>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOUserInfoEditeViewController : UIViewController
-
+@property (nonatomic, assign) BOOL isSignUp; //是否是注册进入的
 @end
 
 NS_ASSUME_NONNULL_END

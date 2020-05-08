@@ -36,7 +36,10 @@
 }
 
 - (IBAction)clickSubmitAction:(id)sender {//点击完成
-    
+    if (self.isSignUp) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSignUpSuccessKey object:nil];
+    }
+    [self clickBackAction:nil];
 }
 
 - (IBAction)selectUserHeadImgAction:(id)sender {
@@ -51,7 +54,9 @@
     //选择生日
 }
 
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 
 /*
 #pragma mark - Navigation

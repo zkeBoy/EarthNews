@@ -171,11 +171,15 @@
 
 #pragma mark - Private Method
 - (void)clickEditeUserInfoAction {
-    
+    if ([self.delegate respondsToSelector:@selector(clickEditeUserInfoAction)]) {
+        [self.delegate clickEditeUserInfoAction];
+    }
 }
 
 - (void)clickSettingAction {
-    
+    if ([self.delegate respondsToSelector:@selector(clickSettingAction)]) {
+        [self.delegate clickSettingAction];
+    }
 }
 
 - (void)exchangeSelectBtn:(UIButton *)sender {

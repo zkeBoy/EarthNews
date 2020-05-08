@@ -9,6 +9,7 @@
 #import "EVOMyCenterViewController.h"
 #import "EVOMyCenterPhotoCollectionView.h"
 #import "EVOMyCenterTopView.h"
+#import "EVOUserInfoEditeViewController.h"
 
 @interface EVOMyCenterViewController () <UIScrollViewDelegate, EVOMyCenterTopChangeSelectItemProtocol>
 @property (nonatomic, strong) EVOMyCenterTopView * topView;
@@ -62,6 +63,16 @@
 #pragma mark - EVOMyCenterTopChangeSelectItemProtocol
 - (void)changeSelectItem:(NSInteger)itemPage {
     [self.contentView setContentOffset:CGPointMake(itemPage*kScreenWidth, 0) animated:YES];
+}
+
+- (void)clickEditeUserInfoAction {//点击编辑用户
+    EVOUserInfoEditeViewController * editeVC = [[EVOUserInfoEditeViewController alloc] initWithNibName:@"EVOUserInfoEditeViewController" bundle:nil];
+    editeVC.isSignUp = NO;
+    [self.navigationController pushViewController:editeVC animated:YES];
+}
+
+- (void)clickSettingAction {//点击设置用户
+    
 }
 
 #pragma mark - lazy init

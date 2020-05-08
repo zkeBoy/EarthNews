@@ -50,6 +50,7 @@
 #pragma mark - Private Method
 - (IBAction)clickSignUpAction:(id)sender {
     EVOUserInfoEditeViewController * editeVC = [[EVOUserInfoEditeViewController alloc] initWithNibName:@"EVOUserInfoEditeViewController" bundle:nil];
+    editeVC.isSignUp = YES;
     [self.navigationController pushViewController:editeVC animated:YES];
 }
 

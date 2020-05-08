@@ -14,6 +14,9 @@
 @optional
 - (void)changeSelectItem:(NSInteger)itemPage;
 
+- (void)clickSettingAction;
+
+- (void)clickEditeUserInfoAction;
 @end
 
 NS_ASSUME_NONNULL_BEGIN

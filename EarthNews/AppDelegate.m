@@ -21,6 +21,8 @@
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(exchangeTabBarToRootVC) name:EVOUserSignUpSuccessKey object:nil];
+    
     [self compareUserLoginStatus];
     
     return YES;
