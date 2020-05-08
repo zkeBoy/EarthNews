@@ -33,10 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController *)currentViewController;
 - (BOOL)isEmptyWithString:(NSString *)str; //判断是否为空字符串
 
-- (void)showAlertViewWithTitle:(NSString *)title
+- (void)showAlertViewWithTitle:(NSString * _Nullable)title
                        message:(NSString * _Nullable)message
-                         other:(NSString *)other
-                        cancel:(NSString *)cancel
+                         other:(NSString * _Nullable)other
+                        cancel:(NSString * _Nullable)cancel
                     otherBlock:(void(^)(void))otherBlock
                    cancelBlock:(void(^)(void))cancelBlock;
 

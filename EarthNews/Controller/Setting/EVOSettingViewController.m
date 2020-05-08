@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.topNavBarHeight.constant = kStatusBarHeight+kNavigationBarHeight;
+    
     self.view.backgroundColor = MainBgColor;
 }
 
@@ -40,6 +42,11 @@
 - (IBAction)serviceAction:(id)sender {//服务条款
 
 }
+
+- (IBAction)clickBackAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 /*
 #pragma mark - Navigation

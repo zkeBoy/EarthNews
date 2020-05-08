@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = MainBgColor;
     
     [self.view addSubview:self.submitBtn];
     [self.submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -40,7 +41,7 @@
         _submitBtn.layer.cornerRadius = 23;
         _submitBtn.layer.backgroundColor = UIColor.whiteColor.CGColor;
         [_submitBtn addTarget:self action:@selector(clickCompleteAction) forControlEvents:UIControlEventTouchUpInside];
-        [_submitBtn setTitle:@"注册" forState:UIControlStateNormal];
+        [_submitBtn setTitle:@"同意" forState:UIControlStateNormal];
         [_submitBtn setTitleColor:MainBgColor forState:UIControlStateNormal];
     }
     return _submitBtn;

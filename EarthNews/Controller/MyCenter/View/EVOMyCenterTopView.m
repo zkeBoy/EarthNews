@@ -38,6 +38,7 @@
     }];
     
     self.userHeadImgView = [UIImageView new];
+    self.userHeadImgView.clipsToBounds = YES;
     self.userHeadImgView.layer.cornerRadius = 37;
     self.userHeadImgView.layer.backgroundColor = UIColor.whiteColor.CGColor;
     [self addSubview:self.userHeadImgView];
