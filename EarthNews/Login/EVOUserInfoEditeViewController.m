@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameInputView;
 @property (weak, nonatomic) IBOutlet UILabel *userSexTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userBrithdayTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *textTitleLabel;
 @property (nonatomic, strong) UIImage * headImg;
 @end
 
@@ -42,6 +43,10 @@
         self.userNameInputView.text =  [EVOUserDataManager shareUserDataManager].userDataObj.userName;
         self.userSexTextLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.userSex;
         self.userBrithdayTextLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.birthDay;
+        self.headImg = image;
+        self.textTitleLabel.text = @"编辑资料";
+    }else {
+        self.textTitleLabel.text = @"注册";
     }
 }
 

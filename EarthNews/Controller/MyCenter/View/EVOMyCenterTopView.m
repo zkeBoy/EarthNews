@@ -17,6 +17,8 @@
         [self setUIConfig];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserDataAction) name:EVOUserEditerSuccessKey object:nil];
+        
+        [self updateUserDataAction];
     }
     return self;
 }

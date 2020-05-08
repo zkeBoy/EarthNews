@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EVOUserInfoEditeViewController">
             <connections>
                 <outlet property="navBarHeightConstraint" destination="hLq-2b-hzJ" id="4Ps-xW-qe5"/>
+                <outlet property="textTitleLabel" destination="usZ-ri-JT3" id="TH8-HH-hjc"/>
                 <outlet property="userBrithdayTextLabel" destination="zbF-rp-Std" id="0Ae-4n-810"/>
                 <outlet property="userHeadImgView" destination="BfF-S1-bW1" id="lwG-k0-d0U"/>
                 <outlet property="userNameInputView" destination="A1G-Pf-g7J" id="LiB-Qm-Igc"/>
