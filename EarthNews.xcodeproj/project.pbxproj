@@ -37,6 +37,7 @@
 		0ACD6E1C2464F2E3006C65FA /* EVOMyCenterPhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E1B2464F2E3006C65FA /* EVOMyCenterPhotoCollectionView.m */; };
 		0ACD6E202464F4BD006C65FA /* EVOMyCenterPhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E1E2464F4BD006C65FA /* EVOMyCenterPhotoViewCell.m */; };
 		0ACD6E212464F4BD006C65FA /* EVOMyCenterPhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E1F2464F4BD006C65FA /* EVOMyCenterPhotoViewCell.xib */; };
+		0ACD6E2524650082006C65FA /* EVOUserCommunityDataObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E2424650082006C65FA /* EVOUserCommunityDataObj.m */; };
 		D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80692613D39F8817B75A928F /* Pods_EarthNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,8 @@
 		0ACD6E1D2464F4BD006C65FA /* EVOMyCenterPhotoViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOMyCenterPhotoViewCell.h; sourceTree = "<group>"; };
 		0ACD6E1E2464F4BD006C65FA /* EVOMyCenterPhotoViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOMyCenterPhotoViewCell.m; sourceTree = "<group>"; };
 		0ACD6E1F2464F4BD006C65FA /* EVOMyCenterPhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOMyCenterPhotoViewCell.xib; sourceTree = "<group>"; };
+		0ACD6E2324650082006C65FA /* EVOUserCommunityDataObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOUserCommunityDataObj.h; sourceTree = "<group>"; };
+		0ACD6E2424650082006C65FA /* EVOUserCommunityDataObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOUserCommunityDataObj.m; sourceTree = "<group>"; };
 		80692613D39F8817B75A928F /* Pods_EarthNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.debug.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +281,7 @@
 		0ACD6DF42463DE5A006C65FA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0ACD6E222464FFF1006C65FA /* Model */,
 				0ACD6DF52463DE60006C65FA /* Network */,
 			);
 			path = Tool;
@@ -350,6 +354,15 @@
 				0ACD6E1F2464F4BD006C65FA /* EVOMyCenterPhotoViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0ACD6E222464FFF1006C65FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6E2324650082006C65FA /* EVOUserCommunityDataObj.h */,
+				0ACD6E2424650082006C65FA /* EVOUserCommunityDataObj.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8F3FE6222781C8434A1D3104 /* Pods */ = {
@@ -494,6 +507,7 @@
 				0ACD6DEB2463D74D006C65FA /* EVOMyCenterViewController.m in Sources */,
 				0ACD6DDA2463B26C006C65FA /* EVOHomeViewController.m in Sources */,
 				0ACD6DC52463A5D3006C65FA /* GlobeScene.m in Sources */,
+				0ACD6E2524650082006C65FA /* EVOUserCommunityDataObj.m in Sources */,
 				0ACD6E0E24640216006C65FA /* EVOCommunityViewCell.m in Sources */,
 				0ACD6DAF2463A50E006C65FA /* SceneDelegate.m in Sources */,
 				0ACD6E202464F4BD006C65FA /* EVOMyCenterPhotoViewCell.m in Sources */,
