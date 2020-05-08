@@ -28,8 +28,9 @@
 
 - (void)compareUserLoginStatus { //判断用户登录状态
     EVOAppEnterViewController * appEnterVC = [[EVOAppEnterViewController alloc] initWithNibName:@"EVOAppEnterViewController" bundle:nil];
+    EVONavigationController * nav = [[EVONavigationController alloc] initWithRootViewController:appEnterVC];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = appEnterVC;
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 }
 

@@ -9,6 +9,7 @@
 #import <SceneKit/SceneKit.h>
 #import "EVOAppEnterViewController.h"
 #import "GlobeScene.h"
+#import "EVOUserInfoEditeViewController.h"
 
 @interface EVOAppEnterViewController ()
 @property (weak, nonatomic) IBOutlet SCNView *sceneView;
@@ -19,6 +20,11 @@
 @end
 
 @implementation EVOAppEnterViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,7 +49,8 @@
 
 #pragma mark - Private Method
 - (IBAction)clickSignUpAction:(id)sender {
-    
+    EVOUserInfoEditeViewController * editeVC = [[EVOUserInfoEditeViewController alloc] initWithNibName:@"EVOUserInfoEditeViewController" bundle:nil];
+    [self.navigationController pushViewController:editeVC animated:YES];
 }
 
 /*
