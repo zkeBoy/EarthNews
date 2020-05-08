@@ -40,6 +40,12 @@
     // Initialization code
     self.userHeadImgView.layer.cornerRadius = 17.5;
     
+    self.userHeadImgView.contentMode = UIViewContentModeScaleToFill;
+    
+    self.pictureOneImgView.contentMode = UIViewContentModeScaleToFill;
+    self.pictureTwoImgView.contentMode = UIViewContentModeScaleToFill;
+    self.pictureThreeImgView.contentMode = UIViewContentModeScaleToFill;
+    
     NSInteger space = (kScreenWidth-114*3-26)/2;
     
     self.spaceOne.constant = space;
@@ -60,14 +66,20 @@
             self.pictureOneImgView.hidden = NO;
             self.pictureThreeImgView.hidden = YES;
             self.pictureTwoImgView.hidden = YES;
+            [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
         }else if (imgs.count==2){
             self.pictureOneImgView.hidden = NO;
             self.pictureThreeImgView.hidden = NO;
             self.pictureTwoImgView.hidden = YES;
+            [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
+            [self.pictureTwoImgView sd_setImageWithURL:[NSURL URLWithString:imgs[1]] placeholderImage:nil];
         }else {
             self.pictureOneImgView.hidden = NO;
             self.pictureThreeImgView.hidden = NO;
             self.pictureTwoImgView.hidden = NO;
+            [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
+            [self.pictureTwoImgView sd_setImageWithURL:[NSURL URLWithString:imgs[1]] placeholderImage:nil];
+            [self.pictureThreeImgView sd_setImageWithURL:[NSURL URLWithString:imgs.lastObject] placeholderImage:nil];
         }
     }else {
         self.pictureOneImgView.hidden = YES;

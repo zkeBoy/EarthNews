@@ -28,9 +28,8 @@
 - (void)setDataObj:(EVOUserCommunityDataObj *)dataObj {
     _dataObj = dataObj;
     NSArray * imgs = [dataObj.Image_1 componentsSeparatedByString:@";"];
-    NSString * string = @"http://android-screenimgs.25pp.com/223/1561567_137633289902.jpg";
     if (imgs.count) {
-        [self.bgContentView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:nil];
+        [self.bgContentView sd_setImageWithURL:imgs.firstObject placeholderImage:nil];
     }
     
     self.newsAddressTextLabel.text = dataObj.Nation;

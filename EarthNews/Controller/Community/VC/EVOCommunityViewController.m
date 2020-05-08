@@ -71,7 +71,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EVOCommunityViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EVOCommunityViewCell" forIndexPath:indexPath];
-    cell.dataObj = self.dataManager.dataSourceArray[indexPath.row];
+    cell.dataObj = self.dataManager.dataSourceArray[indexPath.section];
     return cell;
 }
 
