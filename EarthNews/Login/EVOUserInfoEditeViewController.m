@@ -107,6 +107,10 @@
         [self.navigationController pushViewController:ruleVC animated:YES];
     }else {
         [self clickBackAction:nil];
+        
+        [self showToastText:@"编辑成功!"];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserEditerSuccessKey object:nil];
     }
 }
 

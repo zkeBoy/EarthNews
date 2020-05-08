@@ -15,6 +15,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setUIConfig];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserDataAction) name:EVOUserEditerSuccessKey object:nil];
     }
     return self;
 }
