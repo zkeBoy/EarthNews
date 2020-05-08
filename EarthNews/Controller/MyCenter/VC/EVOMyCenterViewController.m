@@ -11,6 +11,7 @@
 
 @interface EVOMyCenterViewController ()
 @property (nonatomic, strong) EVOMyCenterTopView * topView;
+@property (nonatomic, strong) UIScrollView       * contentView;
 @end
 
 @implementation EVOMyCenterViewController
@@ -29,6 +30,11 @@
 }
 
 - (void)setUIConfig {
+    UIView * statusBar = [UIView new];
+    statusBar.backgroundColor = SecondBgColor;
+    statusBar.frame = CGRectMake(0, 0, kScreenWidth, kStatusBarHeight);
+    [self.view addSubview:statusBar];
+    
     [self.view addSubview:self.topView];
     [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.width.equalTo(self.view);

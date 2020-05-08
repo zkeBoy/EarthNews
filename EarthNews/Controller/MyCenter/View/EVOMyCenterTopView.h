@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) EVOMyCenterCustomView * myFansView; //粉丝
 @property (nonatomic, strong) UIImageView * localAdderssImgView;
 @property (nonatomic, strong) UILabel * localAddressLabel;
+@property (nonatomic, strong) UIButton * myTravelBtn;//我的轨迹
+@property (nonatomic, strong) UIButton * myGoodsBtn; //我的点赞
+@property (nonatomic, strong) UIView   * lineView;
 @end
 
 NS_ASSUME_NONNULL_END

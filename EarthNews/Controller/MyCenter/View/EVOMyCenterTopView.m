@@ -19,6 +19,8 @@
 }
 
 - (void)setUIConfig {
+    self.backgroundColor = SecondBgColor;
+    
     self.textTitleLabel = [UILabel new];
     self.textTitleLabel.text = @"用户昵称";
     self.textTitleLabel.textColor = UIColor.whiteColor;
@@ -105,12 +107,54 @@
     
     self.localAddressLabel = [UILabel new];
     self.localAddressLabel.text = @"北京";
-    self.localAddressLabel.textColor = RGBHex(@"7F7F7F");
+    self.localAddressLabel.textColor = MainTextColor;
     self.localAddressLabel.font = NFont(12);
     [self addSubview:self.localAddressLabel];
     [self.localAddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.localAdderssImgView.mas_centerY);
         make.left.equalTo(self.localAdderssImgView.mas_right).offset(4);
+    }];
+    
+    self.myTravelBtn = [UIButton new];
+    self.myTravelBtn.titleLabel.font = BFont(17);
+    [self.myTravelBtn setTitle:@"我的轨迹" forState:UIControlStateNormal];
+    [self.myTravelBtn addTarget:self action:@selector(exchangeSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.myTravelBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+    [self addSubview:self.myTravelBtn];
+    [self.myTravelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self).offset(-12);
+        make.width.mas_equalTo(70);
+        make.height.mas_equalTo(24);
+        make.left.equalTo(self).offset(82);
+    }];
+    
+    self.myGoodsBtn = [UIButton new];
+    self.myGoodsBtn.titleLabel.font = BFont(17);
+    [self.myGoodsBtn setTitle:@"我的点赞" forState:UIControlStateNormal];
+    [self.myGoodsBtn addTarget:self action:@selector(exchangeSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.myGoodsBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+    [self addSubview:self.myGoodsBtn];
+    [self.myGoodsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self).offset(-12);
+        make.width.mas_equalTo(70);
+        make.height.mas_equalTo(24);
+        make.right.equalTo(self).offset(-82);
+    }];
+    
+    self.lineView = [UIView new];
+    self.lineView.backgroundColor = RGBHex(@"#4A90E2");
+    self.lineView.layer.cornerRadius = 1;
+    [self addSubview:self.lineView];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self changeSelectLinePosition:self.myTravelBtn];
+}
+
+- (void)changeSelectLinePosition:(UIButton *)sender {
+    [UIView animateWithDuration:0.15 animations:^{
+        self.lineView.frame = CGRectMake(sender.center.x-2, CGRectGetMaxY(sender.frame)+5, 6, 2);
     }];
 }
 
@@ -121,6 +165,10 @@
 
 - (void)clickSettingAction {
     
+}
+
+- (void)exchangeSelectBtn:(UIButton *)sender {
+    [self changeSelectLinePosition:sender];
 }
 
 /*

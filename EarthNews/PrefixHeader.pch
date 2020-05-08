@@ -21,7 +21,8 @@
 #define RGBHex(hex)   [UIColor colorWithHexString:hex]
 #define RGBHexA(hex,a)   [UIColor colorWithHexString:hex alpha:a]
 #define MainBgColor [UIColor blackColor]
-#define CellBgColor RGBHex(@"#191919")
+#define SecondBgColor RGBHex(@"#191919")
+#define MainTextColor RGBHex(@"#7F7F7F")
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
