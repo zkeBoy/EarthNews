@@ -13,7 +13,8 @@
 @interface EVOMyCenterViewController () <UIScrollViewDelegate, EVOMyCenterTopChangeSelectItemProtocol>
 @property (nonatomic, strong) EVOMyCenterTopView * topView;
 @property (nonatomic, strong) UIScrollView       * contentView;
-@property (nonatomic, strong) EVOMyCenterPhotoCollectionView * myTravelCollectionView;
+@property (nonatomic, strong) EVOMyCenterPhotoCollectionView * myTravelCollectionView; //我的轨迹
+@property (nonatomic, strong) EVOMyCenterPhotoCollectionView * myGoodsCollectionView;//我的点赞
 @end
 
 @implementation EVOMyCenterViewController
@@ -48,6 +49,8 @@
     self.contentView.frame = CGRectMake(0, kStatusBarHeight+230, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230);
     
     [self.contentView addSubview:self.myTravelCollectionView];
+    
+    [self.contentView addSubview:self.myGoodsCollectionView];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -83,8 +86,17 @@
 - (EVOMyCenterPhotoCollectionView *)myTravelCollectionView {
     if (!_myTravelCollectionView) {
         _myTravelCollectionView = [[EVOMyCenterPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230)];
+        _myTravelCollectionView.itemCount = 12;
     }
     return _myTravelCollectionView;
+}
+
+- (EVOMyCenterPhotoCollectionView *)myGoodsCollectionView {
+    if (!_myGoodsCollectionView) {
+        _myGoodsCollectionView = [[EVOMyCenterPhotoCollectionView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230)];
+        _myGoodsCollectionView.itemCount = 10;
+    }
+    return _myGoodsCollectionView;
 }
 
 /*
