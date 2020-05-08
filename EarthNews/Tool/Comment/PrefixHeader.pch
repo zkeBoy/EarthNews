@@ -18,6 +18,7 @@
 #import <SDWebImage.h>
 #import "EVONavigationController.h"
 #import "EVOTabBarViewController.h"
+#import "EVONormalToolManager.h"
 #import "EVOConstCommentHeader.h"
 
 //HEX颜色值转化

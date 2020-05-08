@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A5C0CBE2465493C0018E88F /* EVONormalToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CBD2465493C0018E88F /* EVONormalToolManager.m */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		0A0A8209C00392E4D831AF9D /* Pods-EarthNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.release.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.release.xcconfig"; sourceTree = "<group>"; };
+		0A5C0CBC2465493C0018E88F /* EVONormalToolManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVONormalToolManager.h; sourceTree = "<group>"; };
+		0A5C0CBD2465493C0018E88F /* EVONormalToolManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONormalToolManager.m; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,6 +142,15 @@
 				80692613D39F8817B75A928F /* Pods_EarthNews.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A5C0CBB246548D70018E88F /* Normal Tool */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0CBC2465493C0018E88F /* EVONormalToolManager.h */,
+				0A5C0CBD2465493C0018E88F /* EVONormalToolManager.m */,
+			);
+			path = "Normal Tool";
 			sourceTree = "<group>";
 		};
 		0ACD6D9E2463A50E006C65FA = {
@@ -297,6 +309,7 @@
 		0ACD6DF42463DE5A006C65FA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0CBB246548D70018E88F /* Normal Tool */,
 				0ACD6E3D2465393F006C65FA /* Comment */,
 				0ACD6E3024652781006C65FA /* UserDataManager */,
 				0ACD6E222464FFF1006C65FA /* Model */,
@@ -585,6 +598,7 @@
 				0ACD6E202464F4BD006C65FA /* EVOMyCenterPhotoViewCell.m in Sources */,
 				0ACD6DDE2463B6B1006C65FA /* EVOHomeNewsListView.m in Sources */,
 				0ACD6E19246417FD006C65FA /* EVOMyCenterCustomView.m in Sources */,
+				0A5C0CBE2465493C0018E88F /* EVONormalToolManager.m in Sources */,
 				0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */,
 				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
 				0ACD6E1624641729006C65FA /* EVOMyCenterTopView.m in Sources */,

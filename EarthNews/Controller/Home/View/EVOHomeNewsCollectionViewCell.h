@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EVOHomeNewsCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *bgContentView;
 @property (weak, nonatomic) IBOutlet UILabel *newsAddressTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *newsTimeTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *newsContentTextLabel;
 @property (nonatomic, strong) EVOUserCommunityDataObj * dataObj;
 @end

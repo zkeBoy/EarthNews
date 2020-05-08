@@ -37,13 +37,6 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2小时之前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NYH-jg-5b1">
-                        <rect key="frame" x="51" y="10" width="76" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交通运输部：公路6日起恢复收费" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7J-Z2-he8">
                         <rect key="frame" x="11" y="123" width="116" height="42"/>
                         <constraints>
@@ -53,10 +46,19 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOo-o9-1iQ">
+                        <rect key="frame" x="102" y="9" width="25" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="1sq-2V-t9V"/>
+                            <constraint firstAttribute="width" constant="25" id="x1b-JL-Vpl"/>
+                        </constraints>
+                        <state key="normal" image="line_more"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="wuR-zD-J3v" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4mz-HM-EmG"/>
+                <constraint firstItem="oOo-o9-1iQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9" id="Izt-3c-gGT"/>
                 <constraint firstItem="Zia-fW-sqS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Obo-67-7ii"/>
                 <constraint firstAttribute="trailing" secondItem="wuR-zD-J3v" secondAttribute="trailing" id="Swv-SG-JMD"/>
                 <constraint firstItem="Zia-fW-sqS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="YPm-GJ-z24"/>
@@ -67,6 +69,7 @@
                 <constraint firstAttribute="trailing" secondItem="S7J-Z2-he8" secondAttribute="trailing" constant="8" id="fPc-xL-DIY"/>
                 <constraint firstItem="S7J-Z2-he8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="k64-CT-f7n"/>
                 <constraint firstItem="e2g-hG-OTd" firstAttribute="leading" secondItem="Zia-fW-sqS" secondAttribute="trailing" constant="4" id="uGE-2V-N0e"/>
+                <constraint firstAttribute="trailing" secondItem="oOo-o9-1iQ" secondAttribute="trailing" constant="8" id="vYP-FE-cfy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="139" height="206"/>
@@ -74,12 +77,12 @@
                 <outlet property="bgContentView" destination="wuR-zD-J3v" id="v1N-Zj-c2K"/>
                 <outlet property="newsAddressTextLabel" destination="e2g-hG-OTd" id="1CA-LU-bDl"/>
                 <outlet property="newsContentTextLabel" destination="S7J-Z2-he8" id="WWh-Rm-enm"/>
-                <outlet property="newsTimeTextLabel" destination="NYH-jg-5b1" id="6dE-Yy-dfK"/>
             </connections>
             <point key="canvasLocation" x="202.17391304347828" y="154.01785714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="line_more" width="13" height="3"/>
         <image name="local" width="9" height="12"/>
     </resources>
 </document>
