@@ -8,10 +8,12 @@
 
 #import "EVOCommunityViewController.h"
 #import "EVOCommunityViewCell.h"
+#import "EVOCommunityDataManager.h"
 
 @interface EVOCommunityViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UILabel * titleTextLabel;
 @property (nonatomic, strong) UITableView * tableView;
+@property (nonatomic, strong) EVOCommunityDataManager * dataManager;
 @end
 
 @implementation EVOCommunityViewController
@@ -24,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.dataManager = [EVOCommunityDataManager new];
     
     self.view.backgroundColor = MainBgColor;
     
@@ -58,7 +62,7 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 10;
+    return self.dataManager.dataSourceArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -67,6 +71,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EVOCommunityViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EVOCommunityViewCell" forIndexPath:indexPath];
+    cell.dataObj = self.dataManager.dataSourceArray[indexPath.row];
     return cell;
 }
 

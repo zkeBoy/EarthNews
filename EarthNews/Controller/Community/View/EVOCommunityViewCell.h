@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EVOUserCommunityDataObj.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spaceOne;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spaceThree;
 @property (nonatomic, assign) BOOL isComment; //是否点赞
+@property (nonatomic, strong) EVOUserCommunityDataObj * dataObj;
 @end
 
 NS_ASSUME_NONNULL_END

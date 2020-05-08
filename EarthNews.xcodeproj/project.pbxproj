@@ -40,6 +40,7 @@
 		0ACD6E2524650082006C65FA /* EVOUserCommunityDataObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E2424650082006C65FA /* EVOUserCommunityDataObj.m */; };
 		0ACD6E272465041D006C65FA /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E262465041D006C65FA /* test.json */; };
 		0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E2A2465053E006C65FA /* EVOHomeDataManager.m */; };
+		0ACD6E2F24650F6E006C65FA /* EVOCommunityDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E2E24650F6E006C65FA /* EVOCommunityDataManager.m */; };
 		D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80692613D39F8817B75A928F /* Pods_EarthNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,8 @@
 		0ACD6E262465041D006C65FA /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		0ACD6E292465053E006C65FA /* EVOHomeDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOHomeDataManager.h; sourceTree = "<group>"; };
 		0ACD6E2A2465053E006C65FA /* EVOHomeDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOHomeDataManager.m; sourceTree = "<group>"; };
+		0ACD6E2D24650F6E006C65FA /* EVOCommunityDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOCommunityDataManager.h; sourceTree = "<group>"; };
+		0ACD6E2E24650F6E006C65FA /* EVOCommunityDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOCommunityDataManager.m; sourceTree = "<group>"; };
 		80692613D39F8817B75A928F /* Pods_EarthNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.debug.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +255,7 @@
 		0ACD6DE72463D713006C65FA /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				0ACD6E2C24650F51006C65FA /* Manager */,
 				0ACD6E0A246401EE006C65FA /* View */,
 				0ACD6DEF2463D765006C65FA /* VC */,
 			);
@@ -377,6 +381,15 @@
 			children = (
 				0ACD6E292465053E006C65FA /* EVOHomeDataManager.h */,
 				0ACD6E2A2465053E006C65FA /* EVOHomeDataManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0ACD6E2C24650F51006C65FA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0ACD6E2D24650F6E006C65FA /* EVOCommunityDataManager.h */,
+				0ACD6E2E24650F6E006C65FA /* EVOCommunityDataManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -533,6 +546,7 @@
 				0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */,
 				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
 				0ACD6E1624641729006C65FA /* EVOMyCenterTopView.m in Sources */,
+				0ACD6E2F24650F6E006C65FA /* EVOCommunityDataManager.m in Sources */,
 				0ACD6DF92463DE98006C65FA /* EVONetworkEngineManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

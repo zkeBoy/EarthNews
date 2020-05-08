@@ -46,10 +46,34 @@
     self.spaceThree.constant = space;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setDataObj:(EVOUserCommunityDataObj *)dataObj {
+    _dataObj = dataObj;
+    [self.userHeadImgView sd_setImageWithURL:[NSURL URLWithString:dataObj.Image] placeholderImage:nil];
+    
+    self.userNameTextLabel.text = dataObj.Name;
+    self.descriptionTextLabel.text = dataObj.Intrduce;
+    self.localAddressLabel.text = dataObj.Nation;
+    
+    NSArray * imgs = [dataObj.Image_1 componentsSeparatedByString:@";"];
+    if (imgs.count) {
+        if (imgs.count==1) {
+            self.pictureOneImgView.hidden = NO;
+            self.pictureThreeImgView.hidden = YES;
+            self.pictureTwoImgView.hidden = YES;
+        }else if (imgs.count==2){
+            self.pictureOneImgView.hidden = NO;
+            self.pictureThreeImgView.hidden = NO;
+            self.pictureTwoImgView.hidden = YES;
+        }else {
+            self.pictureOneImgView.hidden = NO;
+            self.pictureThreeImgView.hidden = NO;
+            self.pictureTwoImgView.hidden = NO;
+        }
+    }else {
+        self.pictureOneImgView.hidden = YES;
+        self.pictureThreeImgView.hidden = YES;
+        self.pictureTwoImgView.hidden = YES;
+    }
 }
 
 #pragma mark - Private Method
