@@ -33,14 +33,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController *)currentViewController;
 
 - (void)showAlertViewWithTitle:(NSString *)title
-                       message:(NSString *)message
+                       message:(NSString * _Nullable)message
                          other:(NSString *)other
                         cancel:(NSString *)cancel
                     otherBlock:(void(^)(void))otherBlock
                    cancelBlock:(void(^)(void))cancelBlock;
 
 - (void)showSectionTitles:(NSArray <NSDictionary *>*)titles
-                  message:(NSString *)message
+                  message:(NSString * _Nullable)message
             selectHandler:(void(^)(NSInteger selectIndex))selectHandler
          clickCancelBlock:(void(^)(void))clickCancelBlock;
 @end

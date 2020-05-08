@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userSexTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userBrithdayTextLabel;
 
+@property (nonatomic, strong) UIImage * headImg;
 @end
 
 @implementation EVOUserInfoEditeViewController
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = MainBgColor;
     self.navBarHeightConstraint.constant = kStatusBarHeight+kNavigationBarHeight;
+    self.userHeadImgView.layer.cornerRadius = 30;
 }
 
 #pragma mark - Private Method
@@ -36,6 +38,11 @@
 }
 
 - (IBAction)clickSubmitAction:(id)sender {//点击完成
+    //判断数据是否完整
+    if (!self.headImg) {
+        
+    }
+    
     if (self.isSignUp) {
         [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSignUpSuccessKey object:nil];
     }
@@ -44,10 +51,28 @@
 
 - (IBAction)selectUserHeadImgAction:(id)sender {
     //选择头像
+    [[EVONormalToolManager shareManager] takePhotoAlbumImage:^(UIImage * _Nonnull image) {
+        self.userHeadImgView.image = image;
+        self.headImg = image;
+    }];
 }
 
 - (IBAction)selectUserSexAction:(id)sender {
     //选择性别
+    NSDictionary * man = @{@"title":@"男",
+                           @"color":RGBHexA(@"#005FFF", 0.74)
+    };
+    NSDictionary * woMan = @{@"title":@"女",
+                             @"color":RGBHexA(@"#FF3535", 0.82)
+    };
+    NSArray * sections = @[man,woMan];
+    [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
+        NSDictionary * dic = sections[selectIndex];
+        NSString * title = dic[@"title"];
+        self.userSexTextLabel.text = title;
+    } clickCancelBlock:^{
+        
+    }];
 }
 
 - (IBAction)selectBirthDayAction:(id)sender {

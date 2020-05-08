@@ -169,7 +169,7 @@
     [[self currentViewController] presentViewController:alertVC animated:YES completion:nil];
 }
 
-- (void)showSectionTitles:(NSArray <NSDictionary *>*)titles message:(NSString *)message selectHandler:(void(^)(NSInteger selectIndex))selectHandler clickCancelBlock:(void(^)(void))clickCancelBlock {
+- (void)showSectionTitles:(NSArray <NSDictionary *>*)titles message:(NSString * _Nullable)message selectHandler:(void(^)(NSInteger selectIndex))selectHandler clickCancelBlock:(void(^)(void))clickCancelBlock {
     if ([[self currentViewController] isKindOfClass:[UIAlertController class]]) {
         return;
     }
@@ -185,20 +185,22 @@
     NSInteger selectIndex = 0;
     for (NSDictionary * dic in titles) {
         NSString * title = dic[@"title"];
-        NSString * color = dic[@"color"];
+        UIColor  * color = dic[@"color"];
         UIAlertAction * action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if (selectHandler) {
                 selectHandler(selectIndex);
             }
         }];
         [sheetVC addAction:action];
-        [action setValue:[UIColor colorWithHexString:color alpha:1] forKey:@"titleTextColor"];
+        [action setValue:color forKey:@"titleTextColor"];
         selectIndex++;
     }
     
-    NSMutableAttributedString *messageString = [[NSMutableAttributedString alloc] initWithString:message];
-    [messageString setAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#8F8F8F" alpha:1], NSFontAttributeName: [UIFont systemFontOfSize:14]} range:NSMakeRange(0, message.length)];
-    [sheetVC setValue:messageString forKey:@"attributedMessage"];
+    if (message) {
+        NSMutableAttributedString *messageString = [[NSMutableAttributedString alloc] initWithString:message];
+        [messageString setAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#8F8F8F" alpha:1], NSFontAttributeName: [UIFont systemFontOfSize:14]} range:NSMakeRange(0, message.length)];
+        [sheetVC setValue:messageString forKey:@"attributedMessage"];
+    }
     [[self currentViewController] presentViewController:sheetVC animated:YES completion:nil];
 }
 
