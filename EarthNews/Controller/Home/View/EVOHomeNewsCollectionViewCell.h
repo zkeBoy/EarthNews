@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EVOUserCommunityDataObj.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *newsAddressTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *newsTimeTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *newsContentTextLabel;
+@property (nonatomic, strong) EVOUserCommunityDataObj * dataObj;
 @end
 
 NS_ASSUME_NONNULL_END

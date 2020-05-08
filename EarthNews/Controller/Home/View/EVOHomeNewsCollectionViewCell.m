@@ -22,7 +22,19 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.bgContentView.contentMode = UIViewContentModeScaleToFill;
+}
+
+- (void)setDataObj:(EVOUserCommunityDataObj *)dataObj {
+    _dataObj = dataObj;
+    NSArray * imgs = [dataObj.Image_1 componentsSeparatedByString:@";"];
+    NSString * string = @"http://android-screenimgs.25pp.com/223/1561567_137633289902.jpg";
+    if (imgs.count) {
+        [self.bgContentView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:nil];
+    }
+    
+    self.newsAddressTextLabel.text = dataObj.Nation;
+    self.newsContentTextLabel.text = dataObj.Intrduce;
 }
 
 @end

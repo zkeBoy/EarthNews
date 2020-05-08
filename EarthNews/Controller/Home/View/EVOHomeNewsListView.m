@@ -14,6 +14,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        self.dataManager = [EVOHomeDataManager new];
         [self setUIConfig];
     }
     return self;
@@ -42,11 +43,12 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.dataManager.dataSourceArray.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EVOHomeNewsCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EVOHomeNewsCollectionViewCell" forIndexPath:indexPath];
+    cell.dataObj = self.dataManager.dataSourceArray[indexPath.row];
     return cell;
 }
 

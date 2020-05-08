@@ -11,7 +11,6 @@
 #import "EVOMapDetailViewController.h"
 #import <SceneKit/SceneKit.h>
 #import "GlobeScene.h"
-#import <Masonry.h>
 
 @interface EVOHomeViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sceneHeight;
