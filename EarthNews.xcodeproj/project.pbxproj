@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A5C0CBE2465493C0018E88F /* EVONormalToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CBD2465493C0018E88F /* EVONormalToolManager.m */; };
 		0A5C0CC1246552550018E88F /* NSObject+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CC0246552550018E88F /* NSObject+Toast.m */; };
+		0A5C0CC6246558E50018E88F /* SPDateTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CC4246558E50018E88F /* SPDateTimePickerView.m */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -55,6 +56,8 @@
 		0A5C0CBD2465493C0018E88F /* EVONormalToolManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONormalToolManager.m; sourceTree = "<group>"; };
 		0A5C0CBF246552550018E88F /* NSObject+Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Toast.h"; sourceTree = "<group>"; };
 		0A5C0CC0246552550018E88F /* NSObject+Toast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Toast.m"; sourceTree = "<group>"; };
+		0A5C0CC4246558E50018E88F /* SPDateTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPDateTimePickerView.m; sourceTree = "<group>"; };
+		0A5C0CC5246558E50018E88F /* SPDateTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDateTimePickerView.h; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -156,6 +159,23 @@
 			path = "Normal Tool";
 			sourceTree = "<group>";
 		};
+		0A5C0CC2246558A30018E88F /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0CC3246558E50018E88F /* SPDateTimePickerView */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		0A5C0CC3246558E50018E88F /* SPDateTimePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0CC4246558E50018E88F /* SPDateTimePickerView.m */,
+				0A5C0CC5246558E50018E88F /* SPDateTimePickerView.h */,
+			);
+			path = SPDateTimePickerView;
+			sourceTree = "<group>";
+		};
 		0ACD6D9E2463A50E006C65FA = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +199,7 @@
 			children = (
 				0ACD6DAA2463A50E006C65FA /* AppDelegate.h */,
 				0ACD6DAB2463A50E006C65FA /* AppDelegate.m */,
+				0A5C0CC2246558A30018E88F /* Third */,
 				0ACD6E3424653039006C65FA /* Login */,
 				0ACD6DF42463DE5A006C65FA /* Tool */,
 				0ACD6DCF2463AEB7006C65FA /* Category */,
@@ -588,6 +609,7 @@
 				0ACD6E1C2464F2E3006C65FA /* EVOMyCenterPhotoCollectionView.m in Sources */,
 				0ACD6DD22463AEFD006C65FA /* UIImage+Category.m in Sources */,
 				0ACD6E12246413E0006C65FA /* UIView+Gesture.m in Sources */,
+				0A5C0CC6246558E50018E88F /* SPDateTimePickerView.m in Sources */,
 				0ACD6E4124653C66006C65FA /* EVOUserInfoEditeViewController.m in Sources */,
 				0ACD6DE52463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m in Sources */,
 				0ACD6DBD2463A50E006C65FA /* main.m in Sources */,

@@ -7,8 +7,9 @@
 //
 
 #import "EVOUserInfoEditeViewController.h"
+#import "SPDateTimePickerView.h"
 
-@interface EVOUserInfoEditeViewController ()
+@interface EVOUserInfoEditeViewController () <SPDateTimePickerViewDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIImageView *userHeadImgView;
 @property (weak, nonatomic) IBOutlet UITextField *userNameInputView;
@@ -102,6 +103,16 @@
 
 - (IBAction)selectBirthDayAction:(id)sender {
     //选择生日
+    SPDateTimePickerView *pickerView = [[SPDateTimePickerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,  [UIScreen mainScreen].bounds.size.height) pickMode:SPDatePickerModeDate];
+    pickerView.delegate = self;
+    pickerView.title = @"时间选择器";
+    [self.view addSubview:pickerView];
+    [pickerView showDateTimePickerView];
+}
+
+#pragma mark - SPDateTimePickerViewDelegate
+- (void)didClickFinishDateTimePickerView:(NSString*)date {
+    self.userBrithdayTextLabel.text = date;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
