@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "EVOAppEnterViewController.h"
+#import "EVOTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,15 @@
 
 - (void)compareUserLoginStatus { //判断用户登录状态
     EVOAppEnterViewController * appEnterVC = [[EVOAppEnterViewController alloc] initWithNibName:@"EVOAppEnterViewController" bundle:nil];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = appEnterVC;
+    [self.window makeKeyAndVisible];
+}
+
+- (void)exchangeTabBarToRootVC {
+    EVOTabBarViewController * rootVC = [EVOTabBarViewController new];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
 }
 
