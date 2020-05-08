@@ -10,5 +10,6 @@
 #define EVOConstCommentHeader_h
 
 #define EVOUserSignUpSuccessKey @"EVOUserSignUpSuccessKey" //用户注册成功
+#define EVOUserLogOutSuccessKey @"EVOUserLogOutSuccessKey" //用户退出登录
 
 #endif /* EVOConstCommentHeader_h */

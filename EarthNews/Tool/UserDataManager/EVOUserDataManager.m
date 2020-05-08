@@ -65,6 +65,8 @@
         NSError *err;
         [[NSFileManager defaultManager] removeItemAtPath:EVOAccountPath error:&err];
     }
+    [self showToastText:@"删除成功!"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserLogOutSuccessKey object:nil];
 }
 
 - (void)saveUserData:(EVOUserDataObj *)userDataObj {

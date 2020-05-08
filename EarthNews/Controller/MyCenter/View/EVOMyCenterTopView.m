@@ -7,6 +7,7 @@
 //
 
 #import "EVOMyCenterTopView.h"
+#import "EVOUserDataManager.h"
 
 @implementation EVOMyCenterTopView
 
@@ -167,6 +168,13 @@
         sender = self.myGoodsBtn;
     }
     [self exchangeSelectBtn:sender];
+}
+
+- (void)updateUserDataAction {
+    UIImage * image = [UIImage imageWithData:[EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg];
+    self.userHeadImgView.image = image;
+    self.textTitleLabel.text =  [EVOUserDataManager shareUserDataManager].userDataObj.userName;
+    
 }
 
 #pragma mark - Private Method

@@ -22,7 +22,11 @@
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
+    //完成注册
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(exchangeTabBarToRootVC) name:EVOUserSignUpSuccessKey object:nil];
+    
+    //退出登录
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(compareUserLoginStatus) name:EVOUserLogOutSuccessKey object:nil];
     
     //判断是否登录
     if ([[EVOUserDataManager shareUserDataManager] isLogin]) {

@@ -32,6 +32,17 @@
     self.view.backgroundColor = MainBgColor;
     self.navBarHeightConstraint.constant = kStatusBarHeight+kNavigationBarHeight;
     self.userHeadImgView.layer.cornerRadius = 30;
+    [self appendUserDataAction];
+}
+
+- (void)appendUserDataAction {//数据回显
+    if (!self.isSignUp) {//个人中心进入
+        UIImage * image = [UIImage imageWithData:[EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg];
+        self.userHeadImgView.image = image;
+        self.userNameInputView.text =  [EVOUserDataManager shareUserDataManager].userDataObj.userName;
+        self.userSexTextLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.userSex;
+        self.userBrithdayTextLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.birthDay;
+    }
 }
 
 #pragma mark - Private Method

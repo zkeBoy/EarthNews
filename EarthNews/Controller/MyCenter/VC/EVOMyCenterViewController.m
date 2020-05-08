@@ -9,6 +9,7 @@
 #import "EVOMyCenterViewController.h"
 #import "EVOMyCenterPhotoCollectionView.h"
 #import "EVOMyCenterTopView.h"
+#import "EVOSettingViewController.h"
 #import "EVOUserInfoEditeViewController.h"
 
 @interface EVOMyCenterViewController () <UIScrollViewDelegate, EVOMyCenterTopChangeSelectItemProtocol>
@@ -72,7 +73,8 @@
 }
 
 - (void)clickSettingAction {//点击设置用户
-    
+    EVOSettingViewController * settingVC = [[EVOSettingViewController alloc] initWithNibName:@"EVOSettingViewController" bundle:nil];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 #pragma mark - lazy init
