@@ -116,6 +116,7 @@
     }];
     
     self.myTravelBtn = [UIButton new];
+    self.myTravelBtn.tag = 0;
     self.myTravelBtn.titleLabel.font = BFont(17);
     [self.myTravelBtn setTitle:@"我的轨迹" forState:UIControlStateNormal];
     [self.myTravelBtn addTarget:self action:@selector(exchangeSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -129,6 +130,7 @@
     }];
     
     self.myGoodsBtn = [UIButton new];
+    self.myGoodsBtn.tag = 1;
     self.myGoodsBtn.titleLabel.font = BFont(17);
     [self.myGoodsBtn setTitle:@"我的点赞" forState:UIControlStateNormal];
     [self.myGoodsBtn addTarget:self action:@selector(exchangeSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -178,6 +180,9 @@
 
 - (void)exchangeSelectBtn:(UIButton *)sender {
     [self changeSelectLinePosition:sender];
+    if ([self.delegate respondsToSelector:@selector(changeSelectItem:)]) {
+        [self.delegate changeSelectItem:sender.tag];
+    }
 }
 
 /*

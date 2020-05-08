@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.contentImgView.backgroundColor = UIColor.whiteColor;
 }
 
 @end

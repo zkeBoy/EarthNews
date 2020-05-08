@@ -10,7 +10,7 @@
 #import "EVOMyCenterPhotoCollectionView.h"
 #import "EVOMyCenterTopView.h"
 
-@interface EVOMyCenterViewController () <UIScrollViewDelegate>
+@interface EVOMyCenterViewController () <UIScrollViewDelegate, EVOMyCenterTopChangeSelectItemProtocol>
 @property (nonatomic, strong) EVOMyCenterTopView * topView;
 @property (nonatomic, strong) UIScrollView       * contentView;
 @property (nonatomic, strong) EVOMyCenterPhotoCollectionView * myTravelCollectionView;
@@ -51,15 +51,21 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger page = scrollView.contentOffset.x/kScreenWidth;
     [self.topView scrollCollectionViewChangePage:page];
+}
+
+#pragma mark - EVOMyCenterTopChangeSelectItemProtocol
+- (void)changeSelectItem:(NSInteger)itemPage {
+    [self.contentView setContentOffset:CGPointMake(itemPage*kScreenWidth, 0) animated:YES];
 }
 
 #pragma mark - lazy init
 - (EVOMyCenterTopView *)topView {
     if (!_topView) {
         _topView = [EVOMyCenterTopView new];
+        _topView.delegate = self;
     }
     return _topView;
 }

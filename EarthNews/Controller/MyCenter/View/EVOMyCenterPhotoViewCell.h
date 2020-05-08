@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOMyCenterPhotoViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *localAddressTextLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImgView;
 
 @end
 

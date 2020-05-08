@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "EVOMyCenterCustomView.h"
 
+@protocol EVOMyCenterTopChangeSelectItemProtocol <NSObject>
+
+@optional
+- (void)changeSelectItem:(NSInteger)itemPage;
+
+@end
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOMyCenterTopView : UIView
@@ -24,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton * myTravelBtn;//我的轨迹
 @property (nonatomic, strong) UIButton * myGoodsBtn; //我的点赞
 @property (nonatomic, strong) UIView   * lineView;
+@property (nonatomic,   weak) id <EVOMyCenterTopChangeSelectItemProtocol> delegate;
 - (void)scrollCollectionViewChangePage:(NSInteger)page;
 @end
 
