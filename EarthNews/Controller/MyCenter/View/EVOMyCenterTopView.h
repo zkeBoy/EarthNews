@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton * myTravelBtn;//我的轨迹
 @property (nonatomic, strong) UIButton * myGoodsBtn; //我的点赞
 @property (nonatomic, strong) UIView   * lineView;
+- (void)scrollCollectionViewChangePage:(NSInteger)page;
 @end
 
 NS_ASSUME_NONNULL_END

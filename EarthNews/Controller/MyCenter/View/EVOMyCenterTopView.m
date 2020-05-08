@@ -158,6 +158,15 @@
     }];
 }
 
+#pragma mark - Public Method
+- (void)scrollCollectionViewChangePage:(NSInteger)page {
+    UIButton * sender = self.myTravelBtn;
+    if (page!=0) {
+        sender = self.myGoodsBtn;
+    }
+    [self exchangeSelectBtn:sender];
+}
+
 #pragma mark - Private Method
 - (void)clickEditeUserInfoAction {
     

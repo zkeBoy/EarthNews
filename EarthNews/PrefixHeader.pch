@@ -31,7 +31,7 @@
 #define isFullScreen    (isIphoneX_XS || isIphoneXR_XSMax)
 #define kStatusBarHeight     (isFullScreen ? 44.f : 20.f)
 #define kNavigationBarHeight  44.f
-#define TabbarHeight         (isFullScreen ? (49.f+34.f) : 49.f)
+#define kTabBarHeight         (isFullScreen ? (49.f+34.f) : 49.f)
 #define iPhone4s    480.f // {320, 480}
 #define iPhone5s    568.f // {320, 568}
 #define iPhone6s    667.f // {375, 667}

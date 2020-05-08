@@ -7,11 +7,13 @@
 //
 
 #import "EVOMyCenterViewController.h"
+#import "EVOMyCenterPhotoCollectionView.h"
 #import "EVOMyCenterTopView.h"
 
-@interface EVOMyCenterViewController ()
+@interface EVOMyCenterViewController () <UIScrollViewDelegate>
 @property (nonatomic, strong) EVOMyCenterTopView * topView;
 @property (nonatomic, strong) UIScrollView       * contentView;
+@property (nonatomic, strong) EVOMyCenterPhotoCollectionView * myTravelCollectionView;
 @end
 
 @implementation EVOMyCenterViewController
@@ -41,6 +43,17 @@
         make.height.mas_equalTo(230);
         make.top.equalTo(self.view).offset(kStatusBarHeight);
     }];
+    
+    [self.view addSubview:self.contentView];
+    self.contentView.frame = CGRectMake(0, kStatusBarHeight+230, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230);
+    
+    [self.contentView addSubview:self.myTravelCollectionView];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSInteger page = scrollView.contentOffset.x/kScreenWidth;
+    [self.topView scrollCollectionViewChangePage:page];
 }
 
 #pragma mark - lazy init
@@ -49,6 +62,23 @@
         _topView = [EVOMyCenterTopView new];
     }
     return _topView;
+}
+
+- (UIScrollView *)contentView {
+    if (!_contentView) {
+        _contentView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        _contentView.contentSize = CGSizeMake(kScreenWidth*2, kScreenHeight-kTabBarHeight-kStatusBarHeight-230);
+        _contentView.pagingEnabled = YES;
+        _contentView.delegate = self;
+    }
+    return _contentView;
+}
+
+- (EVOMyCenterPhotoCollectionView *)myTravelCollectionView {
+    if (!_myTravelCollectionView) {
+        _myTravelCollectionView = [[EVOMyCenterPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230)];
+    }
+    return _myTravelCollectionView;
 }
 
 /*
