@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) UIImageView * emptyImgView;
 @property (nonatomic, strong) UILabel     * titleLabel;
+
+@property (nonatomic, assign) NSInteger position; //0我的轨迹 1我的点赞
 @end
 
 @implementation EVOMyCenterViewController
@@ -36,6 +38,17 @@
     self.view.backgroundColor = MainBgColor;
     
     [self setUIConfig];
+    
+    self.position = 0;
+    
+    [self compareDataEmptyStatus];
+    
+    [self addObserverCenter];
+}
+
+- (void)addObserverCenter {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(compareDataEmptyStatus) name:EVOUserSubmitCommunitySuccessKey object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(compareDataEmptyStatus) name:EVOUserAddGoodCommunitySuccessKey object:nil];
 }
 
 - (void)setUIConfig {
@@ -83,11 +96,15 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger page = scrollView.contentOffset.x/kScreenWidth;
     [self.topView scrollCollectionViewChangePage:page];
+    self.position = page;
+    [self compareDataEmptyStatus];
 }
 
 #pragma mark - EVOMyCenterTopChangeSelectItemProtocol
 - (void)changeSelectItem:(NSInteger)itemPage {
     [self.contentView setContentOffset:CGPointMake(itemPage*kScreenWidth, 0) animated:YES];
+    self.position = itemPage;
+    [self compareDataEmptyStatus];
 }
 
 - (void)clickEditeUserInfoAction {//点击编辑用户
@@ -99,6 +116,19 @@
 - (void)clickSettingAction {//点击设置用户
     EVOSettingViewController * settingVC = [[EVOSettingViewController alloc] initWithNibName:@"EVOSettingViewController" bundle:nil];
     [self.navigationController pushViewController:settingVC animated:YES];
+}
+
+//判断数据是否为空
+- (void)compareDataEmptyStatus {
+    if (self.position==0) {
+        //我的轨迹
+        self.emptyImgView.hidden = [EVOCommunityDataManager shareCommunityDataManager].mySelfSourceArray.count;
+        self.titleLabel.hidden = self.emptyImgView.hidden;
+    }else {
+        //我的点赞
+        self.emptyImgView.hidden = [EVOCommunityDataManager shareCommunityDataManager].othreSourceArray.count;
+        self.titleLabel.hidden = self.emptyImgView.hidden;
+    }
 }
 
 #pragma mark - lazy init
