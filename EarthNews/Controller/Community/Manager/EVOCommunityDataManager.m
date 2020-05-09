@@ -183,6 +183,20 @@
     [NSKeyedArchiver archiveRootObject:arr toFile:path];
 }
 
+- (void)removeLocalData {
+    if (!([self isFileExist:EVOMyCenterCommunityPath])) {
+        NSError *err;
+        [[NSFileManager defaultManager] removeItemAtPath:EVOMyCenterCommunityPath error:&err];
+        //刷新个人中心列表
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSubmitCommunitySuccessKey object:nil];
+    }
 
+    if (!([self isFileExist:EVOAddGoodsPath])) {
+        NSError *err;
+        [[NSFileManager defaultManager] removeItemAtPath:EVOAddGoodsPath error:&err];
+        //刷新点赞数据列表
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];
+    }
+}
 
 @end

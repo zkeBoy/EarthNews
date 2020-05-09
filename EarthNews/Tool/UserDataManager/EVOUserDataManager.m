@@ -7,6 +7,7 @@
 //
 
 #import "EVOUserDataManager.h"
+#import "EVOCommunityDataManager.h"
 
 #define EVOAccountPath [EVOAccountFilePath stringByAppendingPathComponent:@"EVOAccount.plist"]
 #define EVOAccountFilePath [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"EVOUserAccount"]
@@ -68,6 +69,8 @@
     }
     [self showToastText:@"删除成功!"];
     [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserLogOutSuccessKey object:nil];
+    //删除本地存储历史数据
+    [[EVOCommunityDataManager shareCommunityDataManager] removeLocalData];
 }
 
 - (void)saveUserData:(EVOUserDataObj *)userDataObj {

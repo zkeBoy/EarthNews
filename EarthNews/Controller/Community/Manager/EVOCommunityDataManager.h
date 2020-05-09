@@ -28,6 +28,9 @@ kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* othreSourceArray); //他�
 
 //删除点赞他人的动态
 - (void)removeAddGoodCommunityData:(EVOUserCommunityDataObj *)dataObj;
+
+//删除账号
+- (void)removeLocalData;
 @end
 
 NS_ASSUME_NONNULL_END
