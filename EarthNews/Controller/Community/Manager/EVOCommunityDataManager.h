@@ -11,7 +11,23 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOCommunityDataManager : NSObject
-kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* dataSourceArray);
+kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* dataSourceArray);  //动态列表
+kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* mySelfSourceArray);//自己的动态
+kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* othreSourceArray); //他人的动态
+
++ (EVOCommunityDataManager *)shareCommunityDataManager;
+
+//发布我自己的动态 需要存储下来 个人中心需要展示
+- (void)submitMySelfCommunityData:(EVOUserCommunityDataObj *)dataObj;
+
+//点赞他人的动态 需要存储下来 个人中心需要展示
+- (void)addGoodsOtherCommunityData:(EVOUserCommunityDataObj *)dataObj;
+
+//删除我自己的动态
+- (void)removeMySelfCommunityData:(EVOUserCommunityDataObj *)dataObj;
+
+//删除点赞他人的动态
+- (void)removeAddGoodCommunityData:(EVOUserCommunityDataObj *)dataObj;
 @end
 
 NS_ASSUME_NONNULL_END

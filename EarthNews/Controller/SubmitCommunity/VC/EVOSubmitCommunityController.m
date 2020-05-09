@@ -8,6 +8,8 @@
 
 #import "EVOSubmitCommunityController.h"
 #import "EVOSubmitCustomBtn.h"
+#import "EVOUserDataManager.h"
+#import "EVOUserCommunityDataObj.h"
 
 @interface EVOSubmitCommunityController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
@@ -104,6 +106,36 @@
 }
 
 - (IBAction)submitCommunityAction:(id)sender {
+    if (!self.inputTextView.text.length) {
+        [self showToastText:@"请输入描述!"];
+        return;
+    }
+    
+    if (self.inputTextView.text.length>140) {
+        [self showToastText:@"描述应少于140字符!"];
+        return;
+    }
+    
+    if (self.selectUploadImgArray.count) {
+        [self showToastText:@"请上传发布的照片!"];
+        return;
+    }
+    
+    NSMutableArray * imgs = [NSMutableArray array];
+    for (UIImage * image in self.selectUploadImgArray) {
+        NSData * data = UIImagePNGRepresentation(image);
+        [imgs addObject:data];
+    }
+    
+    EVOUserCommunityDataObj * communityDataObj = [EVOUserCommunityDataObj new];
+    communityDataObj.userHeadImg = [EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg;
+    communityDataObj.Gender = [EVOUserDataManager shareUserDataManager].userDataObj.userSex;
+    communityDataObj.Name = [EVOUserDataManager shareUserDataManager].userDataObj.userName;
+    communityDataObj.Intrduce = self.inputTextView.text;
+    communityDataObj.Age = [EVOUserDataManager shareUserDataManager].userDataObj.userAge;
+    communityDataObj.imgArray = imgs;
+    communityDataObj.Nation = @"成都";
+    
     
 }
 

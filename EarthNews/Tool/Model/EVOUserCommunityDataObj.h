@@ -19,6 +19,9 @@ kSPrCopy__(NSString * Nation);
 kSPrCopy__(NSString * Image);
 kSPrCopy__(NSString * Intrduce);
 kSPrCopy__(NSString * Image_1);
+
+kSPrStrong(NSData * userHeadImg); //新加
+kSPrStrong(NSArray <NSData *>*imgArray); //新加 用户的动态图片
 @end
 
 NS_ASSUME_NONNULL_END

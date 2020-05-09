@@ -10,4 +10,17 @@
 
 @implementation EVOUserDataObj
 MJCodingImplementation
+
+- (void)setBirthDay:(NSString *)birthDay {
+    _birthDay = birthDay;
+    NSString * yearString = [birthDay substringToIndex:3];
+    // 2.获取当前时间
+    NSCalendar *calendar0 = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    NSInteger unitFlags =  NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
+    comps = [calendar0 components:unitFlags fromDate:[NSDate date]];
+    NSInteger year = [comps year];
+    NSInteger age = year - yearString.integerValue;
+    self.userAge = NSFormatInt(age);
+}
 @end

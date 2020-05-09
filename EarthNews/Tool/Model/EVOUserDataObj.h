@@ -15,6 +15,7 @@ kSPrCopy__(NSString * userName);
 kSPrStrong(NSData * userHeadImg);
 kSPrCopy__(NSString * userSex);
 kSPrCopy__(NSString * birthDay);
+kSPrCopy__(NSString * userAge);
 @end
 
 NS_ASSUME_NONNULL_END

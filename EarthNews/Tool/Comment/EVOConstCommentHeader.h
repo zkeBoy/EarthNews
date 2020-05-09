@@ -13,4 +13,7 @@
 #define EVOUserLogOutSuccessKey @"EVOUserLogOutSuccessKey" //用户退出登录
 #define EVOUserEditerSuccessKey @"EVOUserEditerSuccessKey" //用户编辑完成
 
+#define EVOUserSubmitCommunitySuccessKey @"EVOUserSubmitCommunitySuccessKey" //用户自己发布动态
+#define EVOUserAddGoodCommunitySuccessKey @"EVOUserAddGoodCommunitySuccessKey" //用户点赞他人的动态
+
 #endif /* EVOConstCommentHeader_h */
