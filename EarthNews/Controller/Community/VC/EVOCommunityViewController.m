@@ -14,6 +14,9 @@
 @property (nonatomic, strong) UILabel * titleTextLabel;
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) EVOCommunityDataManager * dataManager;
+
+@property (nonatomic, strong) UIImageView * emptyImgView;
+@property (nonatomic, strong) UILabel     * titleLabel;
 @end
 
 @implementation EVOCommunityViewController
@@ -47,6 +50,25 @@
         make.top.equalTo(self.view).offset(kStatusBarHeight+10);
     }];
     
+    self.emptyImgView = [[UIImageView alloc] initWithImage:CreateImage(@"icon_empty")];
+    [self.view addSubview:self.emptyImgView];
+    [self.emptyImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(79);
+        make.height.mas_equalTo(50);
+        make.center.equalTo(self.view);
+    }];
+    
+    self.titleLabel = [UILabel new];
+    self.titleLabel.text = @"空空如也~";
+    self.titleLabel.font = NFont(14);
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.textColor = RGBHex(@"#353535");
+    [self.view addSubview:self.titleLabel];
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.emptyImgView.mas_centerX);
+        make.top.equalTo(self.emptyImgView.mas_bottom).offset(10);
+    }];
+    
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -67,6 +89,14 @@
 
 - (void)refreshCommunityList {
     [self.tableView reloadData];
+    
+    if (self.dataManager.dataSourceArray.count) {
+        self.emptyImgView.hidden = YES;
+        self.titleLabel.hidden = YES;
+    }else {
+        self.emptyImgView.hidden = NO;
+        self.titleLabel.hidden = NO;
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -79,7 +109,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WeakSelf(self);
     EVOCommunityViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EVOCommunityViewCell" forIndexPath:indexPath];
     cell.dataObj = self.dataManager.dataSourceArray[indexPath.section];
     return cell;
