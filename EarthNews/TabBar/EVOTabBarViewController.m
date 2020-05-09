@@ -108,7 +108,9 @@
 
 #pragma mark - 判断tabbar是否跳转的相应事件
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    
+    if (tabBarController.selectedIndex==2) {//点击发布
+        return NO;
+    }
     return YES;
 }
 

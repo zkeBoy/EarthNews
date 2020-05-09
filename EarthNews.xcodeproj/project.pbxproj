@@ -197,6 +197,13 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		0A5C0CD3246644EF0018E88F /* SubmitCommunity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubmitCommunity;
+			sourceTree = "<group>";
+		};
 		0ACD6D9E2463A50E006C65FA = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +254,7 @@
 		0ACD6DC82463AC5A006C65FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0CD3246644EF0018E88F /* SubmitCommunity */,
 				0A5C0CCD246566220018E88F /* Setting */,
 				0ACD6DFE2463F1E2006C65FA /* Dynamics */,
 				0ACD6DFD2463F1D9006C65FA /* Message */,

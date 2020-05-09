@@ -12,5 +12,6 @@ target 'EarthNews' do
   pod 'SDWebImage'
   pod 'CYLTabBarController'
   #pod 'Realm'
+  pod 'AMapLocation'
   pod 'SVProgressHUD'
 end
