@@ -13,5 +13,6 @@ target 'EarthNews' do
   pod 'CYLTabBarController'
   #pod 'Realm'
   pod 'AMapLocation'
+  pod 'AMap3DMap'
   pod 'SVProgressHUD'
 end

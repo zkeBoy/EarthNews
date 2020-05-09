@@ -14,6 +14,8 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AMap3DMap (7.2.0):
+    - AMapFoundation (~> 1.5)
   - AMapFoundation (1.6.2)
   - AMapLocation (2.6.4):
     - AMapFoundation (~> 1.6.1)
@@ -29,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AMap3DMap
   - AMapLocation
   - CYLTabBarController
   - Masonry
@@ -39,6 +42,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - AFNetworking
+    - AMap3DMap
     - AMapFoundation
     - AMapLocation
     - CYLTabBarController
@@ -49,6 +53,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AMap3DMap: be13191194c9aeb29a67d9d3e9a797588fb329aa
   AMapFoundation: 672dc3a4759cb733f447c1e1b020f7ba2729f4ab
   AMapLocation: b4162db67f813508a14ee7e05c7ee4073785221d
   CYLTabBarController: edd9fecba9afa3f2e9e44ed50ca6dde69941f25f
@@ -57,6 +62,6 @@ SPEC CHECKSUMS:
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 81e36a8f9086ac702ea7a7850c93e53ae07d2b70
+PODFILE CHECKSUM: cda85502011c166617d4b0257131a4997063cd30
 
 COCOAPODS: 1.9.0.beta.2
