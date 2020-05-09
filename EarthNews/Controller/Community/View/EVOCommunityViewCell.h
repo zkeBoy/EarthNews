@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *commentImgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spaceOne;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spaceThree;
+@property (weak, nonatomic) IBOutlet UIImageView *userSexImgView;
 @property (nonatomic, assign) BOOL isComment; //是否点赞
 @property (nonatomic, strong) EVOUserCommunityDataObj * dataObj;
 @end

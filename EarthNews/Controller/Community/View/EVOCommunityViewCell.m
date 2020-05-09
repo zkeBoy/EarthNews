@@ -59,6 +59,13 @@
     self.userNameTextLabel.text = dataObj.Name;
     self.descriptionTextLabel.text = dataObj.Intrduce;
     self.localAddressLabel.text = dataObj.Nation;
+    self.timeTextLabel.text = dataObj.Age;
+    
+    if (dataObj.Gender.integerValue==1) {
+        self.userSexImgView.image = CreateImage(@"icon_man");
+    }else {
+        self.userSexImgView.image = CreateImage(@"icon_woman");
+    }
     
     NSArray * imgs = [dataObj.Image_1 componentsSeparatedByString:@";"];
     if (imgs.count) {

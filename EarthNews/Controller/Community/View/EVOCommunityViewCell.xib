@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9个小时以前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff1-zv-aAk">
-                                <rect key="frame" x="53" y="35" width="100" height="15"/>
+                                <rect key="frame" x="63" y="35" width="100" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="jii-sK-7Dr"/>
                                     <constraint firstAttribute="height" constant="15" id="uyW-II-2dy"/>
@@ -170,9 +170,18 @@
                                     <action selector="clickMoreAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cmn-Cj-pDo"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_man" translatesAutoresizingMaskIntoConstraints="NO" id="ZJI-FR-UPg">
+                                <rect key="frame" x="53" y="38" width="9" height="9"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="9" id="OVe-92-dWp"/>
+                                    <constraint firstAttribute="width" constant="9" id="o5v-HO-3ES"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="ZJI-FR-UPg" firstAttribute="top" secondItem="fbl-Lt-BDw" secondAttribute="bottom" constant="8" id="IfU-GK-6tF"/>
+                            <constraint firstItem="ZJI-FR-UPg" firstAttribute="leading" secondItem="O3L-Au-V84" secondAttribute="trailing" constant="3" id="KYU-hs-Fk1"/>
                             <constraint firstItem="ZkQ-bS-F96" firstAttribute="top" secondItem="Dl8-BK-wKC" secondAttribute="top" constant="13" id="M4R-Oz-L9K"/>
                             <constraint firstItem="Yn0-xP-sjB" firstAttribute="top" secondItem="y3P-7d-k15" secondAttribute="bottom" constant="9" id="Nwj-jf-nH1"/>
                             <constraint firstAttribute="trailing" secondItem="ZkQ-bS-F96" secondAttribute="trailing" id="RR2-rE-Eil"/>
@@ -185,7 +194,7 @@
                             <constraint firstItem="fbl-Lt-BDw" firstAttribute="leading" secondItem="O3L-Au-V84" secondAttribute="trailing" constant="3" id="YtO-GA-OIo"/>
                             <constraint firstItem="EvG-1t-FMz" firstAttribute="leading" secondItem="ktl-BN-Whs" secondAttribute="trailing" constant="40" id="aoz-eL-tSV"/>
                             <constraint firstItem="y3P-7d-k15" firstAttribute="top" secondItem="O3L-Au-V84" secondAttribute="bottom" constant="10" id="cQ8-GC-4iw"/>
-                            <constraint firstItem="ff1-zv-aAk" firstAttribute="leading" secondItem="O3L-Au-V84" secondAttribute="trailing" constant="3" id="cjX-71-JhO"/>
+                            <constraint firstItem="ff1-zv-aAk" firstAttribute="leading" secondItem="O3L-Au-V84" secondAttribute="trailing" constant="13" id="cjX-71-JhO"/>
                             <constraint firstAttribute="bottom" secondItem="ktl-BN-Whs" secondAttribute="bottom" constant="17.5" id="f2o-GB-z6f"/>
                             <constraint firstItem="O3L-Au-V84" firstAttribute="leading" secondItem="Dl8-BK-wKC" secondAttribute="leading" constant="13" id="gm6-tg-i5U"/>
                             <constraint firstItem="ff1-zv-aAk" firstAttribute="top" secondItem="fbl-Lt-BDw" secondAttribute="bottom" constant="5" id="gn8-h2-fNv"/>
@@ -224,6 +233,7 @@
                 <outlet property="timeTextLabel" destination="ff1-zv-aAk" id="s10-YO-tGe"/>
                 <outlet property="userHeadImgView" destination="O3L-Au-V84" id="INR-Wf-6Bw"/>
                 <outlet property="userNameTextLabel" destination="fbl-Lt-BDw" id="bfc-A2-d5V"/>
+                <outlet property="userSexImgView" destination="ZJI-FR-UPg" id="aVP-La-nNh"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="81.696428571428569"/>
         </tableViewCell>
@@ -232,6 +242,7 @@
         <image name="       " width="128" height="128"/>
         <image name="icon_good" width="13" height="13"/>
         <image name="icon_local" width="9" height="12"/>
+        <image name="icon_man" width="9" height="9"/>
         <image name="icon_more" width="3" height="15"/>
         <image name="icon_private_message" width="14" height="13"/>
     </resources>
