@@ -24,6 +24,7 @@ PODS:
   - CYLTabBarController/Core (1.28.5)
   - Masonry (1.1.0)
   - MJExtension (3.2.1)
+  - MJRefresh (3.3.1)
   - SDWebImage (5.6.1):
     - SDWebImage/Core (= 5.6.1)
   - SDWebImage/Core (5.6.1)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - CYLTabBarController
   - Masonry
   - MJExtension
+  - MJRefresh
   - SDWebImage
   - SVProgressHUD
 
@@ -48,6 +50,7 @@ SPEC REPOS:
     - CYLTabBarController
     - Masonry
     - MJExtension
+    - MJRefresh
     - SDWebImage
     - SVProgressHUD
 
@@ -59,9 +62,10 @@ SPEC CHECKSUMS:
   CYLTabBarController: edd9fecba9afa3f2e9e44ed50ca6dde69941f25f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: cda85502011c166617d4b0257131a4997063cd30
+PODFILE CHECKSUM: 953ad1f97ac539c044ed22097b397f945401b6ed
 
 COCOAPODS: 1.9.0.beta.2

@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 kSPrStrong(UIButton * deleteBtn);
 kSPrStrong(UIButton * contentImgBtn);
 kSPrAssign(NSInteger  selectTag);
+kSPrAssign(BOOL enable);
 kSPrCopy__(void(^clickRemoveImgBlock)(NSInteger tag));
+kSPrCopy__(void(^clickSelectImgBlock)(void));
 @end
 
 NS_ASSUME_NONNULL_END

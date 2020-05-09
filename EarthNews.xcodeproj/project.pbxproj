@@ -223,9 +223,9 @@
 		0A5C0CE2246667BF0018E88F /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				0A5C0CE3246667BF0018E88F /* EVOSubmitCommunityController.xib */,
-				0A5C0CE4246667BF0018E88F /* EVOSubmitCommunityController.m */,
 				0A5C0CE5246667BF0018E88F /* EVOSubmitCommunityController.h */,
+				0A5C0CE4246667BF0018E88F /* EVOSubmitCommunityController.m */,
+				0A5C0CE3246667BF0018E88F /* EVOSubmitCommunityController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";

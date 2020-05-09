@@ -7,6 +7,7 @@ target 'EarthNews' do
 
   # Pods for EarthNews
   pod 'MJExtension'
+  pod 'MJRefresh'
   pod 'Masonry'
   pod 'AFNetworking'
   pod 'SDWebImage'

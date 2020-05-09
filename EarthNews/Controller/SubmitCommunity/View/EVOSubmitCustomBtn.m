@@ -13,24 +13,52 @@
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        
+        [self setUIConfig];
     }
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)coder {
+    self = [super initWithFrame:coder];
+    if (self) {
+        [self setUIConfig];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.contentImgBtn.frame = self.bounds;
+    self.deleteBtn.frame = CGRectMake(CGRectGetWidth(self.frame)-20, 0, 20, 20);
+}
+
 - (void)setUIConfig {
     self.contentImgBtn = [UIButton new];
-    [self.contentImgBtn setImage:CreateImage(@"icon_photo") forState:UIControlStateNormal];
+    [self.contentImgBtn setBackgroundImage:CreateImage(@"take_photo") forState:UIControlStateNormal];
     [self.contentImgBtn addTarget:self action:@selector(clickSelectImageAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.contentImgBtn];
-    [self.contentImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
+    
+    self.deleteBtn = [UIButton new];
+    [self.deleteBtn setImage:CreateImage(@"icon_delete") forState:UIControlStateNormal];
+    [self.deleteBtn addTarget:self action:@selector(clickRemoveImgAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.deleteBtn];
+}
+
+- (void)setEnable:(BOOL)enable {
+    self.contentImgBtn.enabled = enable;
 }
 
 #pragma mark - Private Method
 - (void)clickSelectImageAction {
-    
+    if (self.clickSelectImgBlock) {
+        self.clickSelectImgBlock();
+    }
+}
+
+- (void)clickRemoveImgAction {
+    if (self.clickRemoveImgBlock) {
+        self.clickRemoveImgBlock(self.selectTag);
+    }
 }
 
 /*

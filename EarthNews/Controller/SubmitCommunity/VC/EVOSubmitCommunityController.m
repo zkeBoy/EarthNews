@@ -7,17 +7,24 @@
 //
 
 #import "EVOSubmitCommunityController.h"
+#import "EVOSubmitCustomBtn.h"
 
 @interface EVOSubmitCommunityController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
-
+@property (nonatomic, strong) EVOSubmitCustomBtn * uploadImgBtn;
+@property (nonatomic, strong) EVOSubmitCustomBtn * picture1;
+@property (nonatomic, strong) EVOSubmitCustomBtn * picture3;
+@property (nonatomic, strong) EVOSubmitCustomBtn * picture2;
+@property (nonatomic, strong) NSMutableArray <UIImage *>* selectUploadImgArray;
 @end
 
 @implementation EVOSubmitCommunityController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.selectUploadImgArray = [NSMutableArray array];
     
     self.navBarHeightConstraint.constant = kStatusBarHeight+kNavigationBarHeight;
     
@@ -26,6 +33,69 @@
     self.inputTextView.placeholder = @"说点什么～";
     self.inputTextView.placeholdFont = NFont(16);
     self.inputTextView.limitLength = @(140);
+    
+    WeakSelf(self);
+    self.uploadImgBtn = [EVOSubmitCustomBtn new];
+    self.uploadImgBtn.deleteBtn.hidden = YES;
+    [self.view addSubview:self.uploadImgBtn];
+    self.uploadImgBtn.clickSelectImgBlock = ^{
+        //选择照片
+        [WeakSelf takePhotoActionh];
+    };
+    
+    self.picture1 = [EVOSubmitCustomBtn new];
+    self.picture1.selectTag = 100;
+    self.picture1.hidden = YES;
+    [self.view addSubview:self.picture1];
+    self.picture1.clickRemoveImgBlock = ^(NSInteger tag) {
+        NSInteger selectIndex = tag/100-1;
+        [WeakSelf deleteSelectImgIndex:selectIndex];
+    };
+    
+    self.picture2 = [EVOSubmitCustomBtn new];
+    self.picture2.selectTag = 200;
+    self.picture2.hidden = YES;
+    [self.view addSubview:self.picture2];
+    self.picture2.clickRemoveImgBlock = ^(NSInteger tag) {
+        NSInteger selectIndex = tag/100-1;
+        [WeakSelf deleteSelectImgIndex:selectIndex];
+    };
+    
+    self.picture3 = [EVOSubmitCustomBtn new];
+    self.picture3.selectTag = 300;
+    self.picture3.hidden = YES;
+    [self.view addSubview:self.picture3];
+    self.picture3.clickRemoveImgBlock = ^(NSInteger tag) {
+        NSInteger selectIndex = tag/100-1;
+        [WeakSelf deleteSelectImgIndex:selectIndex];
+    };
+    
+    NSInteger itemSize = (kScreenWidth-34)/3;
+    NSInteger top = kStatusBarHeight+kNavigationBarHeight+211;
+    
+    [self.uploadImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(itemSize);
+        make.left.equalTo(self.view).offset(13);
+        make.top.equalTo(self.view).offset(top);
+    }];
+    
+    [self.picture1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(itemSize);
+        make.left.equalTo(self.view).offset(13);
+        make.top.equalTo(self.view).offset(top);
+    }];
+    
+    [self.picture2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(itemSize);
+        make.left.equalTo(self.picture1.mas_right).offset(4);
+        make.top.equalTo(self.view).offset(top);
+    }];
+    
+    [self.picture3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(itemSize);
+        make.left.equalTo(self.picture2.mas_right).offset(4);
+        make.top.equalTo(self.view).offset(top);
+    }];
 }
 
 #pragma mark - Private Method
@@ -35,6 +105,60 @@
 
 - (IBAction)submitCommunityAction:(id)sender {
     
+}
+
+- (void)deleteSelectImgIndex:(NSInteger)idx {
+    if (idx>=self.selectUploadImgArray.count) {
+        return;
+    }
+    
+    [self.selectUploadImgArray removeObjectAtIndex:idx];
+    [self refreshSelectImgBtn];
+}
+
+- (void)takePhotoActionh {
+    if (self.selectUploadImgArray.count>=3) {
+        [self showToastText:@"已经达到上限!"];
+        return;
+    }
+    [[EVONormalToolManager shareManager] takePhotoAlbumImage:^(UIImage * _Nonnull image) {
+        [self.selectUploadImgArray addObject:image];
+        [self refreshSelectImgBtn];
+    }];
+}
+
+- (void)refreshSelectImgBtn {
+    if (self.selectUploadImgArray.count==0) {
+        self.picture1.hidden = YES;
+        self.picture2.hidden = YES;
+        self.picture3.hidden = YES;
+        self.uploadImgBtn.hidden = NO;
+        self.uploadImgBtn.mj_x = self.picture1.mj_x;
+    }
+    
+    if (self.selectUploadImgArray.count==1) {
+        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.selectUploadImgArray.firstObject forState:UIControlStateNormal];
+        self.picture2.hidden = YES;
+        self.picture3.hidden = YES;
+        self.uploadImgBtn.hidden = NO;
+        self.uploadImgBtn.mj_x = self.picture2.mj_x;
+    }
+    
+    if (self.selectUploadImgArray.count==2) {
+        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.selectUploadImgArray.firstObject forState:UIControlStateNormal];
+        self.picture2.hidden = NO; [self.picture2.contentImgBtn setImage:self.selectUploadImgArray.lastObject forState:UIControlStateNormal];
+        self.picture3.hidden = YES;
+        self.uploadImgBtn.hidden = NO;
+        self.uploadImgBtn.mj_x = self.picture3.mj_x;
+    }
+    
+    if (self.selectUploadImgArray.count==3) {
+        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.selectUploadImgArray.firstObject forState:UIControlStateNormal];
+        self.picture2.hidden = NO; [self.picture2.contentImgBtn setImage:self.selectUploadImgArray[1] forState:UIControlStateNormal];
+        self.picture3.hidden = NO; [self.picture3.contentImgBtn setImage:self.selectUploadImgArray.lastObject forState:UIControlStateNormal];
+        self.uploadImgBtn.hidden = NO;
+        self.uploadImgBtn.hidden = YES;
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
