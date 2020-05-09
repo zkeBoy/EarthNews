@@ -12,10 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOUserDataObj : NSObject <NSCoding>
 kSPrCopy__(NSString * userName);
-kSPrStrong(NSData * userHeadImg);
+kSPrStrong(NSData   * userHeadImg);
 kSPrCopy__(NSString * userSex);
 kSPrCopy__(NSString * birthDay);
 kSPrCopy__(NSString * userAge);
+kSPrCopy__(NSString * location);
 @end
 
 NS_ASSUME_NONNULL_END

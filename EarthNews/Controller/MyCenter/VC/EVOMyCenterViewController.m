@@ -10,6 +10,7 @@
 #import "EVOMyCenterPhotoCollectionView.h"
 #import "EVOMyCenterTopView.h"
 #import "EVOSettingViewController.h"
+#import "EVOCommunityDataManager.h"
 #import "EVOUserInfoEditeViewController.h"
 
 @interface EVOMyCenterViewController () <UIScrollViewDelegate, EVOMyCenterTopChangeSelectItemProtocol>
@@ -17,6 +18,9 @@
 @property (nonatomic, strong) UIScrollView       * contentView;
 @property (nonatomic, strong) EVOMyCenterPhotoCollectionView * myTravelCollectionView; //我的轨迹
 @property (nonatomic, strong) EVOMyCenterPhotoCollectionView * myGoodsCollectionView;//我的点赞
+
+@property (nonatomic, strong) UIImageView * emptyImgView;
+@property (nonatomic, strong) UILabel     * titleLabel;
 @end
 
 @implementation EVOMyCenterViewController
@@ -50,24 +54,24 @@
     [self.view addSubview:self.contentView];
     self.contentView.frame = CGRectMake(0, kStatusBarHeight+230, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230);
     
-    UIImageView * emptyImgView1 = [[UIImageView alloc] initWithImage:CreateImage(@"icon_empty")];
-    [self.view addSubview:emptyImgView1];
-    [emptyImgView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.emptyImgView = [[UIImageView alloc] initWithImage:CreateImage(@"icon_empty")];
+    [self.view addSubview:self.emptyImgView];
+    [self.emptyImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(79);
         make.height.mas_equalTo(50);
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.contentView).offset(181);
     }];
     
-    UILabel * titleLabel = [UILabel new];
-    titleLabel.text = @"空空如也~";
-    titleLabel.font = NFont(14);
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = RGBHex(@"#353535");
-    [self.view addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(emptyImgView1.mas_centerX);
-        make.top.equalTo(emptyImgView1.mas_bottom).offset(10);
+    self.titleLabel = [UILabel new];
+    self.titleLabel.text = @"空空如也~";
+    self.titleLabel.font = NFont(14);
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.textColor = RGBHex(@"#353535");
+    [self.view addSubview:self.titleLabel];
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.emptyImgView.mas_centerX);
+        make.top.equalTo(self.emptyImgView.mas_bottom).offset(10);
     }];
     
     [self.contentView addSubview:self.myTravelCollectionView];
