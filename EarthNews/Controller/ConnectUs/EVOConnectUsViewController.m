@@ -32,7 +32,6 @@
     self.emailInputView.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"你的邮箱" attributes:@{NSForegroundColorAttributeName: color}];
     
     self.contentInputView.placeholder = @"描述你在使用过程中遇到的问题…";
-    self.contentInputView.textColor = color;
     self.contentInputView.placeholdFont = BFont(16);
     self.contentInputView.placeholdColor = color;
     self.contentInputView.limitLength = @(140);
@@ -48,6 +47,11 @@
     
     if (!self.emailInputView.text.length) {
         [self showToastText:@"请输入你的邮箱!"];
+        return;
+    }
+    
+    if (![[EVONormalToolManager shareManager] isEmail:self.emailInputView.text]) {
+        [self showToastText:@"请输入正确邮箱!"];
         return;
     }
     

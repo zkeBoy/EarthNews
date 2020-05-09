@@ -46,6 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
          clickCancelBlock:(void(^)(void))clickCancelBlock;
 
 - (NSString *)getCurrentTimes;
+
+- (BOOL)isEmail:(NSString *)email;
 @end
 
 NS_ASSUME_NONNULL_END
