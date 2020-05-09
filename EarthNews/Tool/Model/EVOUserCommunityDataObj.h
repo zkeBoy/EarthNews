@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EVOUserCommunityDataObj : NSObject
+@interface EVOUserCommunityDataObj : NSObject <NSCoding>
 kSPrCopy__(NSString * ID);
 kSPrCopy__(NSString * Name);
 kSPrCopy__(NSString * Gender);

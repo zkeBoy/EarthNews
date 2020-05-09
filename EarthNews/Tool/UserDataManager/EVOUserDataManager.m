@@ -39,11 +39,12 @@
 /**
  *  判断文件是否已经在沙盒中已经存在
  */
-- (BOOL)isFileExist{
+- (BOOL)isFileExist {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL result = [fileManager fileExistsAtPath:EVOAccountPath];
     return result;
 }
+
 /**
  *  创建目录
  */

@@ -9,5 +9,5 @@
 #import "EVOUserCommunityDataObj.h"
 
 @implementation EVOUserCommunityDataObj
-
+MJCodingImplementation
 @end

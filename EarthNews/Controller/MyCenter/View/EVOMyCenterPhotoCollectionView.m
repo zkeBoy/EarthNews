@@ -83,9 +83,6 @@
             //我的点赞
             [[EVOCommunityDataManager shareCommunityDataManager] removeAddGoodCommunityData:dataObj];
         }
-        [collectionView reloadData];
-        
-        //发送通知
     };
     return cell;
 }

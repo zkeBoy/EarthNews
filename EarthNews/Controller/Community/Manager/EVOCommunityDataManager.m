@@ -6,6 +6,10 @@
 //  Copyright © 2020 zkeBoy. All rights reserved.
 //
 
+//我的轨迹
+#define EVOMyCenterCommunityFilePath [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"EVOMyCenterCommunityAccount"]
+#define EVOMyCenterCommunityPath [EVOMyCenterCommunityFilePath stringByAppendingPathComponent:@"EVOMyCenterCommunityAccount.plist"]
+
 #import "EVOCommunityDataManager.h"
 
 @implementation EVOCommunityDataManager
@@ -26,6 +30,17 @@
         self.mySelfSourceArray = [NSMutableArray array];
         self.othreSourceArray = [NSMutableArray array];
         [self readLocalJsonData];
+        
+        //我的轨迹文件路径创建
+        [self checkMyCommunityPath];
+        //从本地读取我的轨迹
+        NSArray * myCommunityArray = [NSKeyedUnarchiver unarchiveObjectWithFile:EVOMyCenterCommunityPath];
+        if (myCommunityArray) {
+            [self.mySelfSourceArray addObjectsFromArray:myCommunityArray];
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, myCommunityArray.count)];
+            //将本地数据添加到动态列表中
+            [self.dataSourceArray insertObjects:myCommunityArray atIndexes:indexSet];
+        }
     }
     return self;
 }
@@ -49,6 +64,8 @@
     
     [self.mySelfSourceArray addObject:dataObj];
     
+    [self archiveMyCommunityDataToLocal];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSubmitCommunitySuccessKey object:nil];
 }
 
@@ -66,6 +83,10 @@
     if (!isExist) {
         [self.othreSourceArray addObject:dataObj];
         
+        NSArray * arr = [self.othreSourceArray mutableCopy];
+        
+        //保存到本地
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];
     }
 }
@@ -76,7 +97,15 @@
         [self.mySelfSourceArray removeObject:dataObj];
      
         //刷新个人中心列表
-        //[[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSubmitCommunitySuccessKey object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSubmitCommunitySuccessKey object:nil];
+        
+        //重新归档
+        [self archiveMyCommunityDataToLocal];
+        
+        //从动态列表中删除
+        if ([self.dataSourceArray containsObject:dataObj]) {
+            [self.dataSourceArray removeObject:dataObj];
+        }
     }
 }
 
@@ -86,8 +115,41 @@
         [self.othreSourceArray removeObject:dataObj];
         
         //刷新点赞数据列表
-        //[[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];
     }
+}
+
+#pragma mark - File Address
+- (void)checkMyCommunityPath {
+    if (!([self isMyCommunityFileExist])) {
+        [self createMyCommunityDirectory];
+    }
+}
+
+/**
+ *  判断文件是否已经在沙盒中已经存在
+ */
+- (BOOL)isMyCommunityFileExist {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL result = [fileManager fileExistsAtPath:EVOMyCenterCommunityPath];
+    return result;
+}
+
+/**
+ *  创建目录
+ */
+- (BOOL)createMyCommunityDirectory {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    BOOL result = [fileManager createDirectoryAtPath:EVOMyCenterCommunityFilePath withIntermediateDirectories:YES attributes:nil error:&error];
+    return result;
+}
+
+- (void) archiveMyCommunityDataToLocal {
+    //保存到本地
+    NSArray * arr = [self.mySelfSourceArray mutableCopy];
+    
+    [NSKeyedArchiver archiveRootObject:arr toFile:EVOMyCenterCommunityPath];
 }
 
 @end
