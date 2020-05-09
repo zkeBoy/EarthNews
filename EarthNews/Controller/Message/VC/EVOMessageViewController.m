@@ -32,12 +32,28 @@
     [self.view addSubview:self.textTitleLabel];
     [self.textTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view).offset(kNavigationBarHeight+10);
+        make.top.equalTo(self.view).offset(kStatusBarHeight+10);
     }];
     
-    UIImageView * emptyImgView = [[UIImageView alloc] initWithImage:CreateImage(@"")];
+    UIImageView * emptyImgView = [[UIImageView alloc] initWithImage:CreateImage(@"icon_empty")];
+    [self.view addSubview:emptyImgView];
+    [emptyImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(79);
+        make.height.mas_equalTo(50);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.textTitleLabel.mas_bottom).offset(298);
+    }];
     
-    
+    UILabel * titleLabel = [UILabel new];
+    titleLabel.text = @"你收到的点赞和评论会显示在这里";
+    titleLabel.font = NFont(14);
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = RGBHex(@"#353535");
+    [self.view addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(emptyImgView.mas_bottom).offset(10);
+    }];
 }
 /*
 #pragma mark - Navigation
