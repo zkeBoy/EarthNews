@@ -10,6 +10,10 @@
 #define EVOMyCenterCommunityFilePath [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"EVOMyCenterCommunityAccount"]
 #define EVOMyCenterCommunityPath [EVOMyCenterCommunityFilePath stringByAppendingPathComponent:@"EVOMyCenterCommunityAccount.plist"]
 
+//我的点赞
+#define EVOAddGoodsFilePath [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"EVOAddGoodsAccount"]
+#define EVOAddGoodsPath [EVOAddGoodsFilePath stringByAppendingPathComponent:@"EVOAddGoodsAccount.plist"]
+
 #import "EVOCommunityDataManager.h"
 
 @implementation EVOCommunityDataManager
@@ -33,6 +37,10 @@
         
         //我的轨迹文件路径创建
         [self checkMyCommunityPath];
+        
+        //我的点赞文件路径
+        [self checkAddGoodsPath];
+        
         //从本地读取我的轨迹
         NSArray * myCommunityArray = [NSKeyedUnarchiver unarchiveObjectWithFile:EVOMyCenterCommunityPath];
         if (myCommunityArray) {
@@ -40,6 +48,11 @@
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, myCommunityArray.count)];
             //将本地数据添加到动态列表中
             [self.dataSourceArray insertObjects:myCommunityArray atIndexes:indexSet];
+        }
+        
+        NSArray * addGoodsArray = [NSKeyedUnarchiver unarchiveObjectWithFile:EVOAddGoodsPath];
+        if (addGoodsArray) {
+            [self.othreSourceArray addObjectsFromArray:addGoodsArray];
         }
     }
     return self;
@@ -64,7 +77,10 @@
     
     [self.mySelfSourceArray addObject:dataObj];
     
-    [self archiveMyCommunityDataToLocal];
+    NSArray * arr = [self.mySelfSourceArray mutableCopy];
+    
+    //重新归档
+    [self archiveDataToLocal:arr path:EVOMyCenterCommunityPath];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSubmitCommunitySuccessKey object:nil];
 }
@@ -85,6 +101,9 @@
         
         NSArray * arr = [self.othreSourceArray mutableCopy];
         
+        //重新归档
+        [self archiveDataToLocal:arr path:EVOAddGoodsPath];
+        
         //保存到本地
         
         [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];
@@ -96,8 +115,10 @@
     if ([self.mySelfSourceArray containsObject:dataObj]) {
         [self.mySelfSourceArray removeObject:dataObj];
         
+        NSArray * arr = [self.mySelfSourceArray mutableCopy];
+        
         //重新归档
-        [self archiveMyCommunityDataToLocal];
+        [self archiveDataToLocal:arr path:EVOMyCenterCommunityPath];
         
         //从动态列表中删除
         if ([self.dataSourceArray containsObject:dataObj]) {
@@ -114,45 +135,54 @@
     if ([self.othreSourceArray containsObject:dataObj]) {
         [self.othreSourceArray removeObject:dataObj];
         
-        
         //从本地删除数据
+        NSArray * arr = [self.othreSourceArray mutableCopy];
+        
+        //重新归档
+        [self archiveDataToLocal:arr path:EVOAddGoodsPath];
         
         //刷新点赞数据列表
         [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];
     }
 }
 
-#pragma mark - File Address
+#pragma mark - Archive Path
 - (void)checkMyCommunityPath {
-    if (!([self isMyCommunityFileExist])) {
-        [self createMyCommunityDirectory];
+    if (!([self isFileExist:EVOMyCenterCommunityPath])) {
+        [self createDirectory:EVOMyCenterCommunityFilePath];
+    }
+}
+
+- (void)checkAddGoodsPath {
+    if (!([self isFileExist:EVOAddGoodsPath])) {
+        [self createDirectory:EVOAddGoodsFilePath];
     }
 }
 
 /**
  *  判断文件是否已经在沙盒中已经存在
  */
-- (BOOL)isMyCommunityFileExist {
+- (BOOL)isFileExist:(NSString *)path {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL result = [fileManager fileExistsAtPath:EVOMyCenterCommunityPath];
+    BOOL result = [fileManager fileExistsAtPath:path];
     return result;
 }
 
 /**
  *  创建目录
  */
-- (BOOL)createMyCommunityDirectory {
+- (BOOL)createDirectory:(NSString *)filePath {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
-    BOOL result = [fileManager createDirectoryAtPath:EVOMyCenterCommunityFilePath withIntermediateDirectories:YES attributes:nil error:&error];
+    BOOL result = [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:&error];
     return result;
 }
 
-- (void) archiveMyCommunityDataToLocal {
+- (void)archiveDataToLocal:(NSArray *)arr path:(NSString *)path {
     //保存到本地
-    NSArray * arr = [self.mySelfSourceArray mutableCopy];
-    
-    [NSKeyedArchiver archiveRootObject:arr toFile:EVOMyCenterCommunityPath];
+    [NSKeyedArchiver archiveRootObject:arr toFile:path];
 }
+
+
 
 @end
