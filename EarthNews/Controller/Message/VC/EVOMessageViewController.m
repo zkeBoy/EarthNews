@@ -9,7 +9,7 @@
 #import "EVOMessageViewController.h"
 
 @interface EVOMessageViewController ()
-
+@property (nonatomic, strong) UILabel * textTitleLabel;
 @end
 
 @implementation EVOMessageViewController
@@ -23,6 +23,21 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = MainBgColor;
+    
+    self.textTitleLabel = [UILabel new];
+    self.textTitleLabel.text = @"通知";
+    self.textTitleLabel.font = BFont(17);
+    self.textTitleLabel.textAlignment = NSTextAlignmentCenter;
+    self.textTitleLabel.textColor = UIColor.whiteColor;
+    [self.view addSubview:self.textTitleLabel];
+    [self.textTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view).offset(kNavigationBarHeight+10);
+    }];
+    
+    UIImageView * emptyImgView = [[UIImageView alloc] initWithImage:CreateImage(@"")];
+    
+    
 }
 /*
 #pragma mark - Navigation

@@ -798,7 +798,7 @@
 				DEVELOPMENT_TEAM = 822B77XGPZ;
 				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/GitHub/EarthNews/EarthNews/Tool/Comment/PrefixHeader.pch;
 				INFOPLIST_FILE = EarthNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -818,7 +818,7 @@
 				DEVELOPMENT_TEAM = 822B77XGPZ;
 				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/GitHub/EarthNews/EarthNews/Tool/Comment/PrefixHeader.pch;
 				INFOPLIST_FILE = EarthNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
