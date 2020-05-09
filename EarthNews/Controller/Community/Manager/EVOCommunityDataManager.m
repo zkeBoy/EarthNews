@@ -146,6 +146,13 @@
     }
 }
 
+//屏蔽
+- (void)shieldOtherCommunityData:(EVOUserCommunityDataObj *)dataObj {
+    if ([self.dataSourceArray containsObject:dataObj]) {
+        [self.dataSourceArray removeObject:dataObj];
+    }
+}
+
 #pragma mark - Archive Path
 - (void)checkMyCommunityPath {
     if (!([self isFileExist:EVOMyCenterCommunityPath])) {

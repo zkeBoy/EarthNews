@@ -162,7 +162,29 @@
 
 #pragma mark - Private Method
 - (IBAction)clickMoreAction:(id)sender {
+    NSDictionary * dic = @{@"title":@"屏蔽",
+                           @"color":RGBHex(@"#005FFF")
+    };
     
+    NSDictionary * dic1 = @{@"title":@"举报",
+                           @"color":RGBHex(@"#FF3535")
+    };
+    
+    NSArray * sections = @[dic,dic1];
+    
+    [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
+        if (selectIndex==0) {
+            //屏蔽
+            [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:self.dataObj];
+            //刷新列表
+            if (self.removeOtherCommunityBlock) {
+                self.removeOtherCommunityBlock();
+            }
+        }else {
+            //举报
+            [self showToastText:@"举报成功!"];
+        }
+    } clickCancelBlock:nil];
 }
 
 - (void)clickPriveteChatAction {//点击私信

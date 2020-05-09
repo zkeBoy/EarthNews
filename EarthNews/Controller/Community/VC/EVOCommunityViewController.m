@@ -76,8 +76,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    WeakSelf(self);
     EVOCommunityViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EVOCommunityViewCell" forIndexPath:indexPath];
     cell.dataObj = self.dataManager.dataSourceArray[indexPath.section];
+    cell.removeOtherCommunityBlock = ^{
+        [WeakSelf.tableView reloadData];
+    };
     return cell;
 }
 
