@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EVOHomeDataManager.h"
+#import "EVOCommunityDataManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOHomeNewsListView : UIView <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic,   copy) void (^clickSelectNewsItemBlock)(void);
-@property (nonatomic, strong) EVOHomeDataManager * dataManager;
+@property (nonatomic, strong) EVOCommunityDataManager * dataManager;
 @end
 
 NS_ASSUME_NONNULL_END

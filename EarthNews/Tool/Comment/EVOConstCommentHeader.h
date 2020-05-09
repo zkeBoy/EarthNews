@@ -16,4 +16,6 @@
 #define EVOUserSubmitCommunitySuccessKey @"EVOUserSubmitCommunitySuccessKey" //用户自己发布动态
 #define EVOUserAddGoodCommunitySuccessKey @"EVOUserAddGoodCommunitySuccessKey" //用户点赞他人的动态
 
+#define EVOShildeOtherCommunitySuccessKey @"EVOShildeOtherCommunitySuccessKey" //屏蔽他人动态
+
 #endif /* EVOConstCommentHeader_h */

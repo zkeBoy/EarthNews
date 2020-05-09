@@ -50,7 +50,6 @@
 		0ACD6E212464F4BD006C65FA /* EVOMyCenterPhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E1F2464F4BD006C65FA /* EVOMyCenterPhotoViewCell.xib */; };
 		0ACD6E2524650082006C65FA /* EVOUserCommunityDataObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E2424650082006C65FA /* EVOUserCommunityDataObj.m */; };
 		0ACD6E272465041D006C65FA /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E262465041D006C65FA /* test.json */; };
-		0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E2A2465053E006C65FA /* EVOHomeDataManager.m */; };
 		0ACD6E2F24650F6E006C65FA /* EVOCommunityDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E2E24650F6E006C65FA /* EVOCommunityDataManager.m */; };
 		0ACD6E33246527EA006C65FA /* EVOUserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E32246527EA006C65FA /* EVOUserDataManager.m */; };
 		0ACD6E3824653064006C65FA /* EVOAppEnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E3624653064006C65FA /* EVOAppEnterViewController.m */; };
@@ -141,8 +140,6 @@
 		0ACD6E2324650082006C65FA /* EVOUserCommunityDataObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOUserCommunityDataObj.h; sourceTree = "<group>"; };
 		0ACD6E2424650082006C65FA /* EVOUserCommunityDataObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOUserCommunityDataObj.m; sourceTree = "<group>"; };
 		0ACD6E262465041D006C65FA /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
-		0ACD6E292465053E006C65FA /* EVOHomeDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOHomeDataManager.h; sourceTree = "<group>"; };
-		0ACD6E2A2465053E006C65FA /* EVOHomeDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOHomeDataManager.m; sourceTree = "<group>"; };
 		0ACD6E2D24650F6E006C65FA /* EVOCommunityDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOCommunityDataManager.h; sourceTree = "<group>"; };
 		0ACD6E2E24650F6E006C65FA /* EVOCommunityDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOCommunityDataManager.m; sourceTree = "<group>"; };
 		0ACD6E31246527EA006C65FA /* EVOUserDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOUserDataManager.h; sourceTree = "<group>"; };
@@ -320,7 +317,6 @@
 		0ACD6DC92463AC63006C65FA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0ACD6E28246504F7006C65FA /* Manager */,
 				0ACD6DCB2463AC7F006C65FA /* VC */,
 				0ACD6DCA2463AC6D006C65FA /* View */,
 			);
@@ -506,15 +502,6 @@
 				0A5C0CC824655D310018E88F /* EVOUserDataObj.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		0ACD6E28246504F7006C65FA /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				0ACD6E292465053E006C65FA /* EVOHomeDataManager.h */,
-				0ACD6E2A2465053E006C65FA /* EVOHomeDataManager.m */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		0ACD6E2C24650F51006C65FA /* Manager */ = {
@@ -766,7 +753,6 @@
 				0A5C0CCC246560D20018E88F /* EVOPrivateRuleViewController.m in Sources */,
 				0ACD6E19246417FD006C65FA /* EVOMyCenterCustomView.m in Sources */,
 				0A5C0CBE2465493C0018E88F /* EVONormalToolManager.m in Sources */,
-				0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */,
 				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
 				0A5C0CEE246667D70018E88F /* UITextView+YLTextView.m in Sources */,
 				E38C25F42466486900E6C70C /* EVODynamicDetailsVC.m in Sources */,

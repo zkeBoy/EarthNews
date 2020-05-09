@@ -29,6 +29,9 @@
     //刷新动态圈
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCommunityList) name:EVOUserSubmitCommunitySuccessKey object:nil];
     
+    //屏蔽他人动态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCommunityList) name:EVOShildeOtherCommunitySuccessKey object:nil];
+    
     self.dataManager = [EVOCommunityDataManager shareCommunityDataManager];
     
     self.view.backgroundColor = MainBgColor;
@@ -79,9 +82,6 @@
     WeakSelf(self);
     EVOCommunityViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EVOCommunityViewCell" forIndexPath:indexPath];
     cell.dataObj = self.dataManager.dataSourceArray[indexPath.section];
-    cell.removeOtherCommunityBlock = ^{
-        [WeakSelf.tableView reloadData];
-    };
     return cell;
 }
 

@@ -53,6 +53,9 @@
                             <constraint firstAttribute="width" constant="25" id="x1b-JL-Vpl"/>
                         </constraints>
                         <state key="normal" image="line_more"/>
+                        <connections>
+                            <action selector="clickMoreAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gkv-1P-yqT"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

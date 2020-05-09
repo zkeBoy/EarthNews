@@ -14,10 +14,16 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.dataManager = [EVOHomeDataManager new];
+        self.dataManager = [EVOCommunityDataManager shareCommunityDataManager];
         [self setUIConfig];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDataList) name:EVOShildeOtherCommunitySuccessKey object:nil];
     }
     return self;
+}
+
+- (void)refreshDataList {
+    [self.collectionView reloadData];
 }
 
 - (void)setUIConfig {

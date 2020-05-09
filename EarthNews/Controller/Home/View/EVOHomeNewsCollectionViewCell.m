@@ -7,6 +7,7 @@
 //
 
 #import "EVOHomeNewsCollectionViewCell.h"
+#import "EVOCommunityDataManager.h"
 
 @implementation EVOHomeNewsCollectionViewCell
 
@@ -34,6 +35,29 @@
     
     self.newsAddressTextLabel.text = dataObj.Nation;
     self.newsContentTextLabel.text = dataObj.Intrduce;
+}
+
+
+- (IBAction)clickMoreAction:(id)sender {
+    NSDictionary * dic = @{@"title":@"屏蔽",
+                           @"color":RGBHex(@"#005FFF")
+    };
+    
+    NSDictionary * dic1 = @{@"title":@"举报",
+                           @"color":RGBHex(@"#FF3535")
+    };
+    
+    NSArray * sections = @[dic,dic1];
+    
+    [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
+        if (selectIndex==0) {
+            //屏蔽
+            [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:self.dataObj];
+        }else {
+            //举报
+            [self showToastText:@"举报成功!"];
+        }
+    } clickCancelBlock:nil];
 }
 
 @end

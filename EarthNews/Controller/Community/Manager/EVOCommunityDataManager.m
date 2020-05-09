@@ -151,6 +151,9 @@
     if ([self.dataSourceArray containsObject:dataObj]) {
         [self.dataSourceArray removeObject:dataObj];
     }
+    
+    //发送通知刷新列表
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVOShildeOtherCommunitySuccessKey object:nil];
 }
 
 #pragma mark - Archive Path

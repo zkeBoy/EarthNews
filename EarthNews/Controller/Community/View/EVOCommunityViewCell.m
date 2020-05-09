@@ -176,10 +176,6 @@
         if (selectIndex==0) {
             //屏蔽
             [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:self.dataObj];
-            //刷新列表
-            if (self.removeOtherCommunityBlock) {
-                self.removeOtherCommunityBlock();
-            }
         }else {
             //举报
             [self showToastText:@"举报成功!"];
