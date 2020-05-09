@@ -7,6 +7,7 @@
 //
 
 #import "EVOSettingViewController.h"
+#import "EVOConnectUsViewController.h"
 #import "EVOUserDataManager.h"
 
 @interface EVOSettingViewController ()
@@ -32,7 +33,8 @@
 }
 
 - (IBAction)connectUsAction:(id)sender {//联系我们
-
+    EVOConnectUsViewController * connectUsVC = [[EVOConnectUsViewController alloc] initWithNibName:@"EVOConnectUsViewController" bundle:nil];
+    [self.navigationController pushViewController:connectUsVC animated:YES];
 }
 
 - (IBAction)privateRuleAction:(id)sender {//隐私政策

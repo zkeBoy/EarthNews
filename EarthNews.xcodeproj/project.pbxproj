@@ -18,6 +18,8 @@
 		0A5C0CEA246667BF0018E88F /* EVOSubmitCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CE4246667BF0018E88F /* EVOSubmitCommunityController.m */; };
 		0A5C0CEB246667BF0018E88F /* EVOSubmitCustomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CE7246667BF0018E88F /* EVOSubmitCustomBtn.m */; };
 		0A5C0CEE246667D70018E88F /* UITextView+YLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CED246667D60018E88F /* UITextView+YLTextView.m */; };
+		0A5C0CF3246696C00018E88F /* EVOConnectUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CF1246696C00018E88F /* EVOConnectUsViewController.m */; };
+		0A5C0CF4246696C00018E88F /* EVOConnectUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0CF2246696C00018E88F /* EVOConnectUsViewController.xib */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -81,6 +83,9 @@
 		0A5C0CE8246667BF0018E88F /* EVOSubmitCustomBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVOSubmitCustomBtn.h; sourceTree = "<group>"; };
 		0A5C0CEC246667D60018E88F /* UITextView+YLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+YLTextView.h"; sourceTree = "<group>"; };
 		0A5C0CED246667D60018E88F /* UITextView+YLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+YLTextView.m"; sourceTree = "<group>"; };
+		0A5C0CF0246696C00018E88F /* EVOConnectUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOConnectUsViewController.h; sourceTree = "<group>"; };
+		0A5C0CF1246696C00018E88F /* EVOConnectUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOConnectUsViewController.m; sourceTree = "<group>"; };
+		0A5C0CF2246696C00018E88F /* EVOConnectUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOConnectUsViewController.xib; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -239,6 +244,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0A5C0CEF246696A20018E88F /* ConnectUs */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0CF0246696C00018E88F /* EVOConnectUsViewController.h */,
+				0A5C0CF1246696C00018E88F /* EVOConnectUsViewController.m */,
+				0A5C0CF2246696C00018E88F /* EVOConnectUsViewController.xib */,
+			);
+			path = ConnectUs;
+			sourceTree = "<group>";
+		};
 		0ACD6D9E2463A50E006C65FA = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +304,7 @@
 		0ACD6DC82463AC5A006C65FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0CEF246696A20018E88F /* ConnectUs */,
 				0A5C0CE1246667BF0018E88F /* SubmitCommunity */,
 				E38C25EF246647F800E6C70C /* DynamicDetails */,
 				0A5C0CCD246566220018E88F /* Setting */,
@@ -644,6 +660,7 @@
 				0ACD6E272465041D006C65FA /* test.json in Resources */,
 				0ACD6DDB2463B26C006C65FA /* EVOHomeViewController.xib in Resources */,
 				0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */,
+				0A5C0CF4246696C00018E88F /* EVOConnectUsViewController.xib in Resources */,
 				0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */,
 				0ACD6E0F24640216006C65FA /* EVOCommunityViewCell.xib in Resources */,
 				0ACD6E4224653C66006C65FA /* EVOUserInfoEditeViewController.xib in Resources */,
@@ -739,6 +756,7 @@
 				0A5C0CD12465664F0018E88F /* EVOSettingViewController.m in Sources */,
 				0ACD6DCE2463ACAE006C65FA /* EVOTabBarViewController.m in Sources */,
 				0ACD6DEB2463D74D006C65FA /* EVOMyCenterViewController.m in Sources */,
+				0A5C0CF3246696C00018E88F /* EVOConnectUsViewController.m in Sources */,
 				0ACD6DDA2463B26C006C65FA /* EVOHomeViewController.m in Sources */,
 				0ACD6DC52463A5D3006C65FA /* GlobeScene.m in Sources */,
 				0ACD6E2524650082006C65FA /* EVOUserCommunityDataObj.m in Sources */,
