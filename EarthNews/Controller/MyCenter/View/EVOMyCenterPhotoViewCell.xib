@@ -36,6 +36,17 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJB-Kc-sVd">
+                        <rect key="frame" x="101" y="8" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="BDs-Vm-Oec"/>
+                            <constraint firstAttribute="height" constant="14" id="pnI-Fc-F3M"/>
+                        </constraints>
+                        <state key="normal" image="icon_rubbish"/>
+                        <connections>
+                            <action selector="clickDeleteCommunityAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="W66-Uf-MUB"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
@@ -45,7 +56,9 @@
                 <constraint firstItem="d3G-tl-G2I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="a9x-22-9oS"/>
                 <constraint firstAttribute="trailing" secondItem="5v0-6f-Uqb" secondAttribute="trailing" id="bAe-gL-IoP"/>
                 <constraint firstItem="5v0-6f-Uqb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ccF-3R-Gdl"/>
+                <constraint firstItem="bJB-Kc-sVd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="mYq-Cf-3qF"/>
                 <constraint firstItem="IrY-hG-kSL" firstAttribute="leading" secondItem="d3G-tl-G2I" secondAttribute="trailing" constant="3" id="nCZ-v7-QdG"/>
+                <constraint firstAttribute="trailing" secondItem="bJB-Kc-sVd" secondAttribute="trailing" constant="8" id="qP2-tW-BZ0"/>
                 <constraint firstItem="5v0-6f-Uqb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="s5X-uB-xka"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
@@ -58,5 +71,6 @@
     </objects>
     <resources>
         <image name="icon_local" width="9" height="12"/>
+        <image name="icon_rubbish" width="14" height="14"/>
     </resources>
 </document>

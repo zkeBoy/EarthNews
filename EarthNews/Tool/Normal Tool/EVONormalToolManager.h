@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
             selectHandler:(void(^)(NSInteger selectIndex))selectHandler
          clickCancelBlock:(void(^)(void))clickCancelBlock;
 
-- (NSString*)getCurrentTimes;
+- (NSString *)getCurrentTimes;
 @end
 
 NS_ASSUME_NONNULL_END

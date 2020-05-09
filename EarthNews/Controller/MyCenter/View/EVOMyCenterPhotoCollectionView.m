@@ -8,6 +8,7 @@
 
 #import "EVOMyCenterPhotoCollectionView.h"
 #import "EVOMyCenterPhotoViewCell.h"
+#import "EVOCommunityDataManager.h"
 
 @implementation EVOMyCenterPhotoCollectionView
 
@@ -15,8 +16,21 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setUIConfig];
+        [self addNotifications];
     }
     return self;
+}
+
+- (void)addNotifications {
+    //发布动态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshUserData) name:EVOUserSubmitCommunitySuccessKey object:nil];
+    
+    //点赞他人
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshUserData) name:EVOUserAddGoodCommunitySuccessKey object:nil];
+}
+
+- (void)refreshUserData {
+    [self.collectionView reloadData];
 }
 
 - (void)setUIConfig {
@@ -44,11 +58,26 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.itemCount;
+    if (self.cType==MyCollectionTypeGuiJi) {
+        return [EVOCommunityDataManager shareCommunityDataManager].mySelfSourceArray.count;
+    }
+    return [EVOCommunityDataManager shareCommunityDataManager].othreSourceArray.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    WeakSelf(self);
     EVOMyCenterPhotoViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EVOMyCenterPhotoViewCell" forIndexPath:indexPath];
+    cell.clickDeleteMyCommunityBlock = ^(EVOUserCommunityDataObj * _Nonnull dataObj) {
+        //删除数据
+        if (WeakSelf.cType==MyCollectionTypeGuiJi) {
+            //我的轨迹
+        }else {
+            //我的点赞
+        }
+        [collectionView reloadData];
+        
+        //发送通知
+    };
     return cell;
 }
 

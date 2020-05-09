@@ -50,6 +50,26 @@
     [self.view addSubview:self.contentView];
     self.contentView.frame = CGRectMake(0, kStatusBarHeight+230, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230);
     
+    UIImageView * emptyImgView1 = [[UIImageView alloc] initWithImage:CreateImage(@"icon_empty")];
+    [self.view addSubview:emptyImgView1];
+    [emptyImgView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(79);
+        make.height.mas_equalTo(50);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.contentView).offset(181);
+    }];
+    
+    UILabel * titleLabel = [UILabel new];
+    titleLabel.text = @"空空如也~";
+    titleLabel.font = NFont(14);
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = RGBHex(@"#353535");
+    [self.view addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(emptyImgView1.mas_centerX);
+        make.top.equalTo(emptyImgView1.mas_bottom).offset(10);
+    }];
+    
     [self.contentView addSubview:self.myTravelCollectionView];
     
     [self.contentView addSubview:self.myGoodsCollectionView];
@@ -99,7 +119,7 @@
 - (EVOMyCenterPhotoCollectionView *)myTravelCollectionView {
     if (!_myTravelCollectionView) {
         _myTravelCollectionView = [[EVOMyCenterPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230)];
-        _myTravelCollectionView.itemCount = 12;
+        _myTravelCollectionView.cType = MyCollectionTypeGuiJi;
     }
     return _myTravelCollectionView;
 }
@@ -107,7 +127,7 @@
 - (EVOMyCenterPhotoCollectionView *)myGoodsCollectionView {
     if (!_myGoodsCollectionView) {
         _myGoodsCollectionView = [[EVOMyCenterPhotoCollectionView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kStatusBarHeight-230)];
-        _myGoodsCollectionView.itemCount = 10;
+        _myGoodsCollectionView.cType = MyCollectionTypeDianZ;
     }
     return _myGoodsCollectionView;
 }
