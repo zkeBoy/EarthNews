@@ -40,8 +40,7 @@
     [emptyImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(79);
         make.height.mas_equalTo(50);
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.textTitleLabel.mas_bottom).offset(298);
+        make.center.equalTo(self.view);
     }];
     
     UILabel * titleLabel = [UILabel new];
