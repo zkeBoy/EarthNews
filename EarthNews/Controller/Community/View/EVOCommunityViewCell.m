@@ -7,6 +7,7 @@
 //
 
 #import "EVOCommunityViewCell.h"
+#import "EVOCommunityDataManager.h"
 
 @implementation EVOCommunityViewCell
 
@@ -169,5 +170,7 @@
         self.commentTextLabel.text = @"1";
     }
     self.isComment = !self.isComment;
+    
+    [[EVOCommunityDataManager shareCommunityDataManager] addGoodsOtherCommunityData:self.dataObj];
 }
 @end

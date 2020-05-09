@@ -67,12 +67,21 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     WeakSelf(self);
     EVOMyCenterPhotoViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EVOMyCenterPhotoViewCell" forIndexPath:indexPath];
+    EVOUserCommunityDataObj * dataObj;
+    if (self.cType==MyCollectionTypeGuiJi) {
+        dataObj = [EVOCommunityDataManager shareCommunityDataManager].mySelfSourceArray[indexPath.row];
+    }else {
+        dataObj = [EVOCommunityDataManager shareCommunityDataManager].othreSourceArray[indexPath.row];
+    }
+    cell.userDataObj = dataObj;
     cell.clickDeleteMyCommunityBlock = ^(EVOUserCommunityDataObj * _Nonnull dataObj) {
         //删除数据
         if (WeakSelf.cType==MyCollectionTypeGuiJi) {
             //我的轨迹
+            [[EVOCommunityDataManager shareCommunityDataManager] removeMySelfCommunityData:dataObj];
         }else {
             //我的点赞
+            [[EVOCommunityDataManager shareCommunityDataManager] removeAddGoodCommunityData:dataObj];
         }
         [collectionView reloadData];
         
