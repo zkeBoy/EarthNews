@@ -56,6 +56,14 @@
 - (void)setDataObj:(EVOUserCommunityDataObj *)dataObj {
     _dataObj = dataObj;
     
+    if (dataObj.isSelf.length) {
+        self.commnetFathreView.hidden = YES;
+        self.moreBtn.hidden = YES;
+    }else {
+        self.commnetFathreView.hidden = NO;
+        self.moreBtn.hidden = NO;
+    }
+    
     if (dataObj.userHeadImg) {
         //个人发布的动态
         dispatch_async(dispatch_get_global_queue(0, 0), ^{

@@ -136,6 +136,7 @@
     communityDataObj.Age = [EVOUserDataManager shareUserDataManager].userDataObj.userAge;
     communityDataObj.imgArray = imgs;
     communityDataObj.Nation = @"成都";
+    communityDataObj.isSelf = @"1";
     communityDataObj.ID = [[EVONormalToolManager shareManager] getCurrentTimes];
     [[EVOCommunityDataManager shareCommunityDataManager] submitMySelfCommunityData:communityDataObj];
     

@@ -165,7 +165,7 @@
                                     <constraint firstAttribute="width" constant="34" id="fQh-r8-bVN"/>
                                     <constraint firstAttribute="height" constant="34" id="p27-4N-etE"/>
                                 </constraints>
-                                <state key="normal" image="icon_more" backgroundImage="       "/>
+                                <state key="normal" image="line_more"/>
                                 <connections>
                                     <action selector="clickMoreAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cmn-Cj-pDo"/>
                                 </connections>
@@ -222,8 +222,10 @@
                 <outlet property="commentBtn" destination="ktl-BN-Whs" id="3B8-6i-PMR"/>
                 <outlet property="commentImgView" destination="Hfj-OB-7uJ" id="mzJ-9U-Pth"/>
                 <outlet property="commentTextLabel" destination="feN-7Y-wa1" id="bQo-D0-fE3"/>
+                <outlet property="commnetFathreView" destination="ktl-BN-Whs" id="NCR-FZ-VDV"/>
                 <outlet property="descriptionTextLabel" destination="y3P-7d-k15" id="5To-1N-stq"/>
                 <outlet property="localAddressLabel" destination="iAO-q2-zgi" id="PPy-5h-gpk"/>
+                <outlet property="moreBtn" destination="ZkQ-bS-F96" id="63g-l2-nya"/>
                 <outlet property="pictureOneImgView" destination="Yn0-xP-sjB" id="6Ev-qc-tIl"/>
                 <outlet property="pictureThreeImgView" destination="YoW-1c-3pe" id="CjG-kJ-gUS"/>
                 <outlet property="pictureTwoImgView" destination="8dG-1m-rKM" id="STN-97-Akj"/>
@@ -239,11 +241,10 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="       " width="128" height="128"/>
         <image name="icon_good" width="13" height="13"/>
         <image name="icon_local" width="9" height="12"/>
         <image name="icon_man" width="9" height="9"/>
-        <image name="icon_more" width="3" height="15"/>
         <image name="icon_private_message" width="14" height="13"/>
+        <image name="line_more" width="13" height="3"/>
     </resources>
 </document>
