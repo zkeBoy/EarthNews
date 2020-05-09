@@ -74,6 +74,10 @@
 }
 
 #pragma mark - Private Method
+- (void)reloadSourceData {
+    [self readLocalJsonData];
+}
+
 //发布动态
 - (void)submitMySelfCommunityData:(EVOUserCommunityDataObj *)dataObj {
     [self.dataSourceArray insertObject:dataObj atIndex:0];

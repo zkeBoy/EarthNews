@@ -37,6 +37,11 @@
     
     self.dataManager = [EVOCommunityDataManager shareCommunityDataManager];
     
+    //重新加载数据
+    if (!self.dataManager.homeSourceArray.count) {
+        [self.dataManager reloadSourceData];
+    }
+    
     self.view.backgroundColor = MainBgColor;
     
     self.titleTextLabel = [UILabel new];

@@ -105,7 +105,7 @@
     
     EVOUserDataObj * userDataObj = [EVOUserDataObj mj_objectWithKeyValues:userDicObj];
     
-    [[EVOUserDataManager shareUserDataManager] saveUserData:userDataObj];
+    [EVOUserDataManager shareUserDataManager].userDataObj = userDataObj;
     
     if (self.isSignUp) {
         EVOPrivateRuleViewController * ruleVC = [EVOPrivateRuleViewController new];

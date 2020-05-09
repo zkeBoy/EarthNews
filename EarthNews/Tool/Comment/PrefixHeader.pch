@@ -88,6 +88,9 @@ invocation.selector = @selector(setContentInsetAdjustmentBehavior:);\
 _Pragma("clang diagnostic pop")\
 } while (0)
 
+//隐私政策
+#define PrivateRulePath @"https://youngmonster.oss-cn-shanghai.aliyuncs.com/%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96-2.pdf"
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

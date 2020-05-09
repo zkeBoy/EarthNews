@@ -7,15 +7,48 @@
 //
 
 #import "EVOPrivateRuleViewController.h"
+#import "EVOWebViewTool.h"
+#import "EVOUserDataManager.h"
 
 @interface EVOPrivateRuleViewController ()
 @property (nonatomic, strong) UIButton * submitBtn;
+@property (nonatomic, strong) UIView   * topView;
 @end
 
 @implementation EVOPrivateRuleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.topView = [UIView new];
+    self.topView.backgroundColor = MainBgColor;
+    self.topView.frame = CGRectMake(0, 0, kScreenWidth, kNavigationBarHeight+kStatusBarHeight);
+    [self.view addSubview:self.topView];
+    
+    UIButton * backBtn = [UIButton new];
+    [backBtn setImage:CreateImage(@"icon_back") forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(clickBackAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.topView addSubview:backBtn];
+    [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.topView).offset(24);
+        make.bottom.equalTo(self.topView).offset(-14);
+        make.width.mas_equalTo(9);
+        make.height.mas_equalTo(18);
+    }];
+    
+    UILabel * titleLabel = [UILabel new];
+    titleLabel.textColor = UIColor.whiteColor;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = BFont(17);
+    titleLabel.text = @"社区规范";
+    [self.topView addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.topView);
+        make.bottom.equalTo(self.topView).offset(-14);
+    }];
+    
+    CGRect frame = CGRectMake(0, kNavigationBarHeight+kStatusBarHeight, kScreenWidth, kScreenHeight-kNavigationBarHeight-kStatusBarHeight);
+    [EVOWebViewTool initWebViewPath:PrivateRulePath toView:self.view frame:frame];
     
     self.view.backgroundColor = MainBgColor;
     
@@ -30,7 +63,13 @@
 
 #pragma mark - Private Method
 - (void)clickCompleteAction {
+    [[EVOUserDataManager shareUserDataManager] saveUserData:[EVOUserDataManager shareUserDataManager].userDataObj];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSignUpSuccessKey object:nil];
+}
+
+- (void)clickBackAction {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - lazy init

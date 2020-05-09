@@ -18,6 +18,8 @@ kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* othreSourceArray); //他�
 
 + (EVOCommunityDataManager *)shareCommunityDataManager;
 
+- (void)reloadSourceData;
+
 //发布我自己的动态 需要存储下来 个人中心需要展示
 - (void)submitMySelfCommunityData:(EVOUserCommunityDataObj *)dataObj;
 
