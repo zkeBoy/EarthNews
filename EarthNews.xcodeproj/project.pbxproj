@@ -14,6 +14,10 @@
 		0A5C0CCC246560D20018E88F /* EVOPrivateRuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CCB246560D20018E88F /* EVOPrivateRuleViewController.m */; };
 		0A5C0CD12465664F0018E88F /* EVOSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CCF2465664F0018E88F /* EVOSettingViewController.m */; };
 		0A5C0CD22465664F0018E88F /* EVOSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0CD02465664F0018E88F /* EVOSettingViewController.xib */; };
+		0A5C0CE9246667BF0018E88F /* EVOSubmitCommunityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0CE3246667BF0018E88F /* EVOSubmitCommunityController.xib */; };
+		0A5C0CEA246667BF0018E88F /* EVOSubmitCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CE4246667BF0018E88F /* EVOSubmitCommunityController.m */; };
+		0A5C0CEB246667BF0018E88F /* EVOSubmitCustomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CE7246667BF0018E88F /* EVOSubmitCustomBtn.m */; };
+		0A5C0CEE246667D70018E88F /* UITextView+YLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0CED246667D60018E88F /* UITextView+YLTextView.m */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -70,6 +74,13 @@
 		0A5C0CCE2465664F0018E88F /* EVOSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOSettingViewController.h; sourceTree = "<group>"; };
 		0A5C0CCF2465664F0018E88F /* EVOSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOSettingViewController.m; sourceTree = "<group>"; };
 		0A5C0CD02465664F0018E88F /* EVOSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOSettingViewController.xib; sourceTree = "<group>"; };
+		0A5C0CE3246667BF0018E88F /* EVOSubmitCommunityController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EVOSubmitCommunityController.xib; sourceTree = "<group>"; };
+		0A5C0CE4246667BF0018E88F /* EVOSubmitCommunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVOSubmitCommunityController.m; sourceTree = "<group>"; };
+		0A5C0CE5246667BF0018E88F /* EVOSubmitCommunityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVOSubmitCommunityController.h; sourceTree = "<group>"; };
+		0A5C0CE7246667BF0018E88F /* EVOSubmitCustomBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVOSubmitCustomBtn.m; sourceTree = "<group>"; };
+		0A5C0CE8246667BF0018E88F /* EVOSubmitCustomBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVOSubmitCustomBtn.h; sourceTree = "<group>"; };
+		0A5C0CEC246667D60018E88F /* UITextView+YLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+YLTextView.h"; sourceTree = "<group>"; };
+		0A5C0CED246667D60018E88F /* UITextView+YLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+YLTextView.m"; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -200,11 +211,32 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		0A5C0CD3246644EF0018E88F /* SubmitCommunity */ = {
+		0A5C0CE1246667BF0018E88F /* SubmitCommunity */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0CE2246667BF0018E88F /* VC */,
+				0A5C0CE6246667BF0018E88F /* View */,
 			);
 			path = SubmitCommunity;
+			sourceTree = "<group>";
+		};
+		0A5C0CE2246667BF0018E88F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0CE3246667BF0018E88F /* EVOSubmitCommunityController.xib */,
+				0A5C0CE4246667BF0018E88F /* EVOSubmitCommunityController.m */,
+				0A5C0CE5246667BF0018E88F /* EVOSubmitCommunityController.h */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		0A5C0CE6246667BF0018E88F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0CE7246667BF0018E88F /* EVOSubmitCustomBtn.m */,
+				0A5C0CE8246667BF0018E88F /* EVOSubmitCustomBtn.h */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0ACD6D9E2463A50E006C65FA = {
@@ -257,8 +289,8 @@
 		0ACD6DC82463AC5A006C65FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0CE1246667BF0018E88F /* SubmitCommunity */,
 				E38C25EF246647F800E6C70C /* DynamicDetails */,
-				0A5C0CD3246644EF0018E88F /* SubmitCommunity */,
 				0A5C0CCD246566220018E88F /* Setting */,
 				0ACD6DFE2463F1E2006C65FA /* Dynamics */,
 				0ACD6DFD2463F1D9006C65FA /* Message */,
@@ -308,6 +340,8 @@
 		0ACD6DCF2463AEB7006C65FA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0CEC246667D60018E88F /* UITextView+YLTextView.h */,
+				0A5C0CED246667D60018E88F /* UITextView+YLTextView.m */,
 				0ACD6E11246413E0006C65FA /* UIView+Gesture.h */,
 				0ACD6E10246413E0006C65FA /* UIView+Gesture.m */,
 				0ACD6DF22463D9E7006C65FA /* UIColor+Hex.h */,
@@ -604,6 +638,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A5C0CD22465664F0018E88F /* EVOSettingViewController.xib in Resources */,
+				0A5C0CE9246667BF0018E88F /* EVOSubmitCommunityController.xib in Resources */,
 				0ACD6E212464F4BD006C65FA /* EVOMyCenterPhotoViewCell.xib in Resources */,
 				0ACD6E272465041D006C65FA /* test.json in Resources */,
 				0ACD6DDB2463B26C006C65FA /* EVOHomeViewController.xib in Resources */,
@@ -677,8 +712,10 @@
 				0A5C0CC924655D310018E88F /* EVOUserDataObj.m in Sources */,
 				0ACD6E4124653C66006C65FA /* EVOUserInfoEditeViewController.m in Sources */,
 				0ACD6DE52463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.m in Sources */,
+				0A5C0CEA246667BF0018E88F /* EVOSubmitCommunityController.m in Sources */,
 				0ACD6DBD2463A50E006C65FA /* main.m in Sources */,
 				0ACD6DEE2463D75F006C65FA /* EVOCommunityViewController.m in Sources */,
+				0A5C0CEB246667BF0018E88F /* EVOSubmitCustomBtn.m in Sources */,
 				0ACD6E032463F217006C65FA /* EVODynamicsViewController.m in Sources */,
 				0ACD6E33246527EA006C65FA /* EVOUserDataManager.m in Sources */,
 				0A5C0CD12465664F0018E88F /* EVOSettingViewController.m in Sources */,
@@ -695,6 +732,7 @@
 				0A5C0CBE2465493C0018E88F /* EVONormalToolManager.m in Sources */,
 				0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */,
 				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
+				0A5C0CEE246667D70018E88F /* UITextView+YLTextView.m in Sources */,
 				E38C25F42466486900E6C70C /* EVODynamicDetailsVC.m in Sources */,
 				0ACD6E1624641729006C65FA /* EVOMyCenterTopView.m in Sources */,
 				0A5C0CC1246552550018E88F /* NSObject+Toast.m in Sources */,
