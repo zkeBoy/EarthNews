@@ -95,9 +95,6 @@
 - (void)removeMySelfCommunityData:(EVOUserCommunityDataObj *)dataObj {
     if ([self.mySelfSourceArray containsObject:dataObj]) {
         [self.mySelfSourceArray removeObject:dataObj];
-     
-        //刷新个人中心列表
-        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSubmitCommunitySuccessKey object:nil];
         
         //重新归档
         [self archiveMyCommunityDataToLocal];
@@ -106,6 +103,9 @@
         if ([self.dataSourceArray containsObject:dataObj]) {
             [self.dataSourceArray removeObject:dataObj];
         }
+        
+        //刷新个人中心列表
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSubmitCommunitySuccessKey object:nil];
     }
 }
 
@@ -113,6 +113,9 @@
 - (void)removeAddGoodCommunityData:(EVOUserCommunityDataObj *)dataObj {
     if ([self.othreSourceArray containsObject:dataObj]) {
         [self.othreSourceArray removeObject:dataObj];
+        
+        
+        //从本地删除数据
         
         //刷新点赞数据列表
         [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];

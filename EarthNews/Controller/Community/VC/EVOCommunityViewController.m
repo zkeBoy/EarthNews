@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //刷新动态圈
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCommunityList) name:EVOUserSubmitCommunitySuccessKey object:nil];
     
     self.dataManager = [EVOCommunityDataManager shareCommunityDataManager];
