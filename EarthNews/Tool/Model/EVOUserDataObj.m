@@ -13,7 +13,7 @@ MJCodingImplementation
 
 - (void)setBirthDay:(NSString *)birthDay {
     _birthDay = birthDay;
-    NSString * yearString = [birthDay substringToIndex:3];
+    NSString * yearString = [birthDay substringToIndex:4];
     // 2.获取当前时间
     NSCalendar *calendar0 = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [[NSDateComponents alloc] init];

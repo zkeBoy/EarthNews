@@ -28,7 +28,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCommunityList) name:EVOUserSubmitCommunitySuccessKey object:nil];
     
-    self.dataManager = [EVOCommunityDataManager new];
+    self.dataManager = [EVOCommunityDataManager shareCommunityDataManager];
     
     self.view.backgroundColor = MainBgColor;
     

@@ -57,8 +57,10 @@
     
     if (dataObj.userHeadImg) {
         //个人发布的动态
-        UIImage * userImg = [UIImage imageWithData:dataObj.userHeadImg];
-        self.userHeadImgView.image = userImg;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage * userImg = [UIImage imageWithData:dataObj.userHeadImg];
+            self.userHeadImgView.image = userImg;
+        });
         
         NSArray * imgs = dataObj.imgArray;
         
@@ -67,31 +69,37 @@
             self.pictureThreeImgView.hidden = YES;
             self.pictureTwoImgView.hidden = YES;
             
-            UIImage * image = [UIImage imageWithData:imgs.firstObject];
-            self.pictureOneImgView.image = image;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage * image = [UIImage imageWithData:imgs.firstObject];
+                self.pictureOneImgView.image = image;
+            });
             
         }else if (imgs.count==2){
             self.pictureOneImgView.hidden = NO;
             self.pictureThreeImgView.hidden = NO;
             self.pictureTwoImgView.hidden = YES;
-            UIImage * image = [UIImage imageWithData:imgs.firstObject];
-            self.pictureOneImgView.image = image;
-            
-            UIImage * image2 = [UIImage imageWithData:imgs.lastObject];
-            self.pictureTwoImgView.image = image2;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage * image = [UIImage imageWithData:imgs.firstObject];
+                self.pictureOneImgView.image = image;
+                
+                UIImage * image2 = [UIImage imageWithData:imgs.lastObject];
+                self.pictureTwoImgView.image = image2;
+            });
         }else {
             self.pictureOneImgView.hidden = NO;
             self.pictureThreeImgView.hidden = NO;
             self.pictureTwoImgView.hidden = NO;
             
-            UIImage * image = [UIImage imageWithData:imgs.firstObject];
-            self.pictureOneImgView.image = image;
-            
-            UIImage * image2 = [UIImage imageWithData:imgs[1]];
-            self.pictureTwoImgView.image = image2;
-            
-            UIImage * image3 = [UIImage imageWithData:imgs.lastObject];
-            self.pictureThreeImgView.image = image3;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage * image = [UIImage imageWithData:imgs.firstObject];
+                self.pictureOneImgView.image = image;
+                
+                UIImage * image2 = [UIImage imageWithData:imgs[1]];
+                self.pictureTwoImgView.image = image2;
+                
+                UIImage * image3 = [UIImage imageWithData:imgs.lastObject];
+                self.pictureThreeImgView.image = image3;
+            });
         }
         
     }else {
