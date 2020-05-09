@@ -10,6 +10,7 @@
 #import "EVOSubmitCustomBtn.h"
 #import "EVOUserDataManager.h"
 #import "EVOUserCommunityDataObj.h"
+#import "EVOCommunityDataManager.h"
 
 @interface EVOSubmitCommunityController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
@@ -116,7 +117,7 @@
         return;
     }
     
-    if (self.selectUploadImgArray.count) {
+    if (!self.selectUploadImgArray.count) {
         [self showToastText:@"请上传发布的照片!"];
         return;
     }
@@ -135,8 +136,12 @@
     communityDataObj.Age = [EVOUserDataManager shareUserDataManager].userDataObj.userAge;
     communityDataObj.imgArray = imgs;
     communityDataObj.Nation = @"成都";
+    communityDataObj.ID = [[EVONormalToolManager shareManager] getCurrentTimes];
+    [[EVOCommunityDataManager shareCommunityDataManager] submitMySelfCommunityData:communityDataObj];
     
+    [self showToastText:@"发布成功"];
     
+    [self clickBackAction:nil];
 }
 
 - (void)deleteSelectImgIndex:(NSInteger)idx {

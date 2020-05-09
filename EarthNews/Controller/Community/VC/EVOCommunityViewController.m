@@ -25,7 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCommunityList) name:EVOUserSubmitCommunitySuccessKey object:nil];
     
     self.dataManager = [EVOCommunityDataManager new];
     
@@ -58,6 +59,10 @@
         make.left.bottom.width.equalTo(self.view);
         make.top.equalTo(self.titleTextLabel.mas_bottom).offset(20);
     }];
+}
+
+- (void)refreshCommunityList {
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource

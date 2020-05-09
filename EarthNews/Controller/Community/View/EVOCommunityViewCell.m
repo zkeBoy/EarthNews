@@ -54,7 +54,76 @@
 
 - (void)setDataObj:(EVOUserCommunityDataObj *)dataObj {
     _dataObj = dataObj;
-    [self.userHeadImgView sd_setImageWithURL:[NSURL URLWithString:dataObj.Image] placeholderImage:nil];
+    
+    if (dataObj.userHeadImg) {
+        //个人发布的动态
+        UIImage * userImg = [UIImage imageWithData:dataObj.userHeadImg];
+        self.userHeadImgView.image = userImg;
+        
+        NSArray * imgs = dataObj.imgArray;
+        
+        if (imgs.count==1) {
+            self.pictureOneImgView.hidden = NO;
+            self.pictureThreeImgView.hidden = YES;
+            self.pictureTwoImgView.hidden = YES;
+            
+            UIImage * image = [UIImage imageWithData:imgs.firstObject];
+            self.pictureOneImgView.image = image;
+            
+        }else if (imgs.count==2){
+            self.pictureOneImgView.hidden = NO;
+            self.pictureThreeImgView.hidden = NO;
+            self.pictureTwoImgView.hidden = YES;
+            UIImage * image = [UIImage imageWithData:imgs.firstObject];
+            self.pictureOneImgView.image = image;
+            
+            UIImage * image2 = [UIImage imageWithData:imgs.lastObject];
+            self.pictureTwoImgView.image = image2;
+        }else {
+            self.pictureOneImgView.hidden = NO;
+            self.pictureThreeImgView.hidden = NO;
+            self.pictureTwoImgView.hidden = NO;
+            
+            UIImage * image = [UIImage imageWithData:imgs.firstObject];
+            self.pictureOneImgView.image = image;
+            
+            UIImage * image2 = [UIImage imageWithData:imgs[1]];
+            self.pictureTwoImgView.image = image2;
+            
+            UIImage * image3 = [UIImage imageWithData:imgs.lastObject];
+            self.pictureThreeImgView.image = image3;
+        }
+        
+    }else {
+        [self.userHeadImgView sd_setImageWithURL:[NSURL URLWithString:dataObj.Image] placeholderImage:nil];
+        
+        NSArray * imgs = [dataObj.Image_1 componentsSeparatedByString:@";"];
+        if (imgs.count) {
+            if (imgs.count==1) {
+                self.pictureOneImgView.hidden = NO;
+                self.pictureThreeImgView.hidden = YES;
+                self.pictureTwoImgView.hidden = YES;
+                [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
+            }else if (imgs.count==2){
+                self.pictureOneImgView.hidden = NO;
+                self.pictureThreeImgView.hidden = NO;
+                self.pictureTwoImgView.hidden = YES;
+                [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
+                [self.pictureTwoImgView sd_setImageWithURL:[NSURL URLWithString:imgs[1]] placeholderImage:nil];
+            }else {
+                self.pictureOneImgView.hidden = NO;
+                self.pictureThreeImgView.hidden = NO;
+                self.pictureTwoImgView.hidden = NO;
+                [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
+                [self.pictureTwoImgView sd_setImageWithURL:[NSURL URLWithString:imgs[1]] placeholderImage:nil];
+                [self.pictureThreeImgView sd_setImageWithURL:[NSURL URLWithString:imgs.lastObject] placeholderImage:nil];
+            }
+        }else {
+            self.pictureOneImgView.hidden = YES;
+            self.pictureThreeImgView.hidden = YES;
+            self.pictureTwoImgView.hidden = YES;
+        }
+    }
     
     self.userNameTextLabel.text = dataObj.Name;
     self.descriptionTextLabel.text = dataObj.Intrduce;
@@ -65,33 +134,6 @@
         self.userSexImgView.image = CreateImage(@"icon_man");
     }else {
         self.userSexImgView.image = CreateImage(@"icon_woman");
-    }
-    
-    NSArray * imgs = [dataObj.Image_1 componentsSeparatedByString:@";"];
-    if (imgs.count) {
-        if (imgs.count==1) {
-            self.pictureOneImgView.hidden = NO;
-            self.pictureThreeImgView.hidden = YES;
-            self.pictureTwoImgView.hidden = YES;
-            [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
-        }else if (imgs.count==2){
-            self.pictureOneImgView.hidden = NO;
-            self.pictureThreeImgView.hidden = NO;
-            self.pictureTwoImgView.hidden = YES;
-            [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
-            [self.pictureTwoImgView sd_setImageWithURL:[NSURL URLWithString:imgs[1]] placeholderImage:nil];
-        }else {
-            self.pictureOneImgView.hidden = NO;
-            self.pictureThreeImgView.hidden = NO;
-            self.pictureTwoImgView.hidden = NO;
-            [self.pictureOneImgView sd_setImageWithURL:[NSURL URLWithString:imgs.firstObject] placeholderImage:nil];
-            [self.pictureTwoImgView sd_setImageWithURL:[NSURL URLWithString:imgs[1]] placeholderImage:nil];
-            [self.pictureThreeImgView sd_setImageWithURL:[NSURL URLWithString:imgs.lastObject] placeholderImage:nil];
-        }
-    }else {
-        self.pictureOneImgView.hidden = YES;
-        self.pictureThreeImgView.hidden = YES;
-        self.pictureTwoImgView.hidden = YES;
     }
 }
 
