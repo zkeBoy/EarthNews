@@ -7,6 +7,7 @@
 //
 
 #import "EVOMyCenterPhotoViewCell.h"
+#import "EVONormalToolManager.h"
 
 @implementation EVOMyCenterPhotoViewCell
 
@@ -22,7 +23,9 @@
     if (userDataObj.imgArray.count) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             UIImage * image = [UIImage imageWithData:userDataObj.imgArray.firstObject scale:0.5];
-            self.contentImgView.image = image;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.contentImgView.image = image;
+            });
         });
     }else {
         NSArray * arr = [userDataObj.Image_1 componentsSeparatedByString:@";"];
@@ -34,9 +37,11 @@
 }
 
 - (IBAction)clickDeleteCommunityAction:(id)sender {
-    if (self.clickDeleteMyCommunityBlock) {
-        self.clickDeleteMyCommunityBlock(self.userDataObj);
-    }
+    [[EVONormalToolManager shareManager] showAlertViewWithTitle:@"是否要删除?" message:nil other:@"确定" cancel:@"取消" otherBlock:^{
+        if (self.clickDeleteMyCommunityBlock) {
+            self.clickDeleteMyCommunityBlock(self.userDataObj);
+        }
+    } cancelBlock:nil];
 }
 
 @end
