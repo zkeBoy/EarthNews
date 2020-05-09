@@ -12,6 +12,7 @@
 #import "EVOCommunityViewController.h"
 #import "EVOMessageViewController.h"
 #import "EVODynamicsViewController.h"
+#import "EVOSubmitCommunityController.h"
 
 @interface EVOTabBarViewController () <UITabBarControllerDelegate>
 
@@ -103,12 +104,17 @@
 
 #pragma mark - 点击tabbar触发的事件
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    
+    if (!item.title.length) {//点击发布
+        EVOSubmitCommunityController * submitVC = [[EVOSubmitCommunityController alloc] initWithNibName:@"EVOSubmitCommunityController" bundle:nil];
+        submitVC.modalPresentationStyle = 0;
+        [self presentViewController:submitVC animated:YES completion:nil];
+    }
 }
 
 #pragma mark - 判断tabbar是否跳转的相应事件
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    if (tabBarController.selectedIndex==2) {//点击发布
+    NSLog(@"selectIndex");
+    if (viewController==self.viewControllers[2]) {
         return NO;
     }
     return YES;

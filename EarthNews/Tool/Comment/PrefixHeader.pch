@@ -14,6 +14,7 @@
 #import "UIColor+Hex.h"
 #import "NSObject+Toast.h"
 #import "UIView+Gesture.h"
+#import "UITextView+YLTextView.h"
 #import "UIImage+Category.h"
 #import "EVONetworkEngineManager.h"
 #import <SDWebImage.h>
