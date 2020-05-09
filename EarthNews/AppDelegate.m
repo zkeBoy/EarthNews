@@ -27,7 +27,6 @@
     
     //退出登录
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(compareUserLoginStatus) name:EVOUserLogOutSuccessKey object:nil];
-    
     //判断是否登录
     if ([[EVOUserDataManager shareUserDataManager] isLogin]) {
         [self exchangeTabBarToRootVC];

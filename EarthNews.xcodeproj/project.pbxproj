@@ -52,6 +52,7 @@
 		0ACD6E4124653C66006C65FA /* EVOUserInfoEditeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E3F24653C66006C65FA /* EVOUserInfoEditeViewController.m */; };
 		0ACD6E4224653C66006C65FA /* EVOUserInfoEditeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E4024653C66006C65FA /* EVOUserInfoEditeViewController.xib */; };
 		D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80692613D39F8817B75A928F /* Pods_EarthNews.framework */; };
+		E38C25F42466486900E6C70C /* EVODynamicDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E38C25F32466486900E6C70C /* EVODynamicDetailsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,8 @@
 		0ACD6E4024653C66006C65FA /* EVOUserInfoEditeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOUserInfoEditeViewController.xib; sourceTree = "<group>"; };
 		80692613D39F8817B75A928F /* Pods_EarthNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.debug.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.debug.xcconfig"; sourceTree = "<group>"; };
+		E38C25F22466486900E6C70C /* EVODynamicDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVODynamicDetailsVC.h; sourceTree = "<group>"; };
+		E38C25F32466486900E6C70C /* EVODynamicDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVODynamicDetailsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +257,7 @@
 		0ACD6DC82463AC5A006C65FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E38C25EF246647F800E6C70C /* DynamicDetails */,
 				0A5C0CD3246644EF0018E88F /* SubmitCommunity */,
 				0A5C0CCD246566220018E88F /* Setting */,
 				0ACD6DFE2463F1E2006C65FA /* Dynamics */,
@@ -515,6 +519,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E38C25EF246647F800E6C70C /* DynamicDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E38C25F12466482B00E6C70C /* VC */,
+				E38C25F02466482500E6C70C /* Views */,
+			);
+			path = DynamicDetails;
+			sourceTree = "<group>";
+		};
+		E38C25F02466482500E6C70C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E38C25F12466482B00E6C70C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E38C25F22466486900E6C70C /* EVODynamicDetailsVC.h */,
+				E38C25F32466486900E6C70C /* EVODynamicDetailsVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -666,6 +695,7 @@
 				0A5C0CBE2465493C0018E88F /* EVONormalToolManager.m in Sources */,
 				0ACD6E2B2465053E006C65FA /* EVOHomeDataManager.m in Sources */,
 				0ACD6DF32463D9E7006C65FA /* UIColor+Hex.m in Sources */,
+				E38C25F42466486900E6C70C /* EVODynamicDetailsVC.m in Sources */,
 				0ACD6E1624641729006C65FA /* EVOMyCenterTopView.m in Sources */,
 				0A5C0CC1246552550018E88F /* NSObject+Toast.m in Sources */,
 				0ACD6E2F24650F6E006C65FA /* EVOCommunityDataManager.m in Sources */,
@@ -804,7 +834,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 822B77XGPZ;
-				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/GitHub/EarthNews/EarthNews/Tool/Comment/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EarthNews/Tool/Comment/PrefixHeader.pch";
 				INFOPLIST_FILE = EarthNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -824,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 822B77XGPZ;
-				GCC_PREFIX_HEADER = /Users/zhangke/Desktop/GitHub/EarthNews/EarthNews/Tool/Comment/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EarthNews/Tool/Comment/PrefixHeader.pch";
 				INFOPLIST_FILE = EarthNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
