@@ -49,12 +49,12 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.dataManager.dataSourceArray.count;
+    return self.dataManager.homeSourceArray.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EVOHomeNewsCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EVOHomeNewsCollectionViewCell" forIndexPath:indexPath];
-    cell.dataObj = self.dataManager.dataSourceArray[indexPath.row];
+    cell.dataObj = self.dataManager.homeSourceArray[indexPath.row];
     return cell;
 }
 

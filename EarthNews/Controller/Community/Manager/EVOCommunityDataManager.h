@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOCommunityDataManager : NSObject
+kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* homeSourceArray);  //首页动态列表
 kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* dataSourceArray);  //动态列表
 kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* mySelfSourceArray);//自己的动态
 kSPrStrong(NSMutableArray <EVOUserCommunityDataObj *>* othreSourceArray); //他人的动态

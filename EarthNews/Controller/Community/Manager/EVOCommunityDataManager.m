@@ -30,9 +30,11 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.homeSourceArray = [NSMutableArray array];
         self.dataSourceArray = [NSMutableArray array];
         self.mySelfSourceArray = [NSMutableArray array];
         self.othreSourceArray = [NSMutableArray array];
+        
         [self readLocalJsonData];
         
         //我的轨迹文件路径创建
@@ -67,6 +69,7 @@
         NSLog(@"JSON解码失败");
     }else {
         self.dataSourceArray = [EVOUserCommunityDataObj mj_objectArrayWithKeyValuesArray:jsonObj];
+        self.homeSourceArray = [NSMutableArray arrayWithArray:self.dataSourceArray];
     }
 }
 
@@ -152,6 +155,10 @@
         [self.dataSourceArray removeObject:dataObj];
     }
     
+    if ([self.homeSourceArray containsObject:dataObj]) {
+        [self.homeSourceArray removeObject:dataObj];
+    }
+    
     //发送通知刷新列表
     [[NSNotificationCenter defaultCenter] postNotificationName:EVOShildeOtherCommunitySuccessKey object:nil];
 }
@@ -214,8 +221,6 @@
         //刷新点赞数据列表
         [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserAddGoodCommunitySuccessKey object:nil];
     }
-    
-    
 }
 
 @end

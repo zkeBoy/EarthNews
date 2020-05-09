@@ -51,6 +51,7 @@
     }];
     
     self.emptyImgView = [[UIImageView alloc] initWithImage:CreateImage(@"icon_empty")];
+    self.emptyImgView.hidden = YES;
     [self.view addSubview:self.emptyImgView];
     [self.emptyImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(79);
@@ -59,6 +60,7 @@
     }];
     
     self.titleLabel = [UILabel new];
+    self.titleLabel.hidden = YES;
     self.titleLabel.text = @"空空如也~";
     self.titleLabel.font = NFont(14);
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
