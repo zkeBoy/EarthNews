@@ -181,7 +181,7 @@
 		0A5C0DA924693D6B0018E88F /* community_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = community_test.json; sourceTree = "<group>"; };
 		0A5C0DAB2469414C0018E88F /* EVONetworkURLPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVONetworkURLPathManager.h; sourceTree = "<group>"; };
 		0A5C0DAC2469414C0018E88F /* EVONetworkURLPathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONetworkURLPathManager.m; sourceTree = "<group>"; };
-		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ACD6DA72463A50E006C65FA /* 地球社区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "地球社区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0ACD6DB62463A50E006C65FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -531,7 +531,7 @@
 		0ACD6DA82463A50E006C65FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0ACD6DA72463A50E006C65FA /* EarthNews.app */,
+				0ACD6DA72463A50E006C65FA /* 地球社区.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -682,9 +682,9 @@
 		0ACD6DF42463DE5A006C65FA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0CBB246548D70018E88F /* Normal Tool */,
 				0A5C0D812468FA760018E88F /* MapManager */,
 				0A5C0CF92466C36A0018E88F /* WebView */,
-				0A5C0CBB246548D70018E88F /* Normal Tool */,
 				0ACD6E3D2465393F006C65FA /* Comment */,
 				0ACD6E3024652781006C65FA /* UserDataManager */,
 				0ACD6E222464FFF1006C65FA /* Model */,
@@ -860,7 +860,7 @@
 			);
 			name = EarthNews;
 			productName = EarthNews;
-			productReference = 0ACD6DA72463A50E006C65FA /* EarthNews.app */;
+			productReference = 0ACD6DA72463A50E006C65FA /* 地球社区.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1194,7 +1194,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = www.EarthNews;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "地球社区";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1214,7 +1214,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = www.EarthNews;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "地球社区";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
