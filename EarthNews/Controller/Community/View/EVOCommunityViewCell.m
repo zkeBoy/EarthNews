@@ -34,6 +34,18 @@
     [self.privateMessageBtn addTapActionWithBlock:^(UIGestureRecognizer * tap) {
         [WeakSelf clickPriveteChatAction];
     }];
+    
+    [self.pictureOneImgView addTapActionWithBlock:^(UIGestureRecognizer * tap) {
+        [WeakSelf showImgsBrowserPage:1];
+    }];
+    
+    [self.pictureTwoImgView addTapActionWithBlock:^(UIGestureRecognizer * tap) {
+        [WeakSelf showImgsBrowserPage:2];
+    }];
+    
+    [self.pictureThreeImgView addTapActionWithBlock:^(UIGestureRecognizer * tap) {
+        [WeakSelf showImgsBrowserPage:3];
+    }];
 }
 
 - (void)setUIConfig {
@@ -69,7 +81,8 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             UIImage * userImg = [UIImage imageWithData:dataObj.userHeadImg scale:.05];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.userHeadImgView.image = userImg;
+                //self.userHeadImgView.image = userImg;
+                [self.userHeadImgView sd_setImageWithURL:nil placeholderImage:userImg];
             });
         });
         
@@ -83,7 +96,8 @@
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 UIImage * image = [UIImage imageWithData:imgs.firstObject scale:.05];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.pictureOneImgView.image = image;
+                    //self.pictureOneImgView.image = image;
+                    [self.pictureOneImgView sd_setImageWithURL:nil placeholderImage:image];
                 });
             });
             
@@ -199,4 +213,32 @@
     
     [[EVOCommunityDataManager shareCommunityDataManager] addGoodsOtherCommunityData:self.dataObj];
 }
+
+- (void)showImgsBrowserPage:(NSInteger)page {
+    NSMutableArray * arr = [NSMutableArray array];
+    if (self.dataObj.userHeadImg) {
+        //本地图片
+        NSArray * imgs = self.dataObj.imgArray;
+        for (NSData * imgData in imgs) {
+            //UIImage * image = [UIImage imageWithData:imgData];
+            YBIBImageData *data1 = [YBIBImageData new];
+            
+            data1.allowSaveToPhotoAlbum = NO;
+            [arr addObject:data1];
+        }
+    }else {
+        NSArray * imgs = [self.dataObj.Image_1 componentsSeparatedByString:@";"];
+        for (NSString * imglink in imgs) {
+            YBIBImageData *data1 = [YBIBImageData new];
+            data1.imageURL = [NSURL URLWithString:imglink];
+            data1.allowSaveToPhotoAlbum = NO;
+            [arr addObject:data1];
+        }
+    }
+    YBImageBrowser *browser = [YBImageBrowser new];
+    browser.dataSourceArray = arr;
+    browser.currentPage = page;
+    [browser show];
+}
+
 @end
