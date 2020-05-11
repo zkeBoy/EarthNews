@@ -50,9 +50,9 @@
 		0A5C0D982468FA980018E88F /* EVOAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0D912468FA980018E88F /* EVOAnnotation.m */; };
 		0A5C0D9F2468FABC0018E88F /* CALayer+Aimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0D9A2468FABB0018E88F /* CALayer+Aimate.m */; };
 		0A5C0DA02468FABC0018E88F /* FDanmakuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0D9E2468FABB0018E88F /* FDanmakuView.m */; };
-		0A5C0DA4246928070018E88F /* community_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA3246928070018E88F /* community_test.json */; };
 		0A5C0DA7246932420018E88F /* PrivacyPolicy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA5246932420018E88F /* PrivacyPolicy.pdf */; };
 		0A5C0DA8246932420018E88F /* TermsOfUse.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA6246932420018E88F /* TermsOfUse.pdf */; };
+		0A5C0DAA24693D6B0018E88F /* community_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA924693D6B0018E88F /* community_test.json */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -175,9 +175,9 @@
 		0A5C0D9C2468FABB0018E88F /* FDanmakuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDanmakuView.h; sourceTree = "<group>"; };
 		0A5C0D9D2468FABB0018E88F /* CALayer+Aimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Aimate.h"; sourceTree = "<group>"; };
 		0A5C0D9E2468FABB0018E88F /* FDanmakuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDanmakuView.m; sourceTree = "<group>"; };
-		0A5C0DA3246928070018E88F /* community_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = community_test.json; sourceTree = "<group>"; };
 		0A5C0DA5246932420018E88F /* PrivacyPolicy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PrivacyPolicy.pdf; sourceTree = "<group>"; };
 		0A5C0DA6246932420018E88F /* TermsOfUse.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TermsOfUse.pdf; sourceTree = "<group>"; };
+		0A5C0DA924693D6B0018E88F /* community_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = community_test.json; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -806,7 +806,7 @@
 		0ACD6E3D2465393F006C65FA /* Comment */ = {
 			isa = PBXGroup;
 			children = (
-				0A5C0DA3246928070018E88F /* community_test.json */,
+				0A5C0DA924693D6B0018E88F /* community_test.json */,
 				0ACD6E262465041D006C65FA /* test.json */,
 				0A5C0DA5246932420018E88F /* PrivacyPolicy.pdf */,
 				0A5C0DA6246932420018E88F /* TermsOfUse.pdf */,
@@ -907,11 +907,11 @@
 				0A5C0CF4246696C00018E88F /* EVOConnectUsViewController.xib in Resources */,
 				0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */,
 				0A5C0D782468FA5F0018E88F /* LICENSE in Resources */,
-				0A5C0DA4246928070018E88F /* community_test.json in Resources */,
 				0A5C0D5E2468FA570018E88F /* FSActionSheet_cancel@2x.png in Resources */,
 				0A5C0DA8246932420018E88F /* TermsOfUse.pdf in Resources */,
 				0ACD6E0F24640216006C65FA /* EVOCommunityViewCell.xib in Resources */,
 				0ACD6E4224653C66006C65FA /* EVOUserInfoEditeViewController.xib in Resources */,
+				0A5C0DAA24693D6B0018E88F /* community_test.json in Resources */,
 				0ACD6E3924653064006C65FA /* EVOAppEnterViewController.xib in Resources */,
 				0ACD6DE62463B8E5006C65FA /* EVOHomeNewsCollectionViewCell.xib in Resources */,
 			);

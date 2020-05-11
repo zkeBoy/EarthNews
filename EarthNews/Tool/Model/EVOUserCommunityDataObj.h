@@ -21,6 +21,7 @@ kSPrCopy__(NSString * Intrduce);
 kSPrCopy__(NSString * Image_1);
 kSPrCopy__(NSString * review); //评论内容
 kSPrCopy__(NSString * reviewImage); //评论头像
+kSPrCopy__(NSString * reviewName); //评论昵称
 kSPrAssign(double longitude); //经度
 kSPrAssign(double latitude);  //纬度
 

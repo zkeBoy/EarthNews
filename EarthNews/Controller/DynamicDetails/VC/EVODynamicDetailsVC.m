@@ -169,20 +169,27 @@
     
     NSArray * imgs = [self.objModel.reviewImage componentsSeparatedByString:@";"];
     NSArray * titles = [self.objModel.review componentsSeparatedByString:@";"];
-    for (NSString * reviewHeadImg in imgs) {
-        NSInteger idx = 0;
-        EVOBullevchatModel *model1 = [[EVOBullevchatModel alloc]init];
-        model1.beginTime = arc4random()%3;
-        model1.liveTime = arc4random()%3+1;
-        if (self.objModel.isSelf) {
-            model1.image = [UIImage imageWithData:self.objModel.userHeadImg];
-        } else {
-            model1.imageUrl = reviewHeadImg;
+    NSArray * names = [self.objModel.reviewName componentsSeparatedByString:@";"];
+    NSInteger idx = 0;
+    if (self.objModel.reviewName.length) {//有评论
+        for (NSString * reviewHeadImg in imgs) {
+            EVOBullevchatModel *model1 = [[EVOBullevchatModel alloc]init];
+            model1.beginTime = arc4random()%3;
+            model1.liveTime = arc4random()%3+1;
+            if (self.objModel.isSelf) {
+                model1.image = [UIImage imageWithData:self.objModel.userHeadImg];
+            } else {
+                model1.imageUrl = reviewHeadImg;
+            }
+            if (idx<titles.count) {
+                model1.content = titles[idx];
+            }
+            if (idx<names.count) {
+                model1.name = names[idx];
+            }
+            idx++;
+            [self.bullteChatView.modelsArr addObject:model1];
         }
-        model1.content = titles[idx];
-        model1.name = @"张三";
-        idx++;
-        [self.bullteChatView.modelsArr addObject:model1];
     }
 }
 
