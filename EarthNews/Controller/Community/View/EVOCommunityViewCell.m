@@ -218,11 +218,13 @@
     NSMutableArray * arr = [NSMutableArray array];
     if (self.dataObj.userHeadImg) {
         //本地图片
-        NSArray * imgs = self.dataObj.imgArray;
+        NSArray * imgs = self.dataObj.normalImgArray;
         for (NSData * imgData in imgs) {
             //UIImage * image = [UIImage imageWithData:imgData];
             YBIBImageData *data1 = [YBIBImageData new];
-            
+            data1.imageData = ^NSData * _Nullable{
+                return imgData;
+            };
             data1.allowSaveToPhotoAlbum = NO;
             [arr addObject:data1];
         }

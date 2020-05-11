@@ -23,6 +23,7 @@ kSPrCopy__(NSString * Image_1);
 kSPrCopy__(NSString * isSelf); //新加 是否是自己的动态
 kSPrStrong(NSData * userHeadImg); //新加
 kSPrStrong(NSArray <NSData *>*imgArray); //新加 用户的动态图片
+kSPrStrong(NSArray <NSDate *>*normalImgArray); //新加 动态原图
 @end
 
 NS_ASSUME_NONNULL_END

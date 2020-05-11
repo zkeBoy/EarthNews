@@ -19,7 +19,8 @@
 @property (nonatomic, strong) EVOSubmitCustomBtn * picture1;
 @property (nonatomic, strong) EVOSubmitCustomBtn * picture3;
 @property (nonatomic, strong) EVOSubmitCustomBtn * picture2;
-@property (nonatomic, strong) NSMutableArray <UIImage *>* selectUploadImgArray;
+@property (nonatomic, strong) NSMutableArray <UIImage *>* selectUploadImgArray; //缩略图
+@property (nonatomic, strong) NSMutableArray <UIImage *>* normalUploadImgArray; //原图
 @end
 
 @implementation EVOSubmitCommunityController
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     
     self.selectUploadImgArray = [NSMutableArray array];
+    self.normalUploadImgArray = [NSMutableArray array];
     
     self.navBarHeightConstraint.constant = kStatusBarHeight+kNavigationBarHeight;
     
@@ -128,6 +130,12 @@
         [imgs addObject:data];
     }
     
+    NSMutableArray * normalImgs = [NSMutableArray array];
+    for (UIImage * image in self.normalUploadImgArray) {
+        NSData * data = UIImagePNGRepresentation(image);
+        [normalImgs addObject:data];
+    }
+    
     EVOUserCommunityDataObj * communityDataObj = [EVOUserCommunityDataObj new];
     communityDataObj.userHeadImg = [EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg;
     communityDataObj.Gender = [EVOUserDataManager shareUserDataManager].userDataObj.userSex;
@@ -135,6 +143,7 @@
     communityDataObj.Intrduce = self.inputTextView.text;
     communityDataObj.Age = [EVOUserDataManager shareUserDataManager].userDataObj.userAge;
     communityDataObj.imgArray = imgs;
+    communityDataObj.normalImgArray = normalImgs;
     communityDataObj.Nation = @"成都";
     communityDataObj.isSelf = @"1";
     communityDataObj.ID = [[EVONormalToolManager shareManager] getCurrentTimes];
@@ -150,6 +159,7 @@
         return;
     }
     
+    [self.normalUploadImgArray removeObjectAtIndex:idx];
     [self.selectUploadImgArray removeObjectAtIndex:idx];
     [self refreshSelectImgBtn];
 }
@@ -162,12 +172,13 @@
     [[EVONormalToolManager shareManager] takePhotoAlbumImage:^(UIImage * _Nonnull image) {
         UIImage * newImg = [image imageCompressFitSize:CGSizeMake(38, 38)];
         [self.selectUploadImgArray addObject:newImg];
+        [self.normalUploadImgArray addObject:image];
         [self refreshSelectImgBtn];
     }];
 }
 
 - (void)refreshSelectImgBtn {
-    if (self.selectUploadImgArray.count==0) {
+    if (self.normalUploadImgArray.count==0) {
         self.picture1.hidden = YES;
         self.picture2.hidden = YES;
         self.picture3.hidden = YES;
@@ -175,26 +186,26 @@
         self.uploadImgBtn.mj_x = self.picture1.mj_x;
     }
     
-    if (self.selectUploadImgArray.count==1) {
-        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.selectUploadImgArray.firstObject forState:UIControlStateNormal];
+    if (self.normalUploadImgArray.count==1) {
+        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.normalUploadImgArray.firstObject forState:UIControlStateNormal];
         self.picture2.hidden = YES;
         self.picture3.hidden = YES;
         self.uploadImgBtn.hidden = NO;
         self.uploadImgBtn.mj_x = self.picture2.mj_x;
     }
     
-    if (self.selectUploadImgArray.count==2) {
-        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.selectUploadImgArray.firstObject forState:UIControlStateNormal];
-        self.picture2.hidden = NO; [self.picture2.contentImgBtn setImage:self.selectUploadImgArray.lastObject forState:UIControlStateNormal];
+    if (self.normalUploadImgArray.count==2) {
+        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.normalUploadImgArray.firstObject forState:UIControlStateNormal];
+        self.picture2.hidden = NO; [self.picture2.contentImgBtn setImage:self.normalUploadImgArray.lastObject forState:UIControlStateNormal];
         self.picture3.hidden = YES;
         self.uploadImgBtn.hidden = NO;
         self.uploadImgBtn.mj_x = self.picture3.mj_x;
     }
     
-    if (self.selectUploadImgArray.count==3) {
-        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.selectUploadImgArray.firstObject forState:UIControlStateNormal];
-        self.picture2.hidden = NO; [self.picture2.contentImgBtn setImage:self.selectUploadImgArray[1] forState:UIControlStateNormal];
-        self.picture3.hidden = NO; [self.picture3.contentImgBtn setImage:self.selectUploadImgArray.lastObject forState:UIControlStateNormal];
+    if (self.normalUploadImgArray.count==3) {
+        self.picture1.hidden = NO; [self.picture1.contentImgBtn setImage:self.normalUploadImgArray.firstObject forState:UIControlStateNormal];
+        self.picture2.hidden = NO; [self.picture2.contentImgBtn setImage:self.normalUploadImgArray[1] forState:UIControlStateNormal];
+        self.picture3.hidden = NO; [self.picture3.contentImgBtn setImage:self.normalUploadImgArray.lastObject forState:UIControlStateNormal];
         self.uploadImgBtn.hidden = NO;
         self.uploadImgBtn.hidden = YES;
     }
