@@ -102,6 +102,7 @@
 {
     _bullteChatView = [[FDanmakuView alloc]init];
     _bullteChatView.delegate = self;
+    _bullteChatView.userInteractionEnabled = NO;
     [self.view addSubview:_bullteChatView];
     [_bullteChatView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(self.view);

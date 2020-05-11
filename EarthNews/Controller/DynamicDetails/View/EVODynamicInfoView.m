@@ -35,7 +35,7 @@
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        self.bounds = CGRectMake(0, 161.5, 296, 323);
+        self.bounds = CGRectMake(0, 0, 296, 323);//
         [self setupUI];
     }
     return self;
