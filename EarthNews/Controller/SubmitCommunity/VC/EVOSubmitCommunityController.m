@@ -19,6 +19,10 @@
 @property (nonatomic, strong) EVOSubmitCustomBtn * picture1;
 @property (nonatomic, strong) EVOSubmitCustomBtn * picture3;
 @property (nonatomic, strong) EVOSubmitCustomBtn * picture2;
+@property (weak, nonatomic) IBOutlet UIView *bottomLayerView;
+@property (weak, nonatomic) IBOutlet UILabel *localAddressLabel;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topHeight;
 @property (nonatomic, strong) NSMutableArray <UIImage *>* selectUploadImgArray; //缩略图
 @property (nonatomic, strong) NSMutableArray <UIImage *>* normalUploadImgArray; //原图
 @end
@@ -32,6 +36,9 @@
     self.normalUploadImgArray = [NSMutableArray array];
     
     self.navBarHeightConstraint.constant = kStatusBarHeight+kNavigationBarHeight;
+    
+    self.bottomLayerView.layer.cornerRadius = 14;
+    self.localAddressLabel.text = @"成都";
     
     self.view.backgroundColor = MainBgColor;
     self.inputTextView.backgroundColor = SecondBgColor;
@@ -76,7 +83,9 @@
     };
     
     NSInteger itemSize = (kScreenWidth-34)/3;
-    NSInteger top = kStatusBarHeight+kNavigationBarHeight+211;
+    NSInteger top = kStatusBarHeight+kNavigationBarHeight+198+15;
+    
+    self.topHeight.constant = 30+itemSize;
     
     [self.uploadImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(itemSize);

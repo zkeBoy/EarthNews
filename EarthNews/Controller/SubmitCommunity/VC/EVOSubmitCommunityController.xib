@@ -10,8 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EVOSubmitCommunityController">
             <connections>
+                <outlet property="bottomLayerView" destination="z0H-18-MF6" id="7sX-RN-ZHW"/>
                 <outlet property="inputTextView" destination="4zX-QD-ZM0" id="vxF-fa-1zH"/>
                 <outlet property="navBarHeightConstraint" destination="fof-ft-Grj" id="7VD-5G-TqX"/>
+                <outlet property="topHeight" destination="sbq-ER-Cvn" id="942-8I-9Wt"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c9X-zN-gjR"/>
             </connections>
         </placeholder>
@@ -79,14 +81,46 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0H-18-MF6">
+                    <rect key="frame" x="13" y="430" width="68" height="28"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="local" translatesAutoresizingMaskIntoConstraints="NO" id="kTA-bv-kO3">
+                            <rect key="frame" x="11" y="8" width="9" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="9" id="DPt-0V-lD8"/>
+                                <constraint firstAttribute="height" constant="12" id="N3r-Gz-Hhx"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7b-Kk-Lsm">
+                            <rect key="frame" x="26" y="6.5" width="25" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="Neu-NU-Q69"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="S7b-Kk-Lsm" firstAttribute="centerY" secondItem="z0H-18-MF6" secondAttribute="centerY" id="8dt-A5-LNT"/>
+                        <constraint firstItem="kTA-bv-kO3" firstAttribute="centerY" secondItem="z0H-18-MF6" secondAttribute="centerY" id="AzO-Jh-zM2"/>
+                        <constraint firstAttribute="height" constant="28" id="hCy-r8-xgJ"/>
+                        <constraint firstItem="kTA-bv-kO3" firstAttribute="leading" secondItem="z0H-18-MF6" secondAttribute="leading" constant="11" id="mIg-be-XEi"/>
+                        <constraint firstItem="S7b-Kk-Lsm" firstAttribute="leading" secondItem="kTA-bv-kO3" secondAttribute="trailing" constant="6" id="oqW-up-TGD"/>
+                        <constraint firstAttribute="width" constant="68" id="r4N-MJ-rPV"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="vtS-4z-rTH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="8ZO-zT-RPv"/>
+                <constraint firstItem="z0H-18-MF6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="13" id="IdZ-H0-eX7"/>
                 <constraint firstItem="vtS-4z-rTH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LHA-2n-Ea2"/>
                 <constraint firstItem="4zX-QD-ZM0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="TgX-vt-lsS"/>
                 <constraint firstItem="4zX-QD-ZM0" firstAttribute="top" secondItem="vtS-4z-rTH" secondAttribute="bottom" id="axn-41-CPM"/>
                 <constraint firstItem="4zX-QD-ZM0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sKZ-E8-krT"/>
+                <constraint firstItem="z0H-18-MF6" firstAttribute="top" secondItem="4zX-QD-ZM0" secondAttribute="bottom" constant="144" id="sbq-ER-Cvn"/>
                 <constraint firstItem="vtS-4z-rTH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tiC-1e-Mmo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -95,5 +129,6 @@
     </objects>
     <resources>
         <image name="icon_back" width="10" height="18"/>
+        <image name="local" width="9" height="12"/>
     </resources>
 </document>
