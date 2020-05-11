@@ -58,12 +58,14 @@
     
     WeakSelf(self);
     self.newsListView = [[EVOHomeNewsListView alloc] initWithFrame:CGRectMake(0, kStatusBarHeight+top+kScreenWidth+18, kScreenWidth, 172)];
+    self.newsListView.clickSelectNewsItemBlock = ^(EVOUserCommunityDataObj * _Nonnull dataObj) {
+        [WeakSelf clickToMapDetailAction:dataObj];
+    };
     [self.view addSubview:self.newsListView];
-    
 }
 
 #pragma mark - 跳转地图详情
-- (void)clickToMapDetailAction {
+- (void)clickToMapDetailAction:(EVOUserCommunityDataObj *)dataObj {
     
 }
 

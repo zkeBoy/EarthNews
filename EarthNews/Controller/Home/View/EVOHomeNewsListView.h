@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOHomeNewsListView : UIView <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic,   copy) void (^clickSelectNewsItemBlock)(void);
+@property (nonatomic,   copy) void (^clickSelectNewsItemBlock)(EVOUserCommunityDataObj * dataObj);
 @property (nonatomic, strong) EVOCommunityDataManager * dataManager;
 @end
 

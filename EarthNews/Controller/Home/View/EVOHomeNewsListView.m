@@ -60,8 +60,9 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EVOUserCommunityDataObj * dataObj = self.dataManager.homeSourceArray[indexPath.row];
     if (self.clickSelectNewsItemBlock) {
-        self.clickSelectNewsItemBlock();
+        self.clickSelectNewsItemBlock(dataObj);
     }
 }
 
