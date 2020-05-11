@@ -21,8 +21,8 @@
 @property (nonatomic, strong) EVOSubmitCustomBtn * picture2;
 @property (weak, nonatomic) IBOutlet UIView *bottomLayerView;
 @property (weak, nonatomic) IBOutlet UILabel *localAddressLabel;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topHeight;
+
 @property (nonatomic, strong) NSMutableArray <UIImage *>* selectUploadImgArray; //缩略图
 @property (nonatomic, strong) NSMutableArray <UIImage *>* normalUploadImgArray; //原图
 @end
