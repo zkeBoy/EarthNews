@@ -120,6 +120,7 @@
         self.topScrollview.localizationImageNamesGroup = imgArra;
         self.imgCount = imgArra.count;
         self.likeBtn.hidden = YES;
+        self.moreBtn.hidden = YES;
     }else {
         //他人动态
         NSArray * imgs = [obj.Image_1 componentsSeparatedByString:@";"];

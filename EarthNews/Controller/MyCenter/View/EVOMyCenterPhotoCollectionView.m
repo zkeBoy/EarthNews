@@ -91,7 +91,12 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    EVOUserCommunityDataObj * dataObj = [EVOCommunityDataManager shareCommunityDataManager].mySelfSourceArray[indexPath.row];
+    EVOUserCommunityDataObj * dataObj;
+    if (self.cType==MyCollectionTypeGuiJi) {
+        dataObj = [EVOCommunityDataManager shareCommunityDataManager].mySelfSourceArray[indexPath.row];
+    }else {
+        dataObj = [EVOCommunityDataManager shareCommunityDataManager].othreSourceArray[indexPath.row];
+    }
     EVODynamicDetailsVC * vc  = [EVODynamicDetailsVC new];
     vc.objModel = dataObj;
     [[EVONormalToolManager shareManager].currentViewController.navigationController pushViewController:vc animated:YES];

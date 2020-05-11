@@ -17,6 +17,7 @@
 #import "EVOBullevchatModel.h"
 #import "EVOUserDataManager.h"
 #import "EVOInputCommentView.h"
+#import "EVOCommunityDataManager.h"
 
 @interface EVODynamicDetailsVC ()<MAMapViewDelegate,FDanmakuViewProtocol>
 @property (nonatomic, strong) MAMapView *mapView;
@@ -176,6 +177,7 @@
     
     [self.view addSubview:_inputView];
 }
+
 //MARK: 添加弹幕
 - (void)addBullteChat {
     
@@ -228,7 +230,7 @@
             } else if (btnTag == 1){
                 [weakSelf.inputView.commentTextView becomeFirstResponder];
             } else {
-              
+                [weakSelf clickJuBaoSomeOneAction:weakSelf.objModel];
             }
         };
         poiAnnotationView.clickCommunityPictureBlock = ^(EVOUserCommunityDataObj *dataObj, NSInteger page) {
@@ -301,5 +303,27 @@
     [self.bullteChatView.modelsArr addObject:model];
 }
 
+- (void)clickJuBaoSomeOneAction:(EVOUserCommunityDataObj *)dataObj {
+    NSDictionary * dic = @{@"title":@"屏蔽",
+                           @"color":RGBHex(@"#005FFF")
+    };
+    
+    NSDictionary * dic1 = @{@"title":@"举报",
+                           @"color":RGBHex(@"#FF3535")
+    };
+    
+    NSArray * sections = @[dic,dic1];
+    
+    [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
+        if (selectIndex==0) {
+            [self.navigationController popViewControllerAnimated:YES];
+            //屏蔽
+            [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:dataObj];
+        }else {
+            //举报
+            [self showToastText:@"举报成功!"];
+        }
+    } clickCancelBlock:nil];
+}
 
 @end
