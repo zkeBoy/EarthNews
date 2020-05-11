@@ -18,6 +18,8 @@
         [self setUIConfig];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDataList) name:EVOShildeOtherCommunitySuccessKey object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDataList) name:EVOHomeRequestCommunitySuccessKey object:nil];
     }
     return self;
 }

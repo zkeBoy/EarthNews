@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EVONetworkURLPathManager.h"
 
 typedef NS_ENUM(NSUInteger, HTTPMethod) {
     HTTPMethodGet    = 1,

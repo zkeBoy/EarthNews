@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "EVOUserCommunityDataObj.h"
+#import "EVONetworkEngineManager.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EVOCommunityDataManager : NSObject

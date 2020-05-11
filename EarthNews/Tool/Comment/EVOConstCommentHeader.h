@@ -18,4 +18,6 @@
 
 #define EVOShildeOtherCommunitySuccessKey @"EVOShildeOtherCommunitySuccessKey" //屏蔽他人动态
 
+#define EVOHomeRequestCommunitySuccessKey @"EVOHomeRequestCommunitySuccessKey" //首页请求动态数据完成
+
 #endif /* EVOConstCommentHeader_h */

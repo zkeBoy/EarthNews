@@ -35,7 +35,7 @@
         self.mySelfSourceArray = [NSMutableArray array];
         self.othreSourceArray = [NSMutableArray array];
         
-        [self readLocalJsonData];
+        [self requestCommunityData];
         
         //我的轨迹文件路径创建
         [self checkMyCommunityPath];
@@ -71,6 +71,18 @@
         self.dataSourceArray = [EVOUserCommunityDataObj mj_objectArrayWithKeyValuesArray:jsonObj];
         self.homeSourceArray = [NSMutableArray arrayWithArray:self.dataSourceArray];
     }
+}
+
+- (void)requestCommunityData {
+    [[EVONetworkEngineManager shareNetworkEngineManager] requestWithHTTPMethod:HTTPMethodGet URLString:communityDataUrl parameters:nil response:^(id  _Nullable result) {
+        if (!result) {
+            [self readLocalJsonData];
+        }else {
+            self.dataSourceArray = [EVOUserCommunityDataObj mj_objectArrayWithKeyValuesArray:result];
+            self.homeSourceArray = [NSMutableArray arrayWithArray:self.dataSourceArray];
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOHomeRequestCommunitySuccessKey object:nil];
+    }];
 }
 
 #pragma mark - Private Method

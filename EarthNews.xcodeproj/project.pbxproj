@@ -53,6 +53,7 @@
 		0A5C0DA7246932420018E88F /* PrivacyPolicy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA5246932420018E88F /* PrivacyPolicy.pdf */; };
 		0A5C0DA8246932420018E88F /* TermsOfUse.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA6246932420018E88F /* TermsOfUse.pdf */; };
 		0A5C0DAA24693D6B0018E88F /* community_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA924693D6B0018E88F /* community_test.json */; };
+		0A5C0DAD2469414C0018E88F /* EVONetworkURLPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0DAC2469414C0018E88F /* EVONetworkURLPathManager.m */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -178,6 +179,8 @@
 		0A5C0DA5246932420018E88F /* PrivacyPolicy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PrivacyPolicy.pdf; sourceTree = "<group>"; };
 		0A5C0DA6246932420018E88F /* TermsOfUse.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TermsOfUse.pdf; sourceTree = "<group>"; };
 		0A5C0DA924693D6B0018E88F /* community_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = community_test.json; sourceTree = "<group>"; };
+		0A5C0DAB2469414C0018E88F /* EVONetworkURLPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVONetworkURLPathManager.h; sourceTree = "<group>"; };
+		0A5C0DAC2469414C0018E88F /* EVONetworkURLPathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONetworkURLPathManager.m; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* EarthNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -695,6 +698,8 @@
 			children = (
 				0ACD6DF72463DE98006C65FA /* EVONetworkEngineManager.h */,
 				0ACD6DF82463DE98006C65FA /* EVONetworkEngineManager.m */,
+				0A5C0DAB2469414C0018E88F /* EVONetworkURLPathManager.h */,
+				0A5C0DAC2469414C0018E88F /* EVONetworkURLPathManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -987,6 +992,7 @@
 				0A5C0D942468FA980018E88F /* EVOBulletChatView.m in Sources */,
 				0ACD6E062463F221006C65FA /* EVOMessageViewController.m in Sources */,
 				0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */,
+				0A5C0DAD2469414C0018E88F /* EVONetworkURLPathManager.m in Sources */,
 				0ACD6E3824653064006C65FA /* EVOAppEnterViewController.m in Sources */,
 				0A5C0D582468FA570018E88F /* XLProgressView.m in Sources */,
 				0ACD6DD62463B095006C65FA /* EVONavigationController.m in Sources */,

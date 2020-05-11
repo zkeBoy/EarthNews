@@ -28,19 +28,25 @@
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/xml", @"text/plain", nil];
     switch (method) {
-        case HTTPMethodGet:
+        case HTTPMethodGet:{
             [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                
+                if (responseBlock) {
+                    responseBlock(responseObject);
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
             }];
+        }
             break;
-        case HTTPMethodPost:
+        case HTTPMethodPost:{
             [manager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                
+                if (responseBlock) {
+                    responseBlock(responseObject);
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
             }];
+        }
             break;
         default:
             break;
