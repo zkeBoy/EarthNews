@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy)NSString *content;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString * imageUrl;
 @end
 
 NS_ASSUME_NONNULL_END

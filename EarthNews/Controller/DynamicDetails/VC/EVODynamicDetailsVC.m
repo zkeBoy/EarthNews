@@ -15,6 +15,7 @@
 #import "EVOBulletChatView.h"
 #import "FDanmakuView.h"
 #import "EVOBullevchatModel.h"
+#import "EVOUserDataManager.h"
 #import "EVOInputCommentView.h"
 
 @interface EVODynamicDetailsVC ()<MAMapViewDelegate,FDanmakuViewProtocol>
@@ -45,8 +46,8 @@
     [self.view addSubview:self.mapView];
     [self.view sendSubviewToBack:self.mapView];
     
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(30.66074, 104.06327);
-    
+    //CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(30.66074, 104.06327);
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.objModel.latitude, self.objModel.longitude);
     NSMutableArray *poiAnnotations = [NSMutableArray new];
     EVOAnnotation * annotation = [[EVOAnnotation alloc]init];
     annotation.coordinate = coordinate;
@@ -60,6 +61,10 @@
     [self setupInputView];
     [self setupTitleViews];
     [self addNotifacaitons];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self addBullteChat];
+    });
 }
 - (void)setupTitleViews
 {
@@ -92,6 +97,7 @@
         make.height.equalTo(@(88));
     }];
 }
+
 - (void)setupBullteChatView
 {
     _bullteChatView = [[FDanmakuView alloc]init];
@@ -102,6 +108,7 @@
         make.height.equalTo(@(250));
     }];
 }
+
 - (void)popBackClick
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -114,6 +121,7 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
+
 - (void)keyBoardWillShow:(NSNotification *)notification{
     NSDictionary *info = [notification userInfo];
     CGFloat keyboardAnimationDurtion = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
@@ -125,6 +133,7 @@
     }];
 //_keyBoardIsShow = YES;
 }
+
 - (void)keyBoardWillHide:(NSNotification *)notification{
     NSDictionary *info = [notification userInfo];
     CGFloat keyboardAnimationDurtion = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
@@ -133,9 +142,11 @@
         self.inputView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 49);
     }];
 }
+
 - (void)keyBoardDidHide:(NSNotification *)notification{
 //    _keyBoardIsShow = NO;
 }
+
 //MARK: 输入框
 - (void)setupInputView
 {
@@ -143,32 +154,38 @@
     __weak typeof(self) weakSelf = self;
     _inputView.sendCommentsBlock = ^(NSString *comments) {
         EVOBullevchatModel * model = [EVOBullevchatModel new];
-        model.beginTime = .1;
-        model.liveTime = 2;
+        model.beginTime = arc4random()%3;
+        model.liveTime = arc4random()%3+3;
+        model.image = [YYImage imageWithData:[EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg];
         model.content = comments;
-        model.name = @"张三";
+        model.name = [EVOUserDataManager shareUserDataManager].userDataObj.userName;
         [weakSelf.bullteChatView.modelsArr addObject:model];
     };
     
     [self.view addSubview:_inputView];
 }
 //MARK: 添加弹幕
-- (void)addBullteChat{
-    EVOBullevchatModel *model1 = [[EVOBullevchatModel alloc]init];
-    model1.beginTime = .1;
-    model1.liveTime = 2;
-    model1.content = @"哈哈哈~😊🙂😎~~~";
-    model1.name = @"张三";
+- (void)addBullteChat {
     
-    EVOBullevchatModel *model2 = [[EVOBullevchatModel alloc]init];
-    model2.beginTime = 1;
-    model2.liveTime = 3;
-    model2.content = @"23322333";
-    model2.name = @"李四";
-       
-    [self.bullteChatView.modelsArr addObject:model1];
-    [self.bullteChatView.modelsArr addObject:model2];
+    NSArray * imgs = [self.objModel.reviewImage componentsSeparatedByString:@";"];
+    NSArray * titles = [self.objModel.review componentsSeparatedByString:@";"];
+    for (NSString * reviewHeadImg in imgs) {
+        NSInteger idx = 0;
+        EVOBullevchatModel *model1 = [[EVOBullevchatModel alloc]init];
+        model1.beginTime = arc4random()%3;
+        model1.liveTime = arc4random()%3+1;
+        if (self.objModel.isSelf) {
+            model1.image = [UIImage imageWithData:self.objModel.userHeadImg];
+        } else {
+            model1.imageUrl = reviewHeadImg;
+        }
+        model1.content = titles[idx];
+        model1.name = @"张三";
+        idx++;
+        [self.bullteChatView.modelsArr addObject:model1];
+    }
 }
+
 //MARK: MAMapViewDelegate
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
@@ -221,13 +238,17 @@
     chatView.model = model;
     return chatView;
 }
+
 - (void)danmuViewDidClick:(UIView *)danmuView at:(CGPoint)point
 {
     
 }
+
 - (void)danmakuViewEndWithModel:(EVOBullevchatModel *)model
 {
+    //更新速度
+    model.beginTime = arc4random()%3;
+    model.liveTime = arc4random()%3+1;
     [self.bullteChatView.modelsArr addObject:model];
-
 }
 @end

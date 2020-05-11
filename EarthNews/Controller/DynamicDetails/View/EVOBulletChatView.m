@@ -61,7 +61,11 @@
 {
     _model = model;
     
-    self.headImg.image = _model.image;
+    if (model.imageUrl) {
+        [self.headImg sd_setImageWithURL:[NSURL URLWithString:_model.imageUrl] placeholderImage:[UIImage imageNamed:@"default_head"]];
+    } else {
+        self.headImg.image = _model.image;
+    }
     self.contentLabel.text = _model.content;
     self.nameLabel.text = _model.name;
 }
