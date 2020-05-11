@@ -39,7 +39,7 @@
     [AMapServices sharedServices].apiKey = EVOAMapKey;
     
     self.mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
-    self.mapView.zoomLevel = 19;
+    self.mapView.zoomLevel = 12;
     self.mapView.delegate = self;
 
     self.mapView.rotateEnabled = NO;
