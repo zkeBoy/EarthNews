@@ -150,10 +150,11 @@
         _topScrollview.autoScroll = NO;
         _topScrollview.infiniteLoop = YES;
         _topScrollview.autoScroll = YES;
+        _topScrollview.showPageControl = NO;
         _topScrollview.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
         __weak typeof(self) weakSelf = self;
         _topScrollview.itemDidScrollOperationBlock = ^(NSInteger currentIndex) {
-            weakSelf.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld",currentIndex+1,weakSelf.imgCount];
+            weakSelf.indexLabel.text = [NSString stringWithFormat:@"%d/%ld",currentIndex+1,(long)weakSelf.imgCount];
         };
     }
     return _topScrollview;
