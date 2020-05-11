@@ -123,7 +123,8 @@
     [self.view endEditing:YES];
     //选择头像
     [[EVONormalToolManager shareManager] takePhotoAlbumImage:^(UIImage * _Nonnull image) {
-        self.userHeadImgView.image = image;
+        UIImage * newImg = [image imageCompressFitSize:CGSizeMake(20, 20)];
+        self.userHeadImgView.image = newImg;
         self.headImg = image;
     }];
 }

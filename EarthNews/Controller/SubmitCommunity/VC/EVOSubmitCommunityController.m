@@ -160,7 +160,8 @@
         return;
     }
     [[EVONormalToolManager shareManager] takePhotoAlbumImage:^(UIImage * _Nonnull image) {
-        [self.selectUploadImgArray addObject:image];
+        UIImage * newImg = [image imageCompressFitSize:CGSizeMake(38, 38)];
+        [self.selectUploadImgArray addObject:newImg];
         [self refreshSelectImgBtn];
     }];
 }

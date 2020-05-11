@@ -79,10 +79,10 @@
     if (dataObj.userHeadImg) {
         //个人发布的动态
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            UIImage * userImg = [UIImage imageWithData:dataObj.userHeadImg scale:.05];
+            UIImage * userImg = [YYImage imageWithData:dataObj.userHeadImg];
             dispatch_async(dispatch_get_main_queue(), ^{
-                //self.userHeadImgView.image = userImg;
-                [self.userHeadImgView sd_setImageWithURL:nil placeholderImage:userImg];
+                self.userHeadImgView.image = userImg;
+                //[self.userHeadImgView sd_setImageWithURL:nil placeholderImage:userImg];
             });
         });
         
@@ -94,10 +94,10 @@
             self.pictureTwoImgView.hidden = YES;
             
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                UIImage * image = [UIImage imageWithData:imgs.firstObject scale:.05];
+                UIImage * image = [YYImage imageWithData:imgs.firstObject scale:.05];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    //self.pictureOneImgView.image = image;
-                    [self.pictureOneImgView sd_setImageWithURL:nil placeholderImage:image];
+                    self.pictureOneImgView.image = image;
+                    //[self.pictureOneImgView sd_setImageWithURL:nil placeholderImage:image];
                 });
             });
             
@@ -107,8 +107,8 @@
             self.pictureTwoImgView.hidden = YES;
             
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                UIImage * image = [UIImage imageWithData:imgs.firstObject];
-                UIImage * image2 = [UIImage imageWithData:imgs.lastObject];
+                UIImage * image = [YYImage imageWithData:imgs.firstObject];
+                UIImage * image2 = [YYImage imageWithData:imgs.lastObject];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.pictureOneImgView.image = image;
                     self.pictureTwoImgView.image = image2;
@@ -120,9 +120,9 @@
             self.pictureTwoImgView.hidden = NO;
             
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                UIImage * image = [UIImage imageWithData:imgs.firstObject];
-                UIImage * image2 = [UIImage imageWithData:imgs[1]];
-                UIImage * image3 = [UIImage imageWithData:imgs.lastObject];
+                UIImage * image = [YYImage imageWithData:imgs.firstObject];
+                UIImage * image2 = [YYImage imageWithData:imgs[1]];
+                UIImage * image3 = [YYImage imageWithData:imgs.lastObject];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.pictureOneImgView.image = image;
                     self.pictureTwoImgView.image = image2;
