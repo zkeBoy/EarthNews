@@ -40,7 +40,7 @@
     titleLabel.textColor = UIColor.whiteColor;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = BFont(17);
-    titleLabel.text = @"社区规范";
+    titleLabel.text = self.type==RulePriveteType?@"隐私政策":@"服务条款";
     [self.topView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.topView);
@@ -48,14 +48,18 @@
     }];
     
     CGRect frame = CGRectMake(0, kNavigationBarHeight+kStatusBarHeight, kScreenWidth, kScreenHeight-kNavigationBarHeight-kStatusBarHeight);
-    [EVOWebViewTool initWebViewPath:PrivateRulePath toView:self.view frame:frame];
+    if (self.type==RulePriveteType) {
+        [EVOWebViewTool initWebViewPath:LocalFilePath(@"PrivacyPolicy", @"pdf") toView:self.view frame:frame];
+    }else {
+        [EVOWebViewTool initWebViewPath:LocalFilePath(@"TermsOfUse", @"pdf") toView:self.view frame:frame];
+    }
     
     self.view.backgroundColor = MainBgColor;
     
     [self.view addSubview:self.submitBtn];
     [self.submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(10);
-        make.bottom.equalTo(self.view).offset(-167);
+        make.bottom.equalTo(self.view).offset(-107);
         make.right.equalTo(self.view).offset(-10);
         make.height.mas_equalTo(46);
     }];
@@ -63,9 +67,12 @@
 
 #pragma mark - Private Method
 - (void)clickCompleteAction {
-    [[EVOUserDataManager shareUserDataManager] saveUserData:[EVOUserDataManager shareUserDataManager].userDataObj];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSignUpSuccessKey object:nil];
+    if (self.isSetting) {
+        [self clickBackAction];
+    }else {
+        [[EVOUserDataManager shareUserDataManager] saveUserData:[EVOUserDataManager shareUserDataManager].userDataObj];
+        [[NSNotificationCenter defaultCenter] postNotificationName:EVOUserSignUpSuccessKey object:nil];
+    }
 }
 
 - (void)clickBackAction {

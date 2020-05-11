@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import <QuickLook/QuickLook.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EVOWebViewTool : UIView
+@interface EVOWebViewTool : UIView <UIWebViewDelegate>
 @property (nonatomic, strong) WKWebView * webView;
 @property (nonatomic,   copy) NSString  * path;
 + (void)initWebViewPath:(NSString *)path toView:(UIView *)view frame:(CGRect)frame;

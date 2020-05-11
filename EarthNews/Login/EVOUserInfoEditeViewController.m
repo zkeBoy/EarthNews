@@ -109,6 +109,8 @@
     
     if (self.isSignUp) {
         EVOPrivateRuleViewController * ruleVC = [EVOPrivateRuleViewController new];
+        ruleVC.type = RulePriveteType;
+        ruleVC.isSetting = NO;
         [self.navigationController pushViewController:ruleVC animated:YES];
     }else {
         [self clickBackAction:nil];

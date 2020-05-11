@@ -8,6 +8,7 @@
 
 #import "EVOSettingViewController.h"
 #import "EVOConnectUsViewController.h"
+#import "EVOPrivateRuleViewController.h"
 #import "EVOUserDataManager.h"
 
 @interface EVOSettingViewController ()
@@ -38,11 +39,17 @@
 }
 
 - (IBAction)privateRuleAction:(id)sender {//隐私政策
-
+    EVOPrivateRuleViewController * ruleVC = [EVOPrivateRuleViewController new];
+    ruleVC.type = RulePriveteType;
+    ruleVC.isSetting = YES;
+    [self.navigationController pushViewController:ruleVC animated:YES];
 }
 
 - (IBAction)serviceAction:(id)sender {//服务条款
-
+    EVOPrivateRuleViewController * ruleVC = [EVOPrivateRuleViewController new];
+    ruleVC.type = RuleServiceType;
+    ruleVC.isSetting = YES;
+    [self.navigationController pushViewController:ruleVC animated:YES];
 }
 
 - (IBAction)clickBackAction:(id)sender {
