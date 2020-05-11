@@ -36,15 +36,15 @@
     }];
     
     [self.pictureOneImgView addTapActionWithBlock:^(UIGestureRecognizer * tap) {
-        [WeakSelf showImgsBrowserPage:1];
+        [WeakSelf showImgsBrowserPage:0];
     }];
     
     [self.pictureTwoImgView addTapActionWithBlock:^(UIGestureRecognizer * tap) {
-        [WeakSelf showImgsBrowserPage:2];
+        [WeakSelf showImgsBrowserPage:1];
     }];
     
     [self.pictureThreeImgView addTapActionWithBlock:^(UIGestureRecognizer * tap) {
-        [WeakSelf showImgsBrowserPage:3];
+        [WeakSelf showImgsBrowserPage:2];
     }];
 }
 
@@ -55,9 +55,9 @@
     
     self.userHeadImgView.contentMode = UIViewContentModeScaleToFill;
     
-    self.pictureOneImgView.contentMode = UIViewContentModeScaleToFill;
-    self.pictureTwoImgView.contentMode = UIViewContentModeScaleToFill;
-    self.pictureThreeImgView.contentMode = UIViewContentModeScaleToFill;
+    self.pictureOneImgView.contentMode = UIViewContentModeScaleAspectFill;
+    self.pictureTwoImgView.contentMode = UIViewContentModeScaleAspectFill;
+    self.pictureThreeImgView.contentMode = UIViewContentModeScaleAspectFill;
     
     NSInteger space = (kScreenWidth-114*3-26)/2;
     
@@ -103,8 +103,8 @@
             
         }else if (imgs.count==2){
             self.pictureOneImgView.hidden = NO;
-            self.pictureThreeImgView.hidden = NO;
-            self.pictureTwoImgView.hidden = YES;
+            self.pictureThreeImgView.hidden = YES;
+            self.pictureTwoImgView.hidden = NO;
             
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 UIImage * image = [YYImage imageWithData:imgs.firstObject];

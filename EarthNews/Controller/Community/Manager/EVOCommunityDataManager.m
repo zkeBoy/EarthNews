@@ -80,6 +80,14 @@
         }else {
             self.dataSourceArray = [EVOUserCommunityDataObj mj_objectArrayWithKeyValuesArray:result];
             self.homeSourceArray = [NSMutableArray arrayWithArray:self.dataSourceArray];
+            
+            //从本地读取我的轨迹
+            NSArray * myCommunityArray = [NSKeyedUnarchiver unarchiveObjectWithFile:EVOMyCenterCommunityPath];
+            if (myCommunityArray) {
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, myCommunityArray.count)];
+                //将本地数据添加到动态列表中
+                [self.dataSourceArray insertObjects:myCommunityArray atIndexes:indexSet];
+            }
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:EVOHomeRequestCommunitySuccessKey object:nil];
     }];

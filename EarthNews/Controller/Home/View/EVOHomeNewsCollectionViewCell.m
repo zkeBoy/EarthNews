@@ -23,7 +23,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.bgContentView.contentMode = UIViewContentModeScaleToFill;
+    self.bgContentView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)setDataObj:(EVOUserCommunityDataObj *)dataObj {
