@@ -26,6 +26,10 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <YBImageBrowser/YBImageBrowser.h>
 #import <YYImage/YYImage.h>
+#import "EVOLocation.h"
+#import "EVOBullevchatModel.h"
+
+#define EVOAMapKey @"2791d77aa5fc8241994e51cc4cb9be8a"
 
 
 //HEX颜色值转化

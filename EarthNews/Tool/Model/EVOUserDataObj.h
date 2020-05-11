@@ -16,7 +16,7 @@ kSPrStrong(NSData   * userHeadImg);
 kSPrCopy__(NSString * userSex);
 kSPrCopy__(NSString * birthDay);
 kSPrCopy__(NSString * userAge);
-kSPrCopy__(NSString * location);
+kSPrCopy__(NSString * location); //定位
 @end
 
 NS_ASSUME_NONNULL_END

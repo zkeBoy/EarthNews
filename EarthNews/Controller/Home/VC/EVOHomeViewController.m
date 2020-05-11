@@ -11,6 +11,7 @@
 #import "EVOMapDetailViewController.h"
 #import <SceneKit/SceneKit.h>
 #import "GlobeScene.h"
+#import "EVODynamicDetailsVC.h"
 
 @interface EVOHomeViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sceneHeight;
@@ -66,7 +67,9 @@
 
 #pragma mark - 跳转地图详情
 - (void)clickToMapDetailAction:(EVOUserCommunityDataObj *)dataObj {
-    
+    EVODynamicDetailsVC * vc  = [EVODynamicDetailsVC new];
+    vc.objModel = dataObj;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

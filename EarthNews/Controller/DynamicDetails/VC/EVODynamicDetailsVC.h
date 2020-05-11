@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EVOUserCommunityDataObj.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface EVODynamicDetailsVC : UIViewController
 
+@property (nonatomic, strong) EVOUserCommunityDataObj *objModel;
+
 @end
 
-NS_ASSUME_NONNULL_END
+

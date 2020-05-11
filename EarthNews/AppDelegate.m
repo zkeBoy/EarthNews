@@ -34,6 +34,10 @@
         [self compareUserLoginStatus];
     }
     
+    //MARK:定位相关
+    [[EVOLocation shareInstance] registerLocationAMap];
+    [[EVOLocation shareInstance] getUserLocationAddress];
+    
     return YES;
 }
 
