@@ -8,6 +8,7 @@
 
 #import "EVODynamicInfoView.h"
 #import "SDCycleScrollView.h"
+#import "EVOCommunityDataManager.h"
 
 @interface EVODynamicInfoView ()<SDCycleScrollViewDelegate>
 
@@ -101,11 +102,14 @@
     if (self.btnsOnClickBlock) {
         self.btnsOnClickBlock(sender.tag);
     }
+    
+    [[EVOCommunityDataManager shareCommunityDataManager] addGoodsOtherCommunityData:self.dataObj];
 }
 
 //MARK: SET DATA
 - (void)setInfoWithObj:(EVOUserCommunityDataObj *)obj
 {
+    self.dataObj = obj;
     //self.topScrollview.imageURLStringsGroup = obj;
     if (obj.userHeadImg) {
         //自己的动态

@@ -467,18 +467,8 @@
 		0A5C0D862468FA980018E88F /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				0A5C0D8C2468FA980018E88F /* EVOAnnotation.h */,
-				0A5C0D912468FA980018E88F /* EVOAnnotation.m */,
-				0A5C0D872468FA980018E88F /* EVOBulletChatView.h */,
-				0A5C0D8D2468FA980018E88F /* EVOBulletChatView.m */,
-				0A5C0D922468FA980018E88F /* EVOBullevchatModel.h */,
-				0A5C0D8B2468FA980018E88F /* EVOBullevchatModel.m */,
 				0A5C0D892468FA980018E88F /* EVODynamicDetailsVC.h */,
 				0A5C0D8E2468FA980018E88F /* EVODynamicDetailsVC.m */,
-				0A5C0D882468FA980018E88F /* EVODynamicInfoView.h */,
-				0A5C0D8F2468FA980018E88F /* EVODynamicInfoView.m */,
-				0A5C0D8A2468FA980018E88F /* EVOInputCommentView.h */,
-				0A5C0D902468FA980018E88F /* EVOInputCommentView.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -493,6 +483,30 @@
 				0A5C0D9E2468FABB0018E88F /* FDanmakuView.m */,
 			);
 			path = DanmakuView;
+			sourceTree = "<group>";
+		};
+		0A5C0DA12469213D0018E88F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0D872468FA980018E88F /* EVOBulletChatView.h */,
+				0A5C0D8D2468FA980018E88F /* EVOBulletChatView.m */,
+				0A5C0D882468FA980018E88F /* EVODynamicInfoView.h */,
+				0A5C0D8F2468FA980018E88F /* EVODynamicInfoView.m */,
+				0A5C0D8A2468FA980018E88F /* EVOInputCommentView.h */,
+				0A5C0D902468FA980018E88F /* EVOInputCommentView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A5C0DA2246921450018E88F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A5C0D8C2468FA980018E88F /* EVOAnnotation.h */,
+				0A5C0D912468FA980018E88F /* EVOAnnotation.m */,
+				0A5C0D922468FA980018E88F /* EVOBullevchatModel.h */,
+				0A5C0D8B2468FA980018E88F /* EVOBullevchatModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0ACD6D9E2463A50E006C65FA = {
@@ -805,6 +819,8 @@
 		E38C25EF246647F800E6C70C /* DynamicDetails */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C0DA2246921450018E88F /* Model */,
+				0A5C0DA12469213D0018E88F /* View */,
 				0A5C0D862468FA980018E88F /* VC */,
 			);
 			path = DynamicDetails;

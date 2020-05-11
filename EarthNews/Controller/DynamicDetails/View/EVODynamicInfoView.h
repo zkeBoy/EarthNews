@@ -12,8 +12,7 @@
 typedef void(^btnsOnClickBlock)(NSInteger btnTag);
 @interface EVODynamicInfoView : MAAnnotationView
 @property (nonatomic, copy) btnsOnClickBlock btnsOnClickBlock;
-
-
+@property (nonatomic, strong) EVOUserCommunityDataObj * dataObj;
 - (void)setInfoWithObj:(EVOUserCommunityDataObj *)obj;
 @end
 
