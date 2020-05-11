@@ -228,4 +228,12 @@
     }
     return _indexLabel;
 }
+
+//MARK: SDCycleScrollViewDelegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    if (self.clickCommunityPictureBlock) {
+        self.clickCommunityPictureBlock(self.dataObj, index);
+    }
+}
+
 @end

@@ -40,8 +40,7 @@
     
     self.mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
     self.mapView.delegate = self;
-//    self.mapView.zoomEnabled = NO;
-//    self.mapView.scrollEnabled = NO;
+
     self.mapView.rotateEnabled = NO;
     [self.view addSubview:self.mapView];
     [self.view sendSubviewToBack:self.mapView];
@@ -66,6 +65,7 @@
         [self addBullteChat];
     });
 }
+
 - (void)setupTitleViews
 {
     UIImageView * backView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"details_top"]];
@@ -213,14 +213,14 @@
         poiAnnotationView.btnsOnClickBlock = ^(NSInteger btnTag) {
             if (btnTag == 0) {
                
-            } else if (btnTag == 1)
-            {
+            } else if (btnTag == 1){
                 [weakSelf.inputView.commentTextView becomeFirstResponder];
             } else {
               
             }
-            
-            
+        };
+        poiAnnotationView.clickCommunityPictureBlock = ^(EVOUserCommunityDataObj *dataObj, NSInteger page) {
+            [weakSelf showImgsBrowserPage:page communityData:dataObj];
         };
         return poiAnnotationView;
     }
@@ -228,17 +228,47 @@
     return nil;
 }
 
-- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
-{
-    
-   
+#pragma mark - Private Method
+- (void)showImgsBrowserPage:(NSInteger)page communityData:(EVOUserCommunityDataObj *)dataObj {
+    NSMutableArray * arr = [NSMutableArray array];
+    if (dataObj.userHeadImg) {
+        //本地图片
+        NSArray * imgs = dataObj.normalImgArray;
+        for (NSData * imgData in imgs) {
+            //UIImage * image = [UIImage imageWithData:imgData];
+            YBIBImageData *data1 = [YBIBImageData new];
+            data1.imageData = ^NSData * _Nullable{
+                return imgData;
+            };
+            data1.allowSaveToPhotoAlbum = NO;
+            [arr addObject:data1];
+        }
+    }else {
+        NSArray * imgs = [dataObj.Image_1 componentsSeparatedByString:@";"];
+        for (NSString * imglink in imgs) {
+            YBIBImageData *data1 = [YBIBImageData new];
+            data1.imageURL = [NSURL URLWithString:imglink];
+            data1.allowSaveToPhotoAlbum = NO;
+            [arr addObject:data1];
+        }
+    }
+    YBImageBrowser *browser = [YBImageBrowser new];
+    browser.dataSourceArray = arr;
+    browser.currentPage = page;
+    [browser show];
 }
+
+- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view {
+    
+}
+
 //MARK: FDanmakuViewProtocol
 -(NSTimeInterval)currentTime {
     static double time = 0;
     time += 0.1 ;
     return time;
 }
+
 - (UIView *)danmakuViewWithModel:(EVOBullevchatModel *)model
 {
     EVOBulletChatView * chatView = [[EVOBulletChatView alloc]init];
@@ -258,4 +288,6 @@
     model.liveTime = arc4random()%3+2;
     [self.bullteChatView.modelsArr addObject:model];
 }
+
+
 @end
