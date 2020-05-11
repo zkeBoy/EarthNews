@@ -34,6 +34,12 @@
         }
     }
     self.localAddressTextLabel.text = userDataObj.Nation;
+    
+    if (self.collectionType==0) {
+        self.rubbishBtn.hidden = NO;
+    }else {
+        self.rubbishBtn.hidden = YES;
+    }
 }
 
 - (IBAction)clickDeleteCommunityAction:(id)sender {

@@ -9,6 +9,7 @@
 #import "EVOMyCenterPhotoCollectionView.h"
 #import "EVOMyCenterPhotoViewCell.h"
 #import "EVOCommunityDataManager.h"
+#import "EVODynamicDetailsVC.h"
 
 @implementation EVOMyCenterPhotoCollectionView
 
@@ -73,6 +74,7 @@
     }else {
         dataObj = [EVOCommunityDataManager shareCommunityDataManager].othreSourceArray[indexPath.row];
     }
+    cell.collectionType = self.cType;
     cell.userDataObj = dataObj;
     cell.clickDeleteMyCommunityBlock = ^(EVOUserCommunityDataObj * _Nonnull dataObj) {
         //删除数据
@@ -89,7 +91,10 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    EVOUserCommunityDataObj * dataObj = [EVOCommunityDataManager shareCommunityDataManager].mySelfSourceArray[indexPath.row];
+    EVODynamicDetailsVC * vc  = [EVODynamicDetailsVC new];
+    vc.objModel = dataObj;
+    [[EVONormalToolManager shareManager].currentViewController.navigationController pushViewController:vc animated:YES];
 }
 
 /*

@@ -214,8 +214,8 @@
     }
     self.isComment = !self.isComment;*/
     
-    self.commentImgView.image = CreateImage(@"icon_good");
-    self.commentTextLabel.text = @"点赞";
+    self.commentImgView.image = CreateImage(@"icon_good_sel");
+    self.commentTextLabel.text = @"1";
     
     [[EVOCommunityDataManager shareCommunityDataManager] addGoodsOtherCommunityData:self.dataObj];
 }

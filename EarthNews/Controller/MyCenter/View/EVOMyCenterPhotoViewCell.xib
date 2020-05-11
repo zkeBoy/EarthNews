@@ -65,6 +65,7 @@
             <connections>
                 <outlet property="contentImgView" destination="5v0-6f-Uqb" id="VHK-C0-vjQ"/>
                 <outlet property="localAddressTextLabel" destination="IrY-hG-kSL" id="2dg-TF-Yvs"/>
+                <outlet property="rubbishBtn" destination="bJB-Kc-sVd" id="5bz-OH-Swz"/>
             </connections>
             <point key="canvasLocation" x="136.95652173913044" y="81.361607142857139"/>
         </collectionViewCell>
