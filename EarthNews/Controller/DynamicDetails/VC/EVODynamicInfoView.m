@@ -24,6 +24,8 @@
 @property (nonatomic, strong) UIButton *moreBtn;
 
 @property (nonatomic, strong) UILabel *indexLabel;
+
+@property (nonatomic, assign)NSInteger imgCount;
 @end
 
 @implementation EVODynamicInfoView
@@ -104,6 +106,23 @@
 - (void)setInfoWithObj:(EVOUserCommunityDataObj *)obj
 {
     //self.topScrollview.imageURLStringsGroup = obj;
+    if (obj.userHeadImg) {
+        //自己的动态
+        NSArray * imgs = obj.normalImgArray;
+        NSMutableArray * imgArra = [NSMutableArray new];
+        for (NSData * imgData in imgs) {
+            [imgArra addObject:[UIImage imageWithData:imgData]];
+        }
+        self.topScrollview.localizationImageNamesGroup = imgArra;
+        self.imgCount = imgArra.count;
+    }else {
+        //他人动态
+        NSArray * imgs = [obj.Image_1 componentsSeparatedByString:@";"];
+        self.topScrollview.imageURLStringsGroup = imgs;
+        self.imgCount = imgs.count;
+    }
+    self.indexLabel.text = [NSString stringWithFormat:@"1/%ld",self.imgCount];
+    self.contentLabel.text = obj.Intrduce;
 }
 //MARK: GETTER
 
@@ -126,7 +145,7 @@
         _topScrollview.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
         __weak typeof(self) weakSelf = self;
         _topScrollview.itemDidScrollOperationBlock = ^(NSInteger currentIndex) {
-//            weakSelf.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld",currentIndex+1,weakSelf.imgArray.count];
+            weakSelf.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld",currentIndex+1,weakSelf.imgCount];
         };
     }
     return _topScrollview;

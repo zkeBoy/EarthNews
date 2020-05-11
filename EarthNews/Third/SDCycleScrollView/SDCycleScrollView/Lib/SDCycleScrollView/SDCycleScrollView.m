@@ -339,7 +339,10 @@ NSString * const ID = @"SDCycleScrollViewCell";
     _localizationImageNamesGroup = localizationImageNamesGroup;
     self.imagePathsGroup = [localizationImageNamesGroup copy];
 }
-
+//- (void)setLocalizationImageGroup:(NSArray *)localizationImageGroup
+//{
+//    _localizationImageGroup = localizationImageGroup;
+//}
 - (void)setTitlesGroup:(NSArray *)titlesGroup
 {
     _titlesGroup = titlesGroup;
