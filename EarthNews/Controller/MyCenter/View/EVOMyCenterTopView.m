@@ -112,7 +112,7 @@
     }];
     
     self.localAddressLabel = [UILabel new];
-    self.localAddressLabel.text = @"北京";
+    self.localAddressLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.location;
     self.localAddressLabel.textColor = MainTextColor;
     self.localAddressLabel.font = NFont(12);
     [self addSubview:self.localAddressLabel];

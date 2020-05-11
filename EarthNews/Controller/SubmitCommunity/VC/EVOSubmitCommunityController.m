@@ -38,7 +38,7 @@
     self.navBarHeightConstraint.constant = kStatusBarHeight+kNavigationBarHeight;
     
     self.bottomLayerView.layer.cornerRadius = 14;
-    self.localAddressLabel.text = @"成都";
+    self.localAddressLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.location;
     
     self.view.backgroundColor = MainBgColor;
     self.inputTextView.backgroundColor = SecondBgColor;
@@ -153,7 +153,7 @@
     communityDataObj.Age = [EVOUserDataManager shareUserDataManager].userDataObj.userAge;
     communityDataObj.imgArray = imgs;
     communityDataObj.normalImgArray = normalImgs;
-    communityDataObj.Nation = @"成都";
+    communityDataObj.Nation = [EVOUserDataManager shareUserDataManager].userDataObj.location;
     communityDataObj.isSelf = @"1";
     communityDataObj.ID = [[EVONormalToolManager shareManager] getCurrentTimes];
     [[EVOCommunityDataManager shareCommunityDataManager] submitMySelfCommunityData:communityDataObj];
