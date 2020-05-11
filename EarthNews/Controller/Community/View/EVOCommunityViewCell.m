@@ -204,6 +204,7 @@
 }
 
 - (void)clickCommentGoodAction {//点赞
+    /*
     if (self.isComment) {
         self.commentImgView.image = CreateImage(@"icon_good");
         self.commentTextLabel.text = @"点赞";
@@ -211,7 +212,10 @@
         self.commentImgView.image = CreateImage(@"icon_good_sel");
         self.commentTextLabel.text = @"1";
     }
-    self.isComment = !self.isComment;
+    self.isComment = !self.isComment;*/
+    
+    self.commentImgView.image = CreateImage(@"icon_good");
+    self.commentTextLabel.text = @"点赞";
     
     [[EVOCommunityDataManager shareCommunityDataManager] addGoodsOtherCommunityData:self.dataObj];
 }

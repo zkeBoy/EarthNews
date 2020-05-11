@@ -91,12 +91,8 @@
 - (void)btnsOnClick:(UIButton *)sender {
     switch (sender.tag) {
         case 0:{
-            sender.selected = !sender.selected;
-            if (sender.selected) {
-                [sender setTitle:@"1" forState:1];
-            }else {
-                [sender setTitle:@"点赞" forState:1];
-            }
+            [sender setTitle:@"1" forState:UIControlStateNormal];
+            [sender setImage:[UIImage imageNamed:@"like_black_selected"] forState:UIControlStateNormal];
         }
             break;
         default:
@@ -123,6 +119,7 @@
         }
         self.topScrollview.localizationImageNamesGroup = imgArra;
         self.imgCount = imgArra.count;
+        self.likeBtn.hidden = YES;
     }else {
         //他人动态
         NSArray * imgs = [obj.Image_1 componentsSeparatedByString:@";"];

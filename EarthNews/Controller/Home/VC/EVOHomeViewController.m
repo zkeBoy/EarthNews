@@ -35,7 +35,7 @@
     self.view.backgroundColor = MainBgColor;
     
     self.titleTextLabel = [UILabel new];
-    self.titleTextLabel.text = @"地球新闻";
+    self.titleTextLabel.text = @"地球社区";
     self.titleTextLabel.font = [UIFont boldSystemFontOfSize:17];
     self.titleTextLabel.textColor = UIColor.whiteColor;
     self.titleTextLabel.textAlignment = NSTextAlignmentCenter;
