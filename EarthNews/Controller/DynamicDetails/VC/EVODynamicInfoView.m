@@ -102,6 +102,7 @@
         self.btnsOnClickBlock(sender.tag);
     }
 }
+
 //MARK: SET DATA
 - (void)setInfoWithObj:(EVOUserCommunityDataObj *)obj
 {
@@ -123,7 +124,6 @@
     }
     self.indexLabel.text = [NSString stringWithFormat:@"1/%ld",self.imgCount];
     self.contentLabel.text = obj.Intrduce;
-    
 }
 //MARK: GETTER
 
