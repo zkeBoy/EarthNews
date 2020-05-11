@@ -198,7 +198,9 @@
 }
 
 - (void)clickPriveteChatAction {//点击私信
-    
+    if (self.clickPrivateChatBlock) {
+        self.clickPrivateChatBlock(self.dataObj);
+    }
 }
 
 - (void)clickCommentGoodAction {//点赞

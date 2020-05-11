@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *moreBtn;
 @property (nonatomic, assign) BOOL isComment; //是否点赞
 @property (nonatomic, strong) EVOUserCommunityDataObj * dataObj;
+@property (nonatomic,   copy) void(^clickPrivateChatBlock)(EVOUserCommunityDataObj * dataObj);
 @end
 
 NS_ASSUME_NONNULL_END

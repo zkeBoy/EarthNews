@@ -25,4 +25,14 @@ MJCodingImplementation
     self.userAge = NSFormatInt(age);
 }
 
+- (NSString *)location {
+    if (!_location.length) {
+        if (![EVOLocation shareInstance].city) {
+            return @"未知";
+        }
+        return [EVOLocation shareInstance].city;
+    }
+    return _location;
+}
+
 @end

@@ -117,14 +117,22 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    WeakSelf(self);
     EVOCommunityViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EVOCommunityViewCell" forIndexPath:indexPath];
     cell.dataObj = self.dataManager.dataSourceArray[indexPath.section];
+    cell.clickPrivateChatBlock = ^(EVOUserCommunityDataObj * _Nonnull dataObj) {
+        [WeakSelf pushCommunityDetailVC:dataObj];
+    };
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EVOUserCommunityDataObj * dataObj = self.dataManager.dataSourceArray[indexPath.section];
+    [self pushCommunityDetailVC:dataObj];
+}
+
+- (void)pushCommunityDetailVC:(EVOUserCommunityDataObj *)dataObj {
     EVODynamicDetailsVC * vc  = [EVODynamicDetailsVC new];
     vc.objModel = dataObj;
     [self.navigationController pushViewController:vc animated:YES];
