@@ -248,7 +248,7 @@
 {
     //更新速度
     model.beginTime = arc4random()%3;
-    model.liveTime = arc4random()%3+1;
+    model.liveTime = arc4random()%3+2;
     [self.bullteChatView.modelsArr addObject:model];
 }
 @end
