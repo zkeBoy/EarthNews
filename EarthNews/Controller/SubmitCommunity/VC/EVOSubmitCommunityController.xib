@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="bottomLayerView" destination="z0H-18-MF6" id="7sX-RN-ZHW"/>
                 <outlet property="inputTextView" destination="4zX-QD-ZM0" id="vxF-fa-1zH"/>
+                <outlet property="localAddressLabel" destination="S7b-Kk-Lsm" id="sei-eZ-BKF"/>
                 <outlet property="navBarHeightConstraint" destination="fof-ft-Grj" id="7VD-5G-TqX"/>
                 <outlet property="topHeight" destination="sbq-ER-Cvn" id="942-8I-9Wt"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c9X-zN-gjR"/>
