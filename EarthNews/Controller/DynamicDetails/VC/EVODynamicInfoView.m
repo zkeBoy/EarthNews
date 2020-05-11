@@ -123,6 +123,7 @@
     }
     self.indexLabel.text = [NSString stringWithFormat:@"1/%ld",self.imgCount];
     self.contentLabel.text = obj.Intrduce;
+    
 }
 //MARK: GETTER
 
