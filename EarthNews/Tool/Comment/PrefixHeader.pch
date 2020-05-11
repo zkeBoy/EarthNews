@@ -24,6 +24,8 @@
 #import "EVONormalToolManager.h"
 #import "EVOConstCommentHeader.h"
 #import <AMapLocationKit/AMapLocationKit.h>
+#import <YBImageBrowser/YBImageBrowser.h>
+
 //HEX颜色值转化
 #define RGBHex(hex)   [UIColor colorWithHexString:hex]
 #define RGBHexA(hex,a)   [UIColor colorWithHexString:hex alpha:a]

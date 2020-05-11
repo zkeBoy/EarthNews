@@ -12,7 +12,7 @@ target 'EarthNews' do
   pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'CYLTabBarController'
-  #pod 'Realm'
+  pod 'YBImageBrowser'
   pod 'AMapLocation'
   pod 'AMap3DMap'
   pod 'SVProgressHUD'
