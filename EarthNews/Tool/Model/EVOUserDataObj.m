@@ -7,6 +7,7 @@
 //
 
 #import "EVOUserDataObj.h"
+#import "EVOLocation.h"
 
 @implementation EVOUserDataObj
 MJCodingImplementation
@@ -23,4 +24,12 @@ MJCodingImplementation
     NSInteger age = year - yearString.integerValue;
     self.userAge = NSFormatInt(age);
 }
+
+- (NSString *)location {
+    if (!_location) {
+        return [EVOLocation shareInstance].city;
+    }
+    return _location;
+}
+
 @end

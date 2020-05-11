@@ -122,11 +122,11 @@
         self.topScrollview.imageURLStringsGroup = imgs;
         self.imgCount = imgs.count;
     }
-    self.indexLabel.text = [NSString stringWithFormat:@"1/%ld",self.imgCount];
+    self.indexLabel.text = [NSString stringWithFormat:@"1/%ld",(long)self.imgCount];
     self.contentLabel.text = obj.Intrduce;
 }
-//MARK: GETTER
 
+//MARK: GETTER
 - (UIImageView *)backImg
 {
     if (!_backImg) {

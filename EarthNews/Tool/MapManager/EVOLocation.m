@@ -58,14 +58,15 @@
             NSLog(@"reGeocode:%@", regeocode);
             NSLog(@"纬度:%f,经度:%f",location.coordinate.latitude,
                  location.coordinate.longitude);
-            
+            self.latitude = location.coordinate.latitude;
+            self.longitude = location.coordinate.longitude;
             self.country = regeocode.country;
+            self.city = regeocode.city;
             
             //返回是否在大陆或以外地区，返回YES为大陆地区，NO为非大陆。
             BOOL flag= AMapLocationDataAvailableForCoordinate(location.coordinate);
             
             if (flag) {//大陆
-                
                 
             } else {//海外
                 
@@ -74,13 +75,13 @@
         }
     }];
 }
-- (NSString *)country
-{
+
+- (NSString *)country {
     if (_country) {
         return _country;
     } else {
         return @"";
     }
-    
 }
+
 @end

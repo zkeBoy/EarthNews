@@ -9,6 +9,7 @@
 #import "EVOCommunityViewController.h"
 #import "EVOCommunityViewCell.h"
 #import "EVOCommunityDataManager.h"
+#import "EVODynamicDetailsVC.h"
 
 @interface EVOCommunityViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UILabel * titleTextLabel;
@@ -124,7 +125,9 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EVOUserCommunityDataObj * dataObj = self.dataManager.dataSourceArray[indexPath.section];
-    
+    EVODynamicDetailsVC * vc  = [EVODynamicDetailsVC new];
+    vc.objModel = dataObj;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*
