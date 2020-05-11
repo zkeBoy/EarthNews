@@ -78,10 +78,10 @@
         _submitBtn = [UIButton new];
         _submitBtn.titleLabel.font = BFont(17);
         _submitBtn.layer.cornerRadius = 23;
-        _submitBtn.layer.backgroundColor = UIColor.whiteColor.CGColor;
+        _submitBtn.layer.backgroundColor = MainBgColor.CGColor;
         [_submitBtn addTarget:self action:@selector(clickCompleteAction) forControlEvents:UIControlEventTouchUpInside];
         [_submitBtn setTitle:@"同意" forState:UIControlStateNormal];
-        [_submitBtn setTitleColor:MainBgColor forState:UIControlStateNormal];
+        [_submitBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     }
     return _submitBtn;
 }

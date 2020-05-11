@@ -19,6 +19,10 @@ kSPrCopy__(NSString * Nation);
 kSPrCopy__(NSString * Image);
 kSPrCopy__(NSString * Intrduce);
 kSPrCopy__(NSString * Image_1);
+kSPrCopy__(NSString * review); //评论内容
+kSPrCopy__(NSString * reviewImage); //评论头像
+kSPrAssign(double longitude); //纬度
+kSPrAssign(double latitude);  //精度
 
 kSPrCopy__(NSString * isSelf); //新加 是否是自己的动态
 kSPrStrong(NSData * userHeadImg); //新加

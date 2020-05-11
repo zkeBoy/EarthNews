@@ -61,7 +61,7 @@
 }
 
 - (void)readLocalJsonData {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"json"];
+    NSString *path = LocalJsonPath(@"community_test");
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
     NSError *error;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];

@@ -12,6 +12,7 @@
 
 + (void)initWebViewPath:(NSString *)path toView:(UIView *)view frame:(CGRect)frame{
     EVOWebViewTool * webView = [[EVOWebViewTool alloc] initWithFrame:frame];
+    webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     webView.path = path;
     [webView setUIConfig];
     [view addSubview:webView];
