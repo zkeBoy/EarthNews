@@ -178,7 +178,7 @@
         [self showToastText:@"已经达到上限!"];
         return;
     }
-    [[EVONormalToolManager shareManager] takePhotoAlbumImage:^(UIImage * _Nonnull image) {
+    [[EVONormalToolManager shareManager] clipPhotoalbumImage:^(UIImage * _Nonnull image) {
         UIImage * newImg = [image imageCompressFitSize:CGSizeMake(38, 38)];
         [self.selectUploadImgArray addObject:newImg];
         [self.normalUploadImgArray addObject:image];

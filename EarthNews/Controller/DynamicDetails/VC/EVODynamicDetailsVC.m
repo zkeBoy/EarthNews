@@ -39,7 +39,8 @@
     [AMapServices sharedServices].apiKey = EVOAMapKey;
     
     self.mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
-    self.mapView.zoomLevel = 12;
+    self.mapView.mapType = MAMapTypeSatellite;
+    self.mapView.zoomLevel = 14;
     self.mapView.delegate = self;
 
     self.mapView.rotateEnabled = NO;
@@ -186,7 +187,7 @@
         for (NSString * reviewHeadImg in imgs) {
             EVOBullevchatModel *model1 = [[EVOBullevchatModel alloc]init];
             model1.beginTime = arc4random()%3;
-            model1.liveTime = arc4random()%3+1;
+            model1.liveTime = arc4random()%3+3;
             if (self.objModel.isSelf) {
                 model1.image = [UIImage imageWithData:self.objModel.userHeadImg];
             } else {

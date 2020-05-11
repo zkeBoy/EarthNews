@@ -15,7 +15,7 @@
     [super awakeFromNib];
     
     self.contentImgView.backgroundColor = UIColor.whiteColor;
-    self.contentImgView.contentMode = UIViewContentModeScaleToFill;
+    self.contentImgView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)setUserDataObj:(EVOUserCommunityDataObj *)userDataObj {

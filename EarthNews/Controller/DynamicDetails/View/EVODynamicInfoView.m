@@ -88,13 +88,16 @@
 }
 
 
-- (void)btnsOnClick:(UIButton *)sender
-{
+- (void)btnsOnClick:(UIButton *)sender {
     switch (sender.tag) {
-        case 0:
-            {
-                sender.selected = !sender.selected;
+        case 0:{
+            sender.selected = !sender.selected;
+            if (sender.selected) {
+                [sender setTitle:@"1" forState:1];
+            }else {
+                [sender setTitle:@"点赞" forState:1];
             }
+        }
             break;
         default:
             break;
