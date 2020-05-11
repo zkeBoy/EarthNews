@@ -29,7 +29,8 @@
 #import "EVOLocation.h"
 #import "EVOBullevchatModel.h"
 
-#define EVOAMapKey @"2791d77aa5fc8241994e51cc4cb9be8a"
+//#define EVOAMapKey @"2791d77aa5fc8241994e51cc4cb9be8a"
+#define EVOAMapKey @"b886f8b4c96b05cae6eda3adaeeb75f9"
 
 
 //HEX颜色值转化

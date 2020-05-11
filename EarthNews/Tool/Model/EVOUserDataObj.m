@@ -31,6 +31,11 @@ MJCodingImplementation
             return @"未知";
         }
         return [EVOLocation shareInstance].city;
+    }else {
+        if ([_location isEqualToString:[EVOLocation shareInstance].city]) {
+            return _location;
+        }
+        return [EVOLocation shareInstance].city;
     }
     return _location;
 }

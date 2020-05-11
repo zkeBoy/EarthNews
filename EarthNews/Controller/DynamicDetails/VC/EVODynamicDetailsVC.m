@@ -39,6 +39,7 @@
     [AMapServices sharedServices].apiKey = EVOAMapKey;
     
     self.mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
+    self.mapView.zoomLevel = 19;
     self.mapView.delegate = self;
 
     self.mapView.rotateEnabled = NO;
@@ -46,7 +47,16 @@
     [self.view sendSubviewToBack:self.mapView];
     
     //CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(30.66074, 104.06327);
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.objModel.latitude, self.objModel.longitude);
+    double latitude = 0 , longitude = 0;
+    if (self.objModel.isSelf) {
+        latitude = [EVOLocation shareInstance].latitude;
+        longitude = [EVOLocation shareInstance].longitude;
+    }else {
+        latitude = self.objModel.latitude;
+        longitude = self.objModel.longitude;
+    }
+    
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
     NSMutableArray *poiAnnotations = [NSMutableArray new];
     EVOAnnotation * annotation = [[EVOAnnotation alloc]init];
     annotation.coordinate = coordinate;
