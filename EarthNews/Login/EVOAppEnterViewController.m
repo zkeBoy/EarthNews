@@ -10,6 +10,7 @@
 #import "EVOAppEnterViewController.h"
 #import "GlobeScene.h"
 #import "EVOUserInfoEditeViewController.h"
+#import "EVOPrivateRuleViewController.h"
 
 @interface EVOAppEnterViewController ()
 @property (weak, nonatomic) IBOutlet SCNView *sceneView;

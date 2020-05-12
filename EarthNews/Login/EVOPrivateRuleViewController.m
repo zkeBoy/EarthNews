@@ -7,12 +7,13 @@
 //
 
 #import "EVOPrivateRuleViewController.h"
-#import "EVOWebViewTool.h"
 #import "EVOUserDataManager.h"
+#import <WebKit/WebKit.h>
 
 @interface EVOPrivateRuleViewController ()
 @property (nonatomic, strong) UIButton * submitBtn;
 @property (nonatomic, strong) UIView   * topView;
+@property (nonatomic, strong) WKWebView * webView;
 @end
 
 @implementation EVOPrivateRuleViewController
@@ -47,22 +48,34 @@
     }];
     
     CGRect frame = CGRectMake(0, kNavigationBarHeight+kStatusBarHeight, kScreenWidth, kScreenHeight-kNavigationBarHeight-kStatusBarHeight);
+    
+    NSString * path;
+    
     if (self.type==RulePriveteType) {
-        [EVOWebViewTool initWebViewPath:LocalFilePath(@"PrivacyPolicy", @"pdf") toView:self.view frame:frame];
+        path = LocalFilePath(@"PrivacyPolicy", @"pdf");
+        
         self.submitBtn.layer.backgroundColor = MainBgColor.CGColor;
         [self.submitBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         titleLabel.text = @"隐私政策";
     }else if (self.type==RuleServiceType){
-        [EVOWebViewTool initWebViewPath:LocalFilePath(@"TermsOfUse", @"pdf") toView:self.view frame:frame];
+        path = LocalFilePath(@"TermsOfUse", @"pdf");
+        
         self.submitBtn.layer.backgroundColor = MainBgColor.CGColor;
         titleLabel.text = @"服务条款";
         [self.submitBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     }else {
-        [EVOWebViewTool initWebViewPath:LocalFilePath(@"leadRule", @"pdf") toView:self.view frame:frame];
+        path = LocalFilePath(@"leadRule", @"pdf");
+        
         self.submitBtn.layer.backgroundColor = UIColor.whiteColor.CGColor;
         titleLabel.text = @"社区规范";
         [self.submitBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     }
+    
+    _webView = [[WKWebView alloc] initWithFrame:frame];
+    [self.view addSubview:_webView];
+    NSURL * url = [NSURL fileURLWithPath:path];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    [_webView loadRequest:request];
     
     self.view.backgroundColor = MainBgColor;
     
