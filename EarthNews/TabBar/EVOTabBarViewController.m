@@ -36,8 +36,7 @@
     //去掉黑线
     if(@available(iOS 13.0, *)) {
         UITabBarAppearance * tabbarAppearance = self.tabBar.standardAppearance;
-        tabbarAppearance.backgroundImage =
-        [UIImage imageWithColor:UIColor.blackColor];
+        tabbarAppearance.backgroundImage = [UIImage imageWithColor:UIColor.blackColor];
         tabbarAppearance.shadowImage = [UIImage imageWithColor:UIColor.blackColor];
         self.tabBar.standardAppearance = tabbarAppearance;
     }else{
