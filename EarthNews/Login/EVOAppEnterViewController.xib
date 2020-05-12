@@ -44,7 +44,7 @@
                         <constraint firstAttribute="height" constant="46" id="qW6-md-vAc"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                    <state key="normal" title="注册">
+                    <state key="normal" title="开始">
                         <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
