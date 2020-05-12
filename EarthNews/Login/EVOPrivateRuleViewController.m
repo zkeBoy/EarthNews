@@ -40,7 +40,6 @@
     titleLabel.textColor = UIColor.whiteColor;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = BFont(17);
-    titleLabel.text = self.type==RulePriveteType?@"隐私政策":@"服务条款";
     [self.topView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.topView);
@@ -50,8 +49,19 @@
     CGRect frame = CGRectMake(0, kNavigationBarHeight+kStatusBarHeight, kScreenWidth, kScreenHeight-kNavigationBarHeight-kStatusBarHeight);
     if (self.type==RulePriveteType) {
         [EVOWebViewTool initWebViewPath:LocalFilePath(@"PrivacyPolicy", @"pdf") toView:self.view frame:frame];
-    }else {
+        self.submitBtn.layer.backgroundColor = MainBgColor.CGColor;
+        [self.submitBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        titleLabel.text = @"隐私政策";
+    }else if (self.type==RuleServiceType){
         [EVOWebViewTool initWebViewPath:LocalFilePath(@"TermsOfUse", @"pdf") toView:self.view frame:frame];
+        self.submitBtn.layer.backgroundColor = MainBgColor.CGColor;
+        titleLabel.text = @"服务条款";
+        [self.submitBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+    }else {
+        [EVOWebViewTool initWebViewPath:LocalFilePath(@"leadRule", @"pdf") toView:self.view frame:frame];
+        self.submitBtn.layer.backgroundColor = UIColor.whiteColor.CGColor;
+        titleLabel.text = @"社区规范";
+        [self.submitBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     }
     
     self.view.backgroundColor = MainBgColor;

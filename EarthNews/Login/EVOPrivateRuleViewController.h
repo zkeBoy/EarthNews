@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger, RuleType) {
     RulePriveteType, //隐私政策
-    RuleServiceType  //服务条款
+    RuleServiceType, //服务条款
+    LeadPrivateType  //社区规范
 };
 
 NS_ASSUME_NONNULL_BEGIN
