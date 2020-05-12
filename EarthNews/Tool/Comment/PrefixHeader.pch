@@ -30,7 +30,7 @@
 #import "EVOBullevchatModel.h"
 
 #ifdef DEBUG
-#define EVOAMapKey @"b886f8b4c96b05cae6eda3adaeeb75f9"
+#define EVOAMapKey @"2791d77aa5fc8241994e51cc4cb9be8a"
 #else
 #define EVOAMapKey @"b886f8b4c96b05cae6eda3adaeeb75f9"
 #endif
