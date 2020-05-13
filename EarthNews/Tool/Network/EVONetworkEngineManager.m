@@ -6,7 +6,7 @@
 //  Copyright © 2020 zkeBoy. All rights reserved.
 //
 
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking-umbrella.h>
 #import "EVONetworkEngineManager.h"
 
 #define requestTimeOut 10.f
