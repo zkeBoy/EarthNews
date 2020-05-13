@@ -9,7 +9,8 @@ target 'EarthNews' do
   pod 'MJExtension'
   pod 'MJRefresh'
   pod 'Masonry'
-  pod 'AFNetworking'
+  #pod 'AFNetworking'
+  pod 'AFNetworking', '~> 3.2.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
   pod 'SDWebImage'
   pod 'CYLTabBarController'
   pod 'YBImageBrowser'

@@ -1,10 +1,4 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
   - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -12,8 +6,6 @@ PODS:
   - AFNetworking/Reachability (3.2.1)
   - AFNetworking/Security (3.2.1)
   - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
   - AMap3DMap (7.2.0):
     - AMapFoundation (~> 1.5)
   - AMapFoundation (1.6.2)
@@ -39,7 +31,10 @@ PODS:
   - YYImage/Core (1.0.4)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking/NSURLSession (~> 3.2.1)
+  - AFNetworking/Reachability (~> 3.2.1)
+  - AFNetworking/Security (~> 3.2.1)
+  - AFNetworking/Serialization (~> 3.2.1)
   - AMap3DMap
   - AMapLocation
   - CYLTabBarController
@@ -79,6 +74,6 @@ SPEC CHECKSUMS:
   YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 1e31c985cea2120badeb69316e3033bb4e228342
+PODFILE CHECKSUM: 7b06bd82ab01ed1520a8ada7d998860df58e54e0
 
 COCOAPODS: 1.9.1
