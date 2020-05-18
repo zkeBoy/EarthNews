@@ -53,7 +53,7 @@
     self.sceneHeight.constant = kScreenWidth;
     NSInteger top = 100;
     if (!isFullScreen) {
-        top = 0.4*top;
+        top = 0.3*top;
     }
     self.top.constant = kStatusBarHeight+top;
     

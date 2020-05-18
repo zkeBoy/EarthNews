@@ -133,34 +133,36 @@
         return;
     }
     
-    NSMutableArray * imgs = [NSMutableArray array];
-    for (UIImage * image in self.selectUploadImgArray) {
-        NSData * data = UIImagePNGRepresentation(image);
-        [imgs addObject:data];
-    }
-    
-    NSMutableArray * normalImgs = [NSMutableArray array];
-    for (UIImage * image in self.normalUploadImgArray) {
-        NSData * data = UIImagePNGRepresentation(image);
-        [normalImgs addObject:data];
-    }
-    
-    EVOUserCommunityDataObj * communityDataObj = [EVOUserCommunityDataObj new];
-    communityDataObj.userHeadImg = [EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg;
-    communityDataObj.Gender = [EVOUserDataManager shareUserDataManager].userDataObj.userSex;
-    communityDataObj.Name = [EVOUserDataManager shareUserDataManager].userDataObj.userName;
-    communityDataObj.Intrduce = self.inputTextView.text;
-    communityDataObj.Age = [EVOUserDataManager shareUserDataManager].userDataObj.userAge;
-    communityDataObj.imgArray = imgs;
-    communityDataObj.normalImgArray = normalImgs;
-    communityDataObj.Nation = [EVOUserDataManager shareUserDataManager].userDataObj.location;
-    communityDataObj.isSelf = @"1";
-    communityDataObj.ID = [[EVONormalToolManager shareManager] getCurrentTimes];
-    [[EVOCommunityDataManager shareCommunityDataManager] submitMySelfCommunityData:communityDataObj];
-    
-    [self showToastText:@"发布成功"];
-    
-    [self clickBackAction:nil];
+    [[EVONormalToolManager shareManager] showAlertViewWithTitle:@"发布轨迹动态将会记录并展示您的当前位置信息，确定要发布吗？" message:nil other:@"确定" cancel:@"取消" otherBlock:^{
+        NSMutableArray * imgs = [NSMutableArray array];
+        for (UIImage * image in self.selectUploadImgArray) {
+            NSData * data = UIImagePNGRepresentation(image);
+            [imgs addObject:data];
+        }
+        
+        NSMutableArray * normalImgs = [NSMutableArray array];
+        for (UIImage * image in self.normalUploadImgArray) {
+            NSData * data = UIImagePNGRepresentation(image);
+            [normalImgs addObject:data];
+        }
+        
+        EVOUserCommunityDataObj * communityDataObj = [EVOUserCommunityDataObj new];
+        communityDataObj.userHeadImg = [EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg;
+        communityDataObj.Gender = [EVOUserDataManager shareUserDataManager].userDataObj.userSex;
+        communityDataObj.Name = [EVOUserDataManager shareUserDataManager].userDataObj.userName;
+        communityDataObj.Intrduce = self.inputTextView.text;
+        communityDataObj.Age = [EVOUserDataManager shareUserDataManager].userDataObj.userAge;
+        communityDataObj.imgArray = imgs;
+        communityDataObj.normalImgArray = normalImgs;
+        communityDataObj.Nation = [EVOUserDataManager shareUserDataManager].userDataObj.location;
+        communityDataObj.isSelf = @"1";
+        communityDataObj.ID = [[EVONormalToolManager shareManager] getCurrentTimes];
+        [[EVOCommunityDataManager shareCommunityDataManager] submitMySelfCommunityData:communityDataObj];
+        
+        [self showToastText:@"发布成功"];
+        
+        [self clickBackAction:nil];
+    } cancelBlock:nil];
 }
 
 - (void)deleteSelectImgIndex:(NSInteger)idx {
