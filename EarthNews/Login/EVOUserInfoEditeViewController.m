@@ -154,7 +154,6 @@
     //选择生日
     SPDateTimePickerView *pickerView = [[SPDateTimePickerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width,  [UIScreen mainScreen].bounds.size.height) pickMode:SPDatePickerModeDate];
     pickerView.delegate = self;
-    pickerView.title = @"时间选择器";
     [self.view addSubview:pickerView];
     [pickerView showDateTimePickerView];
 }

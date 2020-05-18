@@ -94,7 +94,7 @@
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.font = [UIFont systemFontOfSize:14];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.text = @"时间选择器";
+        _titleLabel.text = @"";
     }
     return _titleLabel;
 }
