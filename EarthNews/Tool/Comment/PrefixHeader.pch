@@ -60,8 +60,6 @@
 #define iPhoneXS    812.f // {375, 812}
 #define iPhoneXSMax 896.f // {414, 896}
 
-#define WeakSelf(self) __weak typeof(self) Weak##Self = self
-
 /****************************初始化方法********************************/
 #define NFont(num) [UIFont systemFontOfSize:(num)]
 #define BFont(num) [UIFont boldSystemFontOfSize:(num)]
