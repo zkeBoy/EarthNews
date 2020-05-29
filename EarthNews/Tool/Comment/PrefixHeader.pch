@@ -27,6 +27,7 @@
 #import <YBImageBrowser/YBImageBrowser.h>
 #import <YYImage/YYImage.h>
 #import "EVOLocation.h"
+#import <TZImagePickerController.h>
 #import "EVOBullevchatModel.h"
 
 #ifdef DEBUG

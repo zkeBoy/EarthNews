@@ -21,6 +21,7 @@ PODS:
     - SDWebImage/Core (= 5.6.1)
   - SDWebImage/Core (5.6.1)
   - SVProgressHUD (2.2.5)
+  - TZImagePickerController (3.3.1)
   - YBImageBrowser (3.0.9):
     - YBImageBrowser/Core (= 3.0.9)
   - YBImageBrowser/Core (3.0.9):
@@ -43,10 +44,11 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - SVProgressHUD
+  - TZImagePickerController
   - YBImageBrowser
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - AMap3DMap
     - AMapFoundation
@@ -57,6 +59,7 @@ SPEC REPOS:
     - MJRefresh
     - SDWebImage
     - SVProgressHUD
+    - TZImagePickerController
     - YBImageBrowser
     - YYImage
 
@@ -71,9 +74,10 @@ SPEC CHECKSUMS:
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 7b06bd82ab01ed1520a8ada7d998860df58e54e0
+PODFILE CHECKSUM: 09f5d1f62a55fe8577637a3bc8e1e2caabf68abf
 
 COCOAPODS: 1.9.1

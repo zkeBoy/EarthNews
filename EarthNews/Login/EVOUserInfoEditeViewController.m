@@ -11,7 +11,7 @@
 #import "EVOUserDataManager.h"
 #import "EVOPrivateRuleViewController.h"
 
-@interface EVOUserInfoEditeViewController () <SPDateTimePickerViewDelegate>
+@interface EVOUserInfoEditeViewController () <SPDateTimePickerViewDelegate, TZImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIImageView *userHeadImgView;
 @property (weak, nonatomic) IBOutlet UITextField *userNameInputView;
@@ -107,12 +107,40 @@
 
 - (IBAction)selectUserHeadImgAction:(id)sender {
     [self.view endEditing:YES];
+    
+    [self clickAddHeadAction:sender];
+    /*
     //选择头像
     [[EVONormalToolManager shareManager] clipPhotoalbumImage:^(UIImage * _Nonnull image) {
         UIImage * newImg = [image imageCompressFitSize:CGSizeMake(20, 20)];
         self.userHeadImgView.image = newImg;
         self.headImg = image;
-    }];
+    }];*/
+}
+
+- (void)clickAddHeadAction:(id)sender {
+    //MaxImagesCount  可以选着的最大条目数
+    TZImagePickerController *imagePicker = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+    // 是否显示可选原图按钮
+    imagePicker.allowPickingOriginalPhoto = NO;
+    // 是否允许显示视频
+    imagePicker.allowPickingVideo = NO;
+    // 是否允许显示图片
+    imagePicker.allowPickingImage = YES;
+    // 这是一个navigation 只能present
+    // 设置 模态弹出模式。 iOS 13默认非全屏
+    imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+#pragma mark - TZImagePickerControllerDelegate
+// 选择照片的回调
+- (void)imagePickerController:(TZImagePickerController *)picker
+      didFinishPickingPhotos:(NSArray<UIImage *> *)photos
+                sourceAssets:(NSArray *)assets
+       isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
+    self.userHeadImgView.image = photos.firstObject;
+    self.headImg = photos.firstObject;
 }
 
 - (IBAction)selectUserSexAction:(id)sender {

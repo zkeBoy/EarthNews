@@ -12,7 +12,7 @@
 #import "EVOUserCommunityDataObj.h"
 #import "EVOCommunityDataManager.h"
 
-@interface EVOSubmitCommunityController ()
+@interface EVOSubmitCommunityController () <TZImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
 @property (nonatomic, strong) EVOSubmitCustomBtn * uploadImgBtn;
@@ -180,12 +180,40 @@
         [self showToastText:@"已经达到上限!"];
         return;
     }
+    /*
     [[EVONormalToolManager shareManager] clipPhotoalbumImage:^(UIImage * _Nonnull image) {
         UIImage * newImg = [image imageCompressFitSize:CGSizeMake(38, 38)];
         [self.selectUploadImgArray addObject:newImg];
         [self.normalUploadImgArray addObject:image];
         [self refreshSelectImgBtn];
-    }];
+    }];*/
+    [self clickAddHeadAction:nil];
+}
+
+- (void)clickAddHeadAction:(id)sender {
+    //MaxImagesCount  可以选着的最大条目数
+    TZImagePickerController *imagePicker = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+    // 是否显示可选原图按钮
+    imagePicker.allowPickingOriginalPhoto = NO;
+    // 是否允许显示视频
+    imagePicker.allowPickingVideo = NO;
+    // 是否允许显示图片
+    imagePicker.allowPickingImage = YES;
+    // 这是一个navigation 只能present
+    // 设置 模态弹出模式。 iOS 13默认非全屏
+    imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+#pragma mark - TZImagePickerControllerDelegate
+// 选择照片的回调
+- (void)imagePickerController:(TZImagePickerController *)picker
+      didFinishPickingPhotos:(NSArray<UIImage *> *)photos
+                sourceAssets:(NSArray *)assets
+       isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
+    [self.selectUploadImgArray addObject:photos.firstObject];
+    [self.normalUploadImgArray addObject:photos.firstObject];
+    [self refreshSelectImgBtn];
 }
 
 - (void)refreshSelectImgBtn {
