@@ -15,8 +15,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIImageView *userHeadImgView;
 @property (weak, nonatomic) IBOutlet UITextField *userNameInputView;
-@property (weak, nonatomic) IBOutlet UILabel *userSexTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userBrithdayTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *textTitleLabel;
 @property (nonatomic, strong) UIImage * headImg;
 @end
@@ -41,8 +39,6 @@
         UIImage * image = [UIImage imageWithData:[EVOUserDataManager shareUserDataManager].userDataObj.userHeadImg];
         self.userHeadImgView.image = image;
         self.userNameInputView.text =  [EVOUserDataManager shareUserDataManager].userDataObj.userName;
-        self.userSexTextLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.userSex;
-        self.userBrithdayTextLabel.text = [EVOUserDataManager shareUserDataManager].userDataObj.birthDay;
         self.headImg = image;
         self.textTitleLabel.text = @"编辑资料";
     }else {
@@ -79,16 +75,6 @@
         }
     }
     
-    if (!self.userSexTextLabel.text.length) {
-        [self showToastText:@"请选择用户性别!"];
-        return;
-    }
-    
-    if (!self.userBrithdayTextLabel.text.length) {
-        [self showToastText:@"请选择用户生日!"];
-        return;
-    }
-    
     /*
      kSPrCopy__(NSString * userName);
      kSPrStrong(NSData * userHeadImg);
@@ -98,8 +84,6 @@
     
     NSData * data = UIImagePNGRepresentation(self.headImg);
     NSDictionary * userDicObj = @{@"userName":self.userNameInputView.text,
-                                   @"userSex":self.userSexTextLabel.text,
-                                   @"birthDay":self.userBrithdayTextLabel.text,
                                    @"userHeadImg":data
     };
     
@@ -144,7 +128,6 @@
     [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
         NSDictionary * dic = sections[selectIndex];
         NSString * title = dic[@"title"];
-        self.userSexTextLabel.text = title;
     } clickCancelBlock:^{
         
     }];
@@ -160,7 +143,6 @@
 
 #pragma mark - SPDateTimePickerViewDelegate
 - (void)didClickFinishDateTimePickerView:(NSString*)date {
-    self.userBrithdayTextLabel.text = date;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

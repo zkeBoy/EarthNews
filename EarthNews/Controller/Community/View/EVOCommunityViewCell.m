@@ -23,6 +23,8 @@
     [super awakeFromNib];
     [self addGestureRecognizers];
     [self setUIConfig];
+    self.timeTextLabel.hidden = YES;
+    self.userSexImgView.hidden = YES;
 }
 
 - (void)addGestureRecognizers {

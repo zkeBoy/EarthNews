@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,10 +12,8 @@
             <connections>
                 <outlet property="navBarHeightConstraint" destination="hLq-2b-hzJ" id="4Ps-xW-qe5"/>
                 <outlet property="textTitleLabel" destination="usZ-ri-JT3" id="TH8-HH-hjc"/>
-                <outlet property="userBrithdayTextLabel" destination="zbF-rp-Std" id="0Ae-4n-810"/>
                 <outlet property="userHeadImgView" destination="BfF-S1-bW1" id="lwG-k0-d0U"/>
                 <outlet property="userNameInputView" destination="A1G-Pf-g7J" id="LiB-Qm-Igc"/>
-                <outlet property="userSexTextLabel" destination="N2e-Ov-mTN" id="1Hr-nz-kGI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -115,62 +113,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="360-xG-Xlr">
-                    <rect key="frame" x="0.0" y="247" width="414" height="54"/>
-                    <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="o3n-jx-2Jz"/>
-                    </constraints>
-                    <connections>
-                        <action selector="selectUserSexAction:" destination="-1" eventType="touchUpInside" id="YjH-eo-iru"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRI-fI-RPu">
-                    <rect key="frame" x="20" y="264" width="35" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="BJz-7a-D08"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2e-Ov-mTN">
-                    <rect key="frame" x="396" y="263" width="0.0" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="doC-z1-YV1"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ6-Op-Bs5">
-                    <rect key="frame" x="0.0" y="305" width="414" height="54"/>
-                    <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="TYV-qk-Cwk"/>
-                    </constraints>
-                    <connections>
-                        <action selector="selectBirthDayAction:" destination="-1" eventType="touchUpInside" id="hTm-m6-7Dt"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-Pl-Eby">
-                    <rect key="frame" x="20" y="322" width="35" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="WtK-3x-OLp"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbF-rp-Std">
-                    <rect key="frame" x="396" y="322" width="0.0" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="YCo-zt-DQg"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1G-Pf-g7J">
                     <rect key="frame" x="176" y="199" width="220" height="34"/>
                     <constraints>
@@ -184,36 +126,22 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="UZ6-Op-Bs5" secondAttribute="trailing" id="0hg-g3-4Gj"/>
-                <constraint firstItem="nRI-fI-RPu" firstAttribute="top" secondItem="Dmo-aj-FAT" secondAttribute="bottom" constant="21" id="2TC-mp-G3P"/>
                 <constraint firstItem="gQx-oI-o0C" firstAttribute="top" secondItem="YOB-pm-dGp" secondAttribute="bottom" constant="38" id="3Ja-U8-ixV"/>
                 <constraint firstAttribute="trailing" secondItem="BfF-S1-bW1" secondAttribute="trailing" constant="18" id="4Lj-FG-dnc"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="A1G-Pf-g7J" secondAttribute="trailing" constant="18" id="8kN-6b-MEC"/>
                 <constraint firstItem="A1G-Pf-g7J" firstAttribute="top" secondItem="Mpw-Sj-vtc" secondAttribute="bottom" constant="14" id="Afs-qb-RTm"/>
                 <constraint firstItem="79z-Z7-Zf4" firstAttribute="top" secondItem="Mpw-Sj-vtc" secondAttribute="bottom" constant="21" id="IbL-tT-agj"/>
-                <constraint firstItem="FRU-Pl-Eby" firstAttribute="top" secondItem="360-xG-Xlr" secondAttribute="bottom" constant="21" id="Iw7-rY-tWA"/>
-                <constraint firstItem="360-xG-Xlr" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="KOi-qx-vAl"/>
                 <constraint firstItem="Mpw-Sj-vtc" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Q1x-v5-54d"/>
                 <constraint firstItem="Mpw-Sj-vtc" firstAttribute="top" secondItem="YOB-pm-dGp" secondAttribute="bottom" id="SnV-3O-8oK"/>
                 <constraint firstItem="YOB-pm-dGp" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ToA-RF-Y2T"/>
-                <constraint firstItem="360-xG-Xlr" firstAttribute="top" secondItem="Dmo-aj-FAT" secondAttribute="bottom" constant="4" id="Uam-sz-7ko"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="N2e-Ov-mTN" secondAttribute="trailing" constant="18" id="Uhg-GE-ov9"/>
-                <constraint firstItem="N2e-Ov-mTN" firstAttribute="top" secondItem="Dmo-aj-FAT" secondAttribute="bottom" constant="20" id="Vb9-Wn-2pV"/>
                 <constraint firstItem="Mpw-Sj-vtc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="XuB-0G-0KV"/>
                 <constraint firstItem="YOB-pm-dGp" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="ZGQ-i8-55G"/>
-                <constraint firstItem="UZ6-Op-Bs5" firstAttribute="top" secondItem="360-xG-Xlr" secondAttribute="bottom" constant="4" id="a7q-Nc-Pot"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zbF-rp-Std" secondAttribute="trailing" constant="18" id="aDV-Wt-GFo"/>
-                <constraint firstItem="zbF-rp-Std" firstAttribute="top" secondItem="360-xG-Xlr" secondAttribute="bottom" constant="21" id="fS4-rr-OBk"/>
                 <constraint firstItem="Dmo-aj-FAT" firstAttribute="top" secondItem="Mpw-Sj-vtc" secondAttribute="bottom" constant="4" id="fjF-Q1-IFR"/>
-                <constraint firstItem="nRI-fI-RPu" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="haM-78-24Q"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="360-xG-Xlr" secondAttribute="trailing" id="ibY-0S-sZh"/>
                 <constraint firstItem="gQx-oI-o0C" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="jvD-zb-Bnj"/>
                 <constraint firstItem="YOB-pm-dGp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lvy-jO-Dnf"/>
                 <constraint firstItem="79z-Z7-Zf4" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="mia-17-qvR"/>
-                <constraint firstItem="UZ6-Op-Bs5" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="oT0-6R-TcY"/>
                 <constraint firstItem="Dmo-aj-FAT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="odL-bb-tgl"/>
                 <constraint firstItem="Dmo-aj-FAT" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="p27-Z9-Byg"/>
-                <constraint firstItem="FRU-Pl-Eby" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="ri6-91-qzi"/>
                 <constraint firstItem="BfF-S1-bW1" firstAttribute="top" secondItem="Mpw-Sj-vtc" secondAttribute="top" constant="18" id="wIu-fY-yzJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
