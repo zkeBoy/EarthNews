@@ -26,11 +26,11 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>需要访问您的定位信息，来为您提供对应的信息显示。</string>
+	<string>需要访问您的定位信息，来用于记录您当前发布该轨迹动态的地点，是否允许？</string>
 	<key>NSCameraUsageDescription</key>
 	<string>需要访问您的相机，来扫描二维码或是拍摄照片用于您的用户头像。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>需要访问您的相册,是否允许？</string>
+	<string>需要访问您的相册，来用于上传头像和分享轨迹动态，是否允许？</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

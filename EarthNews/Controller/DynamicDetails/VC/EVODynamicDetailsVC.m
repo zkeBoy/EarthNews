@@ -132,7 +132,6 @@
 {
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)keyBoardWillShow:(NSNotification *)notification{
@@ -156,9 +155,6 @@
     }];
 }
 
-- (void)keyBoardDidHide:(NSNotification *)notification{
-//    _keyBoardIsShow = NO;
-}
 
 //MARK: 输入框
 - (void)setupInputView
