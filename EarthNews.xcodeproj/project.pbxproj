@@ -95,6 +95,7 @@
 		0ACD6E3924653064006C65FA /* EVOAppEnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E3724653064006C65FA /* EVOAppEnterViewController.xib */; };
 		0ACD6E4124653C66006C65FA /* EVOUserInfoEditeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6E3F24653C66006C65FA /* EVOUserInfoEditeViewController.m */; };
 		0ACD6E4224653C66006C65FA /* EVOUserInfoEditeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6E4024653C66006C65FA /* EVOUserInfoEditeViewController.xib */; };
+		0AF32241249227D5008103E3 /* libOpenInstallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AF3223E249227D5008103E3 /* libOpenInstallSDK.a */; };
 		D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80692613D39F8817B75A928F /* Pods_EarthNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -259,6 +260,9 @@
 		0ACD6E3E24653C66006C65FA /* EVOUserInfoEditeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOUserInfoEditeViewController.h; sourceTree = "<group>"; };
 		0ACD6E3F24653C66006C65FA /* EVOUserInfoEditeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOUserInfoEditeViewController.m; sourceTree = "<group>"; };
 		0ACD6E4024653C66006C65FA /* EVOUserInfoEditeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOUserInfoEditeViewController.xib; sourceTree = "<group>"; };
+		0AF3223E249227D5008103E3 /* libOpenInstallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpenInstallSDK.a; sourceTree = "<group>"; };
+		0AF3223F249227D5008103E3 /* OpeninstallData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeninstallData.h; sourceTree = "<group>"; };
+		0AF32240249227D5008103E3 /* OpenInstallSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenInstallSDK.h; sourceTree = "<group>"; };
 		80692613D39F8817B75A928F /* Pods_EarthNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C227E15C40890433819469B /* Pods-EarthNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthNews.debug.xcconfig"; path = "Target Support Files/Pods-EarthNews/Pods-EarthNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +272,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF32241249227D5008103E3 /* libOpenInstallSDK.a in Frameworks */,
 				D6555C332DEB0C720E24951F /* Pods_EarthNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +300,7 @@
 		0A5C0CC2246558A30018E88F /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				0AF3223D249227D5008103E3 /* OpenInstallSDK2.3.0 */,
 				0A5C0D992468FABB0018E88F /* DanmakuView */,
 				0A5C0D632468FA5F0018E88F /* SDCycleScrollView */,
 				0A5C0D3F2468FA570018E88F /* XLPhotoBrowser */,
@@ -856,6 +862,16 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
+		0AF3223D249227D5008103E3 /* OpenInstallSDK2.3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3223E249227D5008103E3 /* libOpenInstallSDK.a */,
+				0AF3223F249227D5008103E3 /* OpeninstallData.h */,
+				0AF32240249227D5008103E3 /* OpenInstallSDK.h */,
+			);
+			path = OpenInstallSDK2.3.0;
+			sourceTree = "<group>";
+		};
 		8F3FE6222781C8434A1D3104 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,6 +1249,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EarthNews/Third/OpenInstallSDK2.3.0",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = www.EarthNews;
 				PRODUCT_NAME = "地球社区";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1252,6 +1272,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EarthNews/Third/OpenInstallSDK2.3.0",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = www.EarthNews;
 				PRODUCT_NAME = "地球社区";

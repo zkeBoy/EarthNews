@@ -11,7 +11,7 @@
 #import "EVOTabBarViewController.h"
 #import "EVOUserDataManager.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<OpenInstallDelegate>
 
 @end
 
@@ -19,6 +19,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [OpenInstallSDK initWithDelegate:self];
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     

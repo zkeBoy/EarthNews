@@ -29,6 +29,7 @@
 #import "EVOLocation.h"
 #import <TZImagePickerController.h>
 #import "EVOBullevchatModel.h"
+#import "OpenInstallSDK.h"
 
 #ifdef DEBUG
 #define EVOAMapKey @"2791d77aa5fc8241994e51cc4cb9be8a"

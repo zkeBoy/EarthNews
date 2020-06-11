@@ -33,6 +33,8 @@
 	<string>需要访问您的相册，来用于上传头像和分享轨迹动态，是否允许？</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>com.openinstall.APP_KEY</key>
+	<string>dz0r6l</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
