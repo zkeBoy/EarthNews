@@ -9,12 +9,16 @@
 #define BlackListUserPath [BlackListUserFilePath stringByAppendingPathComponent:@"blackList.plist"]
 #define BlackListUserFilePath [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"EarthNews"]
 
+#import "EVOCommunityDataManager.h"
 #import "EVOBlackListManager.h"
 
 @implementation EVOBlackListManager
 
 + (void)addBlackList:(EVOUserCommunityDataObj *)dataObj {
     [self checkPath];
+    
+    //加入黑名单执行屏蔽
+    [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:dataObj];
     
     NSArray * arr = [NSKeyedUnarchiver unarchiveObjectWithFile:BlackListUserPath];
     NSMutableArray * list = [NSMutableArray array];
