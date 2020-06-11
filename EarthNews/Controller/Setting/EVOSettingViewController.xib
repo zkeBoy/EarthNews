@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -121,7 +121,7 @@
                         <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="W0b-BI-Evl"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="删除账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-xN-znU">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="删除账号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-xN-znU">
                     <rect key="frame" x="20" y="280" width="70" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="LMY-ZU-yOk"/>
@@ -130,10 +130,27 @@
                     <color key="textColor" red="1" green="0.20784313725490194" blue="0.20784313725490194" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KE-7P-3AG">
+                    <rect key="frame" x="0.0" y="321" width="414" height="54"/>
+                    <color key="backgroundColor" red="0.058823529409999999" green="0.058823529409999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="Ifq-Ko-bmD"/>
+                    </constraints>
+                    <connections>
+                        <action selector="clickBlackListAction:" destination="-1" eventType="touchUpInside" id="zOK-3l-fCe"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黑名单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruq-EA-TLr">
+                    <rect key="frame" x="20" y="338" width="52" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="8sF-MD-hro" firstAttribute="top" secondItem="jVW-Ju-JZl" secondAttribute="bottom" constant="17" id="0AK-K2-vWl"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="4KE-7P-3AG" secondAttribute="trailing" id="941-ad-2U4"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="d7u-rS-Rgb" secondAttribute="trailing" id="9AA-xj-rtB"/>
                 <constraint firstItem="LGc-xN-znU" firstAttribute="top" secondItem="d7u-rS-Rgb" secondAttribute="bottom" constant="21" id="CF8-3Z-QtM"/>
                 <constraint firstItem="d7u-rS-Rgb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="CJR-Tg-Eye"/>
@@ -141,8 +158,10 @@
                 <constraint firstItem="jVW-Ju-JZl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EcE-Uc-cwb"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="6Gb-6j-fcy" secondAttribute="trailing" id="HBl-oq-Qhv"/>
                 <constraint firstItem="J00-UU-rMQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="INI-9W-pa0"/>
+                <constraint firstItem="4KE-7P-3AG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="INP-rv-j8f"/>
                 <constraint firstItem="jVW-Ju-JZl" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="MdN-4R-9eP"/>
                 <constraint firstItem="CqW-AC-7aH" firstAttribute="top" secondItem="d7u-rS-Rgb" secondAttribute="bottom" constant="4" id="OKy-oT-WPm"/>
+                <constraint firstItem="ruq-EA-TLr" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Q5B-Tg-23r"/>
                 <constraint firstItem="Gqe-I2-hVO" firstAttribute="top" secondItem="J00-UU-rMQ" secondAttribute="bottom" constant="21" id="Zt9-Ka-stO"/>
                 <constraint firstItem="8sF-MD-hro" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="auI-V1-P4X"/>
                 <constraint firstItem="6Gb-6j-fcy" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="bRA-yP-82o"/>
@@ -153,7 +172,9 @@
                 <constraint firstItem="6Gb-6j-fcy" firstAttribute="top" secondItem="J00-UU-rMQ" secondAttribute="bottom" constant="4" id="onC-Nb-GJl"/>
                 <constraint firstItem="CqW-AC-7aH" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="pZR-5k-uzi"/>
                 <constraint firstItem="jVW-Ju-JZl" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="rwg-2u-aVl"/>
+                <constraint firstItem="ruq-EA-TLr" firstAttribute="top" secondItem="CqW-AC-7aH" secondAttribute="bottom" constant="21" id="sy8-99-9YM"/>
                 <constraint firstItem="r77-33-AaD" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="tsC-LR-uIg"/>
+                <constraint firstItem="4KE-7P-3AG" firstAttribute="top" secondItem="CqW-AC-7aH" secondAttribute="bottom" constant="4" id="uYx-Uz-pec"/>
                 <constraint firstItem="Gqe-I2-hVO" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="wwR-wh-u04"/>
                 <constraint firstItem="r77-33-AaD" firstAttribute="top" secondItem="6Gb-6j-fcy" secondAttribute="bottom" constant="21" id="yqY-5l-mUf"/>
             </constraints>

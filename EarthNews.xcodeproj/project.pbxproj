@@ -54,6 +54,11 @@
 		0A5C0DAA24693D6B0018E88F /* community_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DA924693D6B0018E88F /* community_test.json */; };
 		0A5C0DAD2469414C0018E88F /* EVONetworkURLPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C0DAC2469414C0018E88F /* EVONetworkURLPathManager.m */; };
 		0A5C0DC4246A4F840018E88F /* leadRule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C0DC3246A4F840018E88F /* leadRule.pdf */; };
+		0A9ADE3B2491CA5D0001CFBF /* EVOBlackListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9ADE3A2491CA5D0001CFBF /* EVOBlackListManager.m */; };
+		0A9ADE402491CCCC0001CFBF /* EVOBlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9ADE3E2491CCCC0001CFBF /* EVOBlackListViewController.m */; };
+		0A9ADE412491CCCC0001CFBF /* EVOBlackListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9ADE3F2491CCCC0001CFBF /* EVOBlackListViewController.xib */; };
+		0A9ADE472491CFD80001CFBF /* EVOBlackListCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9ADE452491CFD80001CFBF /* EVOBlackListCellView.m */; };
+		0A9ADE482491CFD80001CFBF /* EVOBlackListCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9ADE462491CFD80001CFBF /* EVOBlackListCellView.xib */; };
 		0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD6DAB2463A50E006C65FA /* AppDelegate.m */; };
 		0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB62463A50E006C65FA /* Assets.xcassets */; };
 		0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD6DB82463A50E006C65FA /* LaunchScreen.storyboard */; };
@@ -180,6 +185,14 @@
 		0A5C0DAB2469414C0018E88F /* EVONetworkURLPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVONetworkURLPathManager.h; sourceTree = "<group>"; };
 		0A5C0DAC2469414C0018E88F /* EVONetworkURLPathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVONetworkURLPathManager.m; sourceTree = "<group>"; };
 		0A5C0DC3246A4F840018E88F /* leadRule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = leadRule.pdf; sourceTree = "<group>"; };
+		0A9ADE392491CA5D0001CFBF /* EVOBlackListManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOBlackListManager.h; sourceTree = "<group>"; };
+		0A9ADE3A2491CA5D0001CFBF /* EVOBlackListManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOBlackListManager.m; sourceTree = "<group>"; };
+		0A9ADE3D2491CCCC0001CFBF /* EVOBlackListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOBlackListViewController.h; sourceTree = "<group>"; };
+		0A9ADE3E2491CCCC0001CFBF /* EVOBlackListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOBlackListViewController.m; sourceTree = "<group>"; };
+		0A9ADE3F2491CCCC0001CFBF /* EVOBlackListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOBlackListViewController.xib; sourceTree = "<group>"; };
+		0A9ADE442491CFD80001CFBF /* EVOBlackListCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVOBlackListCellView.h; sourceTree = "<group>"; };
+		0A9ADE452491CFD80001CFBF /* EVOBlackListCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVOBlackListCellView.m; sourceTree = "<group>"; };
+		0A9ADE462491CFD80001CFBF /* EVOBlackListCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVOBlackListCellView.xib; sourceTree = "<group>"; };
 		0ACD6DA72463A50E006C65FA /* 地球社区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "地球社区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACD6DAA2463A50E006C65FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ACD6DAB2463A50E006C65FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -508,6 +521,36 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0A9ADE382491CA3D0001CFBF /* Black List */ = {
+			isa = PBXGroup;
+			children = (
+				0A9ADE392491CA5D0001CFBF /* EVOBlackListManager.h */,
+				0A9ADE3A2491CA5D0001CFBF /* EVOBlackListManager.m */,
+			);
+			path = "Black List";
+			sourceTree = "<group>";
+		};
+		0A9ADE3C2491CCAC0001CFBF /* Black List */ = {
+			isa = PBXGroup;
+			children = (
+				0A9ADE3D2491CCCC0001CFBF /* EVOBlackListViewController.h */,
+				0A9ADE3E2491CCCC0001CFBF /* EVOBlackListViewController.m */,
+				0A9ADE3F2491CCCC0001CFBF /* EVOBlackListViewController.xib */,
+				0A9ADE432491CFB70001CFBF /* View */,
+			);
+			path = "Black List";
+			sourceTree = "<group>";
+		};
+		0A9ADE432491CFB70001CFBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A9ADE442491CFD80001CFBF /* EVOBlackListCellView.h */,
+				0A9ADE452491CFD80001CFBF /* EVOBlackListCellView.m */,
+				0A9ADE462491CFD80001CFBF /* EVOBlackListCellView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0ACD6D9E2463A50E006C65FA = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +601,7 @@
 		0ACD6DC82463AC5A006C65FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A9ADE3C2491CCAC0001CFBF /* Black List */,
 				0A5C0CEF246696A20018E88F /* ConnectUs */,
 				0A5C0CE1246667BF0018E88F /* SubmitCommunity */,
 				E38C25EF246647F800E6C70C /* DynamicDetails */,
@@ -672,6 +716,7 @@
 		0ACD6DF42463DE5A006C65FA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0A9ADE382491CA3D0001CFBF /* Black List */,
 				0A5C0CBB246548D70018E88F /* Normal Tool */,
 				0A5C0D812468FA760018E88F /* MapManager */,
 				0ACD6E3D2465393F006C65FA /* Comment */,
@@ -901,6 +946,8 @@
 				0A5C0D792468FA5F0018E88F /* README.md in Resources */,
 				0ACD6DBA2463A50E006C65FA /* LaunchScreen.storyboard in Resources */,
 				0A5C0CF4246696C00018E88F /* EVOConnectUsViewController.xib in Resources */,
+				0A9ADE482491CFD80001CFBF /* EVOBlackListCellView.xib in Resources */,
+				0A9ADE412491CCCC0001CFBF /* EVOBlackListViewController.xib in Resources */,
 				0ACD6DB72463A50E006C65FA /* Assets.xcassets in Resources */,
 				0A5C0D782468FA5F0018E88F /* LICENSE in Resources */,
 				0A5C0D5E2468FA570018E88F /* FSActionSheet_cancel@2x.png in Resources */,
@@ -985,6 +1032,7 @@
 				0ACD6DAC2463A50E006C65FA /* AppDelegate.m in Sources */,
 				0A5C0DAD2469414C0018E88F /* EVONetworkURLPathManager.m in Sources */,
 				0ACD6E3824653064006C65FA /* EVOAppEnterViewController.m in Sources */,
+				0A9ADE402491CCCC0001CFBF /* EVOBlackListViewController.m in Sources */,
 				0A5C0D582468FA570018E88F /* XLProgressView.m in Sources */,
 				0ACD6DD62463B095006C65FA /* EVONavigationController.m in Sources */,
 				0A5C0D602468FA570018E88F /* FSActionSheet.m in Sources */,
@@ -993,7 +1041,9 @@
 				0ACD6DD22463AEFD006C65FA /* UIImage+Category.m in Sources */,
 				0A5C0D5C2468FA570018E88F /* XLPhotoBrowser.m in Sources */,
 				0ACD6E12246413E0006C65FA /* UIView+Gesture.m in Sources */,
+				0A9ADE3B2491CA5D0001CFBF /* EVOBlackListManager.m in Sources */,
 				0A5C0CC6246558E50018E88F /* SPDateTimePickerView.m in Sources */,
+				0A9ADE472491CFD80001CFBF /* EVOBlackListCellView.m in Sources */,
 				0A5C0D962468FA980018E88F /* EVODynamicInfoView.m in Sources */,
 				0A5C0D802468FA5F0018E88F /* TAAbstractDotView.m in Sources */,
 				0A5C0CC924655D310018E88F /* EVOUserDataObj.m in Sources */,

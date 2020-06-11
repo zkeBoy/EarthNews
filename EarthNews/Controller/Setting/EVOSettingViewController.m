@@ -9,6 +9,7 @@
 #import "EVOSettingViewController.h"
 #import "EVOConnectUsViewController.h"
 #import "EVOPrivateRuleViewController.h"
+#import "EVOBlackListViewController.h"
 #import "EVOUserDataManager.h"
 
 @interface EVOSettingViewController ()
@@ -56,6 +57,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)clickBlackListAction:(id)sender {
+    EVOBlackListViewController * blackListVC = [[EVOBlackListViewController alloc] initWithNibName:@"EVOBlackListViewController" bundle:nil];
+    [self.navigationController pushViewController:blackListVC animated:YES];
+}
 
 /*
 #pragma mark - Navigation

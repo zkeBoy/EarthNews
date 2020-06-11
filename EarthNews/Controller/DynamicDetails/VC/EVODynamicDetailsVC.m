@@ -18,6 +18,7 @@
 #import "EVOUserDataManager.h"
 #import "EVOInputCommentView.h"
 #import "EVOCommunityDataManager.h"
+#import "EVOBlackListManager.h"
 
 @interface EVODynamicDetailsVC ()<MAMapViewDelegate,FDanmakuViewProtocol>
 @property (nonatomic, strong) MAMapView *mapView;
@@ -324,6 +325,7 @@
         }else {
             //加入黑名单
             [self showToastText:@"加入黑名单成功!"];
+            [EVOBlackListManager addBlackList:dataObj];
         }
     } clickCancelBlock:nil];
 }

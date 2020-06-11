@@ -20,4 +20,5 @@
 
 #define EVOHomeRequestCommunitySuccessKey @"EVOHomeRequestCommunitySuccessKey" //首页请求动态数据完成
 
+#define EVORemoveBlackListSuccessKey @"EVORemoveBlackListSuccessKey" //移除黑名单
 #endif /* EVOConstCommentHeader_h */

@@ -8,6 +8,7 @@
 
 #import "EVOCommunityViewCell.h"
 #import "EVOCommunityDataManager.h"
+#import "EVOBlackListManager.h"
 
 @implementation EVOCommunityViewCell
 
@@ -201,6 +202,7 @@
         }else {
             //加入黑名单
             [self showToastText:@"加入黑名单成功!"];
+            [EVOBlackListManager addBlackList:self.dataObj];
         }
     } clickCancelBlock:nil];
 }

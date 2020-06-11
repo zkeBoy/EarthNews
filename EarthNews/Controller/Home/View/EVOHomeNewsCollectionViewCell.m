@@ -8,6 +8,7 @@
 
 #import "EVOHomeNewsCollectionViewCell.h"
 #import "EVOCommunityDataManager.h"
+#import "EVOBlackListManager.h"
 
 @implementation EVOHomeNewsCollectionViewCell
 
@@ -47,7 +48,10 @@
                            @"color":RGBHex(@"#FF3535")
     };
     
-    NSArray * sections = @[dic,dic1];
+    NSDictionary * dic2 = @{@"title":@"将此人加入黑名单",
+                            @"color":RGBHex(@"#FF3535")};
+    
+    NSArray * sections = @[dic,dic1,dic2];
     
     [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
         if (selectIndex==0) {
@@ -59,6 +63,7 @@
         }else {
             //加入黑名单
             [self showToastText:@"加入黑名单成功!"];
+            [EVOBlackListManager addBlackList:self.dataObj];
         }
     } clickCancelBlock:nil];
 }
