@@ -53,9 +53,12 @@
         if (selectIndex==0) {
             //屏蔽
             [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:self.dataObj];
-        }else {
+        }else if (selectIndex==1){
             //举报
             [self showToastText:@"举报成功!"];
+        }else {
+            //加入黑名单
+            [self showToastText:@"加入黑名单成功!"];
         }
     } clickCancelBlock:nil];
 }

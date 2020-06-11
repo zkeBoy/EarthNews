@@ -183,18 +183,24 @@
     };
     
     NSDictionary * dic1 = @{@"title":@"举报",
-                           @"color":RGBHex(@"#FF3535")
+                            @"color":RGBHex(@"#FF3535")
     };
     
-    NSArray * sections = @[dic,dic1];
+    NSDictionary * dic2 = @{@"title":@"将此人加入黑名单",
+                            @"color":RGBHex(@"#FF3535")};
+    
+    NSArray * sections = @[dic,dic1,dic2];
     
     [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
         if (selectIndex==0) {
             //屏蔽
             [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:self.dataObj];
-        }else {
+        }else if (selectIndex==1){
             //举报
             [self showToastText:@"举报成功!"];
+        }else {
+            //加入黑名单
+            [self showToastText:@"加入黑名单成功!"];
         }
     } clickCancelBlock:nil];
 }

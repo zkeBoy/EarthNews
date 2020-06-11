@@ -250,7 +250,7 @@
             data1.imageData = ^NSData * _Nullable{
                 return imgData;
             };
-            data1.allowSaveToPhotoAlbum = NO;
+            data1.allowSaveToPhotoAlbum = YES;
             [arr addObject:data1];
         }
     }else {
@@ -258,7 +258,7 @@
         for (NSString * imglink in imgs) {
             YBIBImageData *data1 = [YBIBImageData new];
             data1.imageURL = [NSURL URLWithString:imglink];
-            data1.allowSaveToPhotoAlbum = NO;
+            data1.allowSaveToPhotoAlbum = YES;
             [arr addObject:data1];
         }
     }
@@ -305,19 +305,25 @@
     };
     
     NSDictionary * dic1 = @{@"title":@"举报",
-                           @"color":RGBHex(@"#FF3535")
+                            @"color":RGBHex(@"#FF3535")
     };
     
-    NSArray * sections = @[dic,dic1];
+    NSDictionary * dic2 = @{@"title":@"将此人加入黑名单",
+                            @"color":RGBHex(@"#FF3535")};
+    
+    NSArray * sections = @[dic,dic1,dic2];
     
     [[EVONormalToolManager shareManager] showSectionTitles:sections message:nil selectHandler:^(NSInteger selectIndex) {
         if (selectIndex==0) {
             [self.navigationController popViewControllerAnimated:YES];
             //屏蔽
             [[EVOCommunityDataManager shareCommunityDataManager] shieldOtherCommunityData:dataObj];
-        }else {
+        }else if (selectIndex==1){
             //举报
             [self showToastText:@"举报成功!"];
+        }else {
+            //加入黑名单
+            [self showToastText:@"加入黑名单成功!"];
         }
     } clickCancelBlock:nil];
 }

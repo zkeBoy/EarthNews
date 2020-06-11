@@ -138,6 +138,10 @@ static const CGFloat   kDandaoCount  = 5;
             continue;
         }
         
+        if (!danmakuView) { //add by zkeBoy 防止Crash
+            continue;
+        }
+        
         [self.danmakuViewArr addObject:danmakuView];
         
         //重置数据
